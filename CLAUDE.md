@@ -1,4 +1,5 @@
-# Canal educativo de matemáticas (ESO → Bachillerato → Universidad)
+# Omnia: canal educativo de matemáticas (ESO → Bachillerato → Universidad)
+Canal bilingüe (castellano e inglés). Conocimiento universal y accesible para todo el mundo.
 
 Misión: educación accesible para cualquiera con conexión a internet. Entender, no memorizar.
 Primero 1º ESO completo (ver `curriculo/MAPA_1ESO.md`), luego 2º, 3º, 4º y Bachillerato.

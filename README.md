@@ -1,4 +1,4 @@
-# Canal educativo: sistema de producción
+# Omnia: sistema de producción del canal
 
 Qué es: un repositorio donde Claude Code produce los vídeos con agentes especializados. Tú apruebas el guion y el vídeo final.
 
@@ -22,7 +22,7 @@ Qué es: un repositorio donde Claude Code produce los vídeos con agentes especi
 `pipeline/render_nexo.py` (cuando llegue el modelo), `pipeline/componer.py` (ffmpeg), motor de voz, intro/cierre.
 
 ## Próximos pasos (en orden)
-1. Nombre del canal, logo y carta de presentación definitivos (`brand/`).
+1. ~~Nombre, logo y carta~~ hechos (Omnia). Falta comprobar nombre en YouTube, dominio y marca, y revisar la carta con el modelo definitivo de Nexo.
 2. Agente de revisión periódica del contenido (comprobar si algo debe actualizarse: currículo, datos, enlaces).
 3. Modelo definitivo de Nexo y biblioteca de clips.
 4. Voz de la locución y scripts de render y montaje.

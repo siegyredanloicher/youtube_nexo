@@ -1,3 +1,19 @@
+# Omnia: identidad del canal
+
+**Nombre:** Omnia (latín: "todo"). Internacional: se lee igual en castellano e inglés.
+**Descriptor:** Conocimiento para todos · Knowledge for everyone
+**Lema:** Entender, no memorizar · Understand, don't memorize
+**Estado del nombre:** elegido. Falta comprobar a mano YouTube (@omniaacademy u otro), dominio y marca (EUIPO/OEPM).
+
+## Logotipo (`brand/logo/`)
+- Marca: cuatro arcos, uno por nivel (verde, azul, violeta, coral), alrededor del triángulo de Nexo, sobre un cuadrado marino.
+- Palabra: "omnia" en Sora Bold, minúsculas, convertida a trazados (el SVG no depende de ninguna fuente).
+- Archivos: `omnia_marca.svg`, `omnia_marca_sin_fondo.svg`, `omnia_logo_horizontal.svg`, `omnia_avatar.png` (800x800), `omnia_banner_youtube.png` (2560x1440).
+- Se regeneran con `make_logo.py` y `render_assets.py` desde `tokens.json`.
+- Zona segura del banner de YouTube: 1546x423 px centrados. El logotipo y el descriptor caben dentro.
+- El avatar va a sangre (sin esquinas redondeadas) porque YouTube lo recorta en círculo.
+- Uso: sobre fondo crema o marino. Nunca sobre negro. No deformar ni recolorear los arcos.
+
 # Identidad visual del canal
 
 Fuente única: `tokens.json`. En código: `from brand import C, F, nivel, rgb, linear`.
