@@ -280,8 +280,11 @@ def bloque(m=None, lado=0.02, col="mates.a", forma="unidad", de_pie=False):
     material = mat(f"bloque_{col}", col, 0.5)
     hijos = _cubitos("Bloque", n, lado, material)
     tam = [d * lado for d in n]
-    return _grupo("bloque", hijos, agarre="mano", radio=max(tam) * 0.6, forma=forma, tam=tam,
-                  semialto=tam[2] / 2, sep_mano=min(tam) / 2 + 0.012)
+    g = _grupo("bloque", hijos, agarre="mano", radio=max(tam) * 0.6, forma=forma, tam=tam,
+               semialto=tam[2] / 2, sep_mano=min(tam) / 2 + 0.012)
+    if de_pie and tam[2] > 2 * lado:  # de pie se coge por el borde inferior, con la cara libre hacia cámara
+        g["desp_mano"] = [0.0, 0.0, tam[2] / 2 - 0.02]
+    return g
 
 
 @prop("mano", "Teléfono móvil genérico (7×15 cm), marco marino y crema, sin marcas; la pantalla (objeto MovilPantalla) "

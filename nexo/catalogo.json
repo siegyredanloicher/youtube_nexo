@@ -12,9 +12,13 @@
   },
   "bloque": {
    "agarre": "mano",
-   "descripcion": "Bloque unidad (cubo de 10 cm) en color de mates; params: col",
+   "descripcion": "Bloque de base 10 en color de mates, con cada cubito marcado. params: forma (unidad | barra 10×1×1 | placa 10×10×1 | cubo_mil 10×10×10), lado (arista del cubito, 2 cm), col (mates.a-d), de_pie (barra vertical o placa de cara a cámara en vez de tumbada)",
    "usos": [
     "contar",
+    "valor posicional",
+    "base 10",
+    "decimales",
+    "área",
     "volumen",
     "álgebra",
     "apilar"
@@ -64,6 +68,19 @@
     "trabajar",
     "teclear",
     "experimentos"
+   ]
+  },
+  "movil": {
+   "agarre": "mano",
+   "descripcion": "Teléfono móvil genérico (7×15 cm), marco marino y crema, sin marcas; la pantalla (objeto MovilPantalla) es una superficie donde el editor incrusta 2D. params: pantalla_encendida, orientacion (vertical | horizontal)",
+   "usos": [
+    "datos",
+    "porcentajes",
+    "gráficas",
+    "temporizador",
+    "código",
+    "mensajes",
+    "redes"
    ]
   },
   "pelota": {
@@ -121,6 +138,18 @@
     "programación"
    ]
   },
+  "ticket": {
+   "agarre": "mano",
+   "descripcion": "Tique de caja de papel (8×18 cm); la zona de texto (objeto TicketTexto) es una superficie donde el editor incrusta 2D",
+   "usos": [
+    "cuentas",
+    "compras",
+    "precios",
+    "operaciones",
+    "porcentajes",
+    "IVA"
+   ]
+  },
   "vaso": {
    "agarre": "mano",
    "descripcion": "Vaso medidor graduado con líquido; params: lleno (0-1)",
@@ -165,6 +194,31 @@
    "usos": [
     "resultado correcto",
     "final"
+   ]
+  },
+  "colocar": {
+   "descripcion": "Deja un prop de mano en un punto del suelo o de la mesa: se agacha, lo baja y lo suelta a pocos centímetros (cae en caída libre y se queda quieto). Con veces > 1 coloca en fila los props p1..pN (cada uno aparece en su mano al cogerlo); con mano auto usa la mano del lado de cada destino. Nexo no se desplaza: alcanza ~0,2 m a cada lado de sus pies (en el suelo, lo suelta a 4-6 cm; cuanto más lejos, más cae: plano_meta.colocar)",
+   "params": {
+    "prop": "p1",
+    "destino": [
+     0.18,
+     -0.16,
+     0.0
+    ],
+    "veces": 1,
+    "paso": "auto",
+    "fila": "derecha",
+    "mano": "auto"
+   },
+   "props": [
+    "cualquiera de mano (bloque, dado, pelota, libro...)"
+   ],
+   "usos": [
+    "contar",
+    "repartir",
+    "agrupar de diez en diez",
+    "apilar",
+    "ordenar"
    ]
   },
   "encoger": {
