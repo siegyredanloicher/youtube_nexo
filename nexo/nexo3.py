@@ -22,7 +22,6 @@ from pathlib import Path
 import bpy  # noqa: I001  (bpy antes que bmesh)
 import bmesh
 from mathutils import Matrix, Vector
-from mathutils import noise as mnoise
 from mathutils.bvhtree import BVHTree
 
 AQUI = Path(__file__).resolve().parent
@@ -114,27 +113,6 @@ def bvh_of(ob):
     t = BVHTree.FromBMesh(bm)
     bm.free()
     return t
-
-
-def smoothstep(e0, e1, x):
-    t = max(0.0, min(1.0, (x - e0) / (e1 - e0)))
-    return t * t * (3 - 2 * t)
-
-
-def seg_param(p, a, b):
-    """(t, distancia, punto más cercano) de p al segmento a-b."""
-    ab = b - a
-    t = max(0.0, min(1.0, (p - a).dot(ab) / ab.length_squared))
-    q = a + ab * t
-    return t, (p - q).length, q
-
-
-def angle_around(p, q, axis, ref=Vector((0, -1, 0))):
-    """Ángulo de p alrededor del eje (q, axis); 0 = lado de ref (delante)."""
-    r = ref - axis * axis.dot(ref)
-    r.normalize()
-    v = p - q
-    return math.atan2(axis.cross(r).dot(v), r.dot(v))
 
 
 def catmull(pts, n):
@@ -249,10 +227,6 @@ def contorno(t):
 def forma_capucha(p):
     x, y, z = p
     q = Vector((x * (1 + 0.08 * max(0.0, -z)), y, z))  # se abre sobre los hombros
-    caida = max(0.0, -z - 0.4)  # la tela de abajo se posa sobre los hombros
-    q.x *= 1 + 0.55 * caida
-    q.y *= 1 + 0.2 * caida
-    q.z -= 0.18 * caida
     if y > 0 and z < 0:
         q.z -= 0.22 * y * (-z)  # la nuca cae hacia la espalda
     g = math.exp(-(Vector(p).angle(PEAK) / 0.4) ** 2)
@@ -269,30 +243,14 @@ def build_hood(m):
     bmesh.ops.create_uvsphere(bm, u_segments=96, v_segments=64, radius=1.0)
     for v in bm.verts:
         v.co = forma_capucha(v.co.normalized())
-    pliegues_capucha(bm)
     hood = bm_obj("NexoHead", bm, m["crema"])
     smooth(hood)
-    subsurf(hood, 1, 1)
+    tex = bpy.data.textures.new("Pliegues", "CLOUDS")
+    tex.noise_scale = 0.09
+    d = hood.modifiers.new("Pliegues", "DISPLACE")
+    d.texture, d.strength, d.mid_level = tex, 0.005, 0.5
+    d.texture_coords = "OBJECT"
     return hood
-
-
-def pliegues_capucha(bm):
-    """Tela, no carcasa: bultos suaves, pliegues que salen del borde de la cara y frunces en la nuca."""
-    bm.normal_update()
-    for v in bm.verts:
-        p, n = v.co.copy(), v.normal.copy()
-        d = 0.007 * mnoise.noise(p * 6.0) + 0.002 * mnoise.noise(p * 24.0)
-        xn, zn = p.x / FACE_A, (p.z - FACE_Z) / FACE_B
-        if p.y < HEAD_C.y:
-            rho = (abs(xn) ** FACE_N + abs(zn) ** FACE_N) ** (1 / FACE_N)
-            t = math.atan2(zn, xn)
-            w = math.exp(-((rho - 1.32) / 0.28) ** 2) * min(1.0, (HEAD_C.y - p.y) / 0.1)
-            d += 0.0075 * w * math.sin(9 * t + 2.8 * mnoise.noise(p * 5.0))
-        rz = (p.z - HEAD_C.z) / HEAD_R.z
-        if p.y > HEAD_C.y - 0.05:
-            w = smoothstep(-0.15, -0.65, rz) * smoothstep(HEAD_C.y - 0.05, HEAD_C.y + 0.1, p.y)
-            d += 0.006 * w * math.sin(p.z * 150 + 3.5 * mnoise.noise(p * 7.0))
-        v.co = p + n * d
 
 
 def build_face(m, hood):
@@ -566,7 +524,6 @@ def build_body(m):
     c = body.modifiers.new("Suave", "CORRECTIVE_SMOOTH")
     c.iterations, c.use_only_smooth = 12, True
     apply_all(body)
-    arrugas_ropa(body)
     d = body.modifiers.new("Decimate", "DECIMATE")
     d.ratio = 0.45
     apply_all(body)
@@ -574,45 +531,6 @@ def build_body(m):
     body.data.materials.append(m["crema"])
     smooth(body)
     return body
-
-
-def arrugas_ropa(body):
-    """Pliegues de sudadera y pantalón: codos, rodillas, tela amontonada en muñecas y tobillos, cintura."""
-    me = body.data
-    tau = 2 * math.pi
-    for v in me.vertices:
-        p, n = v.co.copy(), v.normal.copy()
-        d = 0.0025 * mnoise.noise(p * 9.0) + 0.001 * mnoise.noise(p * 30.0)
-        for s in (1, -1):
-            sh, el, wr = P("shoulder", s), P("elbow", s), P("wrist", s)
-            t1, d1, q1 = seg_param(p, sh, el)
-            t2, d2, q2 = seg_param(p, el, wr)
-            if min(d1, d2) < 0.08 and abs(p.x) > 0.13:
-                u = t1 * 0.5 if d1 < d2 else 0.5 + t2 * 0.5   # 0 hombro, 0.5 codo, 1 muñeca
-                axis = (el - sh).normalized() if d1 < d2 else (wr - el).normalized()
-                ang = angle_around(p, q1 if d1 < d2 else q2, axis)
-                wob = 1.0 * mnoise.noise(p * 14.0)
-                w = math.exp(-((u - 0.52) / 0.12) ** 2)
-                d += 0.005 * w * (0.35 + 0.65 * max(0.0, math.cos(ang))) * math.sin(tau * u * 8 + 1.2 * math.sin(2 * ang + s) + wob)
-                w = smoothstep(0.7, 0.93, u)
-                d += 0.0055 * w * math.sin(tau * u * 15 + 1.4 * math.sin(3 * ang + 1.7 * s) + wob)
-                w = math.exp(-((u - 0.12) / 0.08) ** 2) * max(0.0, -math.cos(ang - s * 1.2))
-                d += 0.003 * w * math.sin(tau * u * 10 + wob)  # axila
-            hp, an = P("hip", s), P("ankle", s)
-            t, dd, q = seg_param(p, hp, an)
-            if dd < 0.09 and p.z < 0.25:
-                ang = angle_around(p, q, (an - hp).normalized())
-                wob = 1.0 * mnoise.noise(p * 12.0 + Vector((3, 0, 0)))
-                w = smoothstep(0.62, 0.92, t)
-                d += 0.006 * w * math.sin(tau * t * 11 + 1.5 * math.sin(3 * ang + s) + wob)
-                w = math.exp(-((t - 0.47) / 0.12) ** 2) * (0.3 + 0.7 * max(0.0, -math.cos(ang)))
-                d += 0.004 * w * math.sin(tau * t * 8 + 0.8 * math.sin(2 * ang) + wob)
-        if 0.25 < p.z < 0.48 and abs(p.x) < 0.17:  # tronco
-            w = math.exp(-((p.z - 0.3) / 0.035) ** 2)
-            d += 0.003 * w * math.sin(p.z * 240 + 5 * mnoise.noise(p * 6.0))
-            w = math.exp(-((p.z - 0.43) / 0.04) ** 2) * smoothstep(0.06, 0.13, abs(p.x))
-            d += 0.0035 * w * math.sin((p.z - 0.6 * abs(p.x)) * 200 + 3 * mnoise.noise(p * 5.0))
-        v.co = p + n * d
 
 
 def build_hand(s, m):
@@ -636,20 +554,17 @@ def build_hand(s, m):
     return ob
 
 
-def band(name, center, axis, radius, minor, mat, ph=0.0):
-    """Puño o dobladillo de tela: grosor y altura irregulares, no un anillo perfecto."""
+def band(name, center, axis, radius, minor, mat):
     bm = bmesh.new()
     seg, tube = 56, 14
     grid = []
     for i in range(seg):
         a = 2 * math.pi * i / seg
-        k = 1 + 0.28 * math.sin(3 * a + ph) + 0.12 * math.sin(7 * a + 2 * ph)
-        dz = minor * 0.35 * math.sin(2 * a + 1.3 * ph)
         row = []
         for j in range(tube):
             b = 2 * math.pi * j / tube
-            rr = radius + minor * k * math.cos(b)
-            row.append(bm.verts.new((rr * math.cos(a), rr * math.sin(a), dz + minor * k * 1.3 * math.sin(b))))
+            rr = radius + minor * math.cos(b)
+            row.append(bm.verts.new((rr * math.cos(a), rr * math.sin(a), minor * 1.3 * math.sin(b))))
         grid.append(row)
     for i in range(seg):
         for j in range(tube):
@@ -671,111 +586,10 @@ def build_feet(m):
             v.co.z = max(v.co.z, 0.0)
         for v in boot.data.vertices:
             v.co.z = max(v.co.z, 0.018)
-        cuff = band(f"NexoCuffA{sf}", Vector((0.072 * s, -0.004, 0.118)), (0, 0, 1), 0.058, 0.014, m["ribete"], 1 + s)
+        cuff = band(f"NexoCuffA{sf}", Vector((0.072 * s, -0.004, 0.118)), (0, 0, 1), 0.058, 0.014, m["ribete"])
         out.append((f"foot.{sf}", boot))
         out.append((f"foot.{sf}", sole))
         out.append((f"shin.{sf}", cuff))
-    return out
-
-
-# ---------------------------------------------------------------- prendas de la sudadera
-def tube(name, pts, radius, mat):
-    cu = bpy.data.curves.new(name, "CURVE")
-    cu.dimensions = "3D"
-    cu.bevel_depth, cu.bevel_resolution, cu.resolution_u = radius, 4, 12
-    sp = cu.splines.new("NURBS")
-    sp.points.add(len(pts) - 1)
-    for pt, co in zip(sp.points, pts):
-        pt.co = (*co, 1)
-    sp.use_endpoint_u, sp.order_u = True, 3
-    cu.use_fill_caps = True
-    ob = to_obj(name, cu, mat)
-    activate(ob)
-    bpy.ops.object.convert(target="MESH")
-    ob = bpy.context.view_layer.objects.active
-    smooth(ob)
-    return ob
-
-
-def build_ropa(m, body, hood):
-    """Detalles que dicen «ropa»: dobladillo de la sudadera, bolsillo canguro y cordones de la capucha."""
-    tree = bvh_of(body)
-    out = []
-    # dobladillo: sigue el contorno del cuerpo a la altura de la cadera
-    zc = 0.268
-    bm = bmesh.new()
-    K, T = 72, 12
-    grid = []
-    for i in range(K):
-        a = 2 * math.pi * i / K
-        o = Vector((0, 0, zc + 0.004 * math.sin(3 * a)))  # desde dentro: el primer choque es el tronco, no los brazos
-        loc, nor, _, _ = tree.ray_cast(o, Vector((math.cos(a), math.sin(a), 0)))
-        if nor is not None and nor.dot(Vector((math.cos(a), math.sin(a), 0))) < 0:
-            nor = -nor
-        if loc is None:
-            loc, nor = Vector((0.15 * math.cos(a), 0.12 * math.sin(a), zc)), Vector((math.cos(a), math.sin(a), 0))
-        r = 0.011 * (1 + 0.25 * mnoise.noise(loc * 20))
-        c = loc + nor * (r * 0.5)
-        row = []
-        for j in range(T):
-            b = 2 * math.pi * j / T
-            row.append(bm.verts.new(c + nor * (r * math.cos(b)) + Vector((0, 0, 1.4 * r * math.sin(b)))))
-        grid.append(row)
-    for i in range(K):
-        for j in range(T):
-            bm.faces.new((grid[i][j], grid[(i + 1) % K][j], grid[(i + 1) % K][(j + 1) % T], grid[i][(j + 1) % T]))
-    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
-    hem = bm_obj("NexoHem", bm, m["ribete"])
-    smooth(hem)
-    subsurf(hem, 1, 2)
-    out.append(("hips", hem))
-
-    # bolsillo canguro: parche de tela sobre la tripa, más ancho abajo
-    bm = bmesh.new()
-    U, W = 18, 9
-    rows = []
-    for j in range(W + 1):
-        w = j / W
-        row = []
-        for i in range(U + 1):
-            u = -1 + 2 * i / U
-            half = 0.062 + 0.026 * w
-            x = u * half
-            z = 0.372 - w * 0.07 + 0.004 * (1 - u * u) * w
-            loc, nor, _, _ = tree.ray_cast(Vector((x, -1.0, z)), Vector((0, 1, 0)))
-            puff = 0.005 + 0.004 * (1 - u * u) * math.sin(math.pi * w)
-            row.append(bm.verts.new(loc + nor * puff))
-        rows.append(row)
-    for j in range(W):
-        for i in range(U):
-            bm.faces.new((rows[j][i], rows[j][i + 1], rows[j + 1][i + 1], rows[j + 1][i]))
-    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
-    pocket = bm_obj("NexoPocket", bm, m["crema"])
-    if pocket.data.polygons[0].normal.y > 0:
-        for poly in pocket.data.polygons:
-            poly.flip()
-    so = pocket.modifiers.new("Grosor", "SOLIDIFY")
-    so.thickness, so.offset = 0.004, -1
-    subsurf(pocket, 1, 2)
-    smooth(pocket)
-    out.append(("spine", pocket))
-
-    # cordones: salen de la capucha bajo la cara y caen sobre el pecho
-    htree = bvh_of(hood)
-    for s, sf in ((1, "L"), (-1, "R")):
-        x0 = 0.055 * s
-        z0 = FACE_Z - FACE_B - 0.045
-        hit = htree.ray_cast(Vector((x0, -1.0, z0)), Vector((0, 1, 0)))
-        start = (hit[0] if hit[0] else Vector((x0, -0.2, z0))) + Vector((0, -0.004, 0))
-        pts = [start]
-        for k, z in enumerate((0.47, 0.43, 0.395)):
-            xx = x0 * (1.0 + 0.08 * k) + 0.004 * s * k
-            loc, nor, _, _ = tree.find_nearest(Vector((xx, -0.2, z)))
-            pts.append(loc + nor * 0.008)
-        cord = tube(f"NexoCord{sf}", [tuple(p) for p in pts], 0.0052, m["ribete"])
-        tip = ellipsoid(f"NexoCordTip{sf}", pts[-1] + (pts[-1] - pts[-2]).normalized() * 0.008,
-                        (0.0075, 0.0075, 0.013), m["marino"], 16, 10)
-        out += [("chest", cord), ("chest", tip)]
     return out
 
 
@@ -1033,16 +847,15 @@ def build(nivel="bach"):
     for s, sf in ((1, "L"), (-1, "R")):
         w, e = P("wrist", s), P("elbow", s)
         d = (w - e).normalized()
-        cuffs.append((f"forearm.{sf}", band(f"NexoCuffW{sf}", w - d * 0.012, d, 0.043, 0.012, m["ribete"], 2 - s)))
-    ropa = build_ropa(m, body, hood)
+        cuffs.append((f"forearm.{sf}", band(f"NexoCuffW{sf}", w - d * 0.012, d, 0.043, 0.012, m["ribete"])))
     pack = build_pack(m, body)
     rig = build_rig()
     rigid = [("head", o) for o in [hood, screen, rim] + eyes]
-    rigid += [("hand.L", hands[0]), ("hand.R", hands[1])] + feet + cuffs + ropa + [("chest", o) for o in pack]
+    rigid += [("hand.L", hands[0]), ("hand.R", hands[1])] + feet + cuffs + [("chest", o) for o in pack]
     skin(body, rig, rigid)
     col = bpy.data.collections.new("Nexo")
     sc.collection.children.link(col)
-    for o in [rig, body, hood, screen, rim, *eyes, *hands, *[o for _, o in feet], *[o for _, o in cuffs], *[o for _, o in ropa], *pack]:
+    for o in [rig, body, hood, screen, rim, *eyes, *hands, *[o for _, o in feet], *[o for _, o in cuffs], *pack]:
         sc.collection.objects.unlink(o)
         col.objects.link(o)
     return dict(rig=rig, body=body, eyes=eyes, col=col, nivel=nivel)
@@ -1081,14 +894,12 @@ def place(N, name, p):
 
 
 def pose(N, nombre):
-    """Poses de ejemplo: relajado (la de por defecto), señala, lanza, piensa, saluda."""
+    """Poses de ejemplo: señala, lanza, piensa, saluda."""
     reset_pose(N)
     activate(N["rig"])
     bpy.ops.object.mode_set(mode="POSE")
     r = math.radians
-    if nombre == "relajado":
-        relajar(N)
-    elif nombre == "señala":
+    if nombre == "señala":
         place(N, "IK_hand.L", (0.42, -0.2, 0.62)); place(N, "pole_elbow.L", (0.42, 0.2, 0.38))
         pb(N, "head").rotation_euler = (0, 0, r(-12)); pb(N, "spine").rotation_euler = (0, 0, r(6))
     elif nombre == "lanza":
@@ -1105,22 +916,6 @@ def pose(N, nombre):
     bpy.context.view_layer.update()
 
 
-def relajar(N, fase=0.0):
-    """Brazos sueltos y algo doblados, peso en una pierna, cabeza ladeada: nada de pose de maniquí."""
-    r = math.radians
-    place(N, "IK_hand.L", (0.218, -0.05, 0.278 + 0.004 * math.sin(fase)))
-    place(N, "pole_elbow.L", (0.26, 0.3, 0.38))
-    place(N, "IK_hand.R", (-0.214, -0.03, 0.282 + 0.004 * math.sin(fase + 1)))
-    place(N, "pole_elbow.R", (-0.26, 0.3, 0.38))
-    pb(N, "IK_hand.L").rotation_euler = (r(-4), 0, r(6))
-    pb(N, "IK_hand.R").rotation_euler = (r(-3), 0, r(-8))
-    pb(N, "hips").rotation_euler = (0, r(2.5), r(-3))
-    pb(N, "spine").rotation_euler = (r(2), r(-2), r(2))
-    pb(N, "chest").rotation_euler = (r(3), r(-1.5), r(2))
-    pb(N, "head").rotation_euler = (r(-3), r(5), r(-6))
-    bpy.context.view_layer.update()
-
-
 def idle(N, frames=96):
     """Respira, mueve un poco la cabeza y parpadea una vez."""
     sc = bpy.context.scene
@@ -1131,15 +926,11 @@ def idle(N, frames=96):
     reset_pose(N)
     for f in range(1, frames + 1, frames // 4):
         ph = (f - 1) / frames * 2 * math.pi
-        relajar(N, ph)
-        for n in ("IK_hand.L", "IK_hand.R"):
-            pb(N, n).keyframe_insert("location", frame=f)
-            pb(N, n).keyframe_insert("rotation_euler", frame=f)
         pb(N, "hips").location = (0, 0, 0.005 * math.sin(ph))
         pb(N, "hips").keyframe_insert("location", frame=f)
-        pb(N, "chest").rotation_euler = (math.radians(3) + 0.025 * math.sin(ph), 0, math.radians(2))
+        pb(N, "chest").rotation_euler = (0.025 * math.sin(ph), 0, 0)
         pb(N, "chest").keyframe_insert("rotation_euler", frame=f)
-        pb(N, "head").rotation_euler = (math.radians(-3) + 0.02 * math.sin(ph + 1), math.radians(5), math.radians(-6) + 0.06 * math.sin(ph))
+        pb(N, "head").rotation_euler = (0.02 * math.sin(ph + 1), 0, 0.06 * math.sin(ph))
         pb(N, "head").keyframe_insert("rotation_euler", frame=f)
     bpy.ops.object.mode_set(mode="OBJECT")
     kb = N["eyes"][0].data.shape_keys.key_blocks["Parpadeo"]
@@ -1164,7 +955,6 @@ def render_review(N, cam, out):
     sc.render.resolution_x, sc.render.resolution_y = 800, 900
     sc.cycles.samples = 40
     vistas = {"frente": 0, "tres_cuartos": -32, "lateral": 90, "espalda": 180}
-    pose(N, "relajado")
     expr(N, "Feliz")
     for n, az in vistas.items():
         set_camera(cam, az, 6, 3.7, 0.53)
@@ -1200,7 +990,6 @@ if __name__ == "__main__":
             sc = bpy.context.scene
             sc.render.resolution_x, sc.render.resolution_y = 500, 560
             sc.cycles.samples = 16
-            pose(N, "relajado")
             expr(N, "Feliz")
             for n, az in {"frente": 0, "tres_cuartos": -32, "lateral": 90, "espalda": 180}.items():
                 set_camera(cam, az, 6, 3.7, 0.53)
