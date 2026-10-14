@@ -78,3 +78,6 @@ Total con este ajuste: **670 s ≈ 11 min 10 s**, dentro del rango de 8 a 12 min
 | Nexo participa | Sí: coloca, camina la recta, escribe, se equivoca y estima |
 | Duración | 11 min 05 s (11 min 10 s con el ajuste de e14). Dentro de rango |
 | Resumen en tres frases y siguiente vídeo | Sí (e18, e19) |
+
+## Tercera vuelta (cierre)
+El único punto imprescindible (frase de e16) se ha corregido tal como proponía esta revisión, y e14 pasa a 55 s con la pausa de 2 s. Según lo indicado arriba («con este cambio, el guion queda APROBADO sin otra revisión pedagógica»): **APROBADO**.
