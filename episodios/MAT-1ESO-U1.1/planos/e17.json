@@ -1,0 +1,32 @@
+{
+ "accion": "mostrar",
+ "params": {
+  "prop": "t1",
+  "mano": "L",
+  "duracion": 14.0
+ },
+ "props": [
+  {
+   "id": "t1",
+   "prop": "ticket"
+  }
+ ],
+ "expresiones": [
+  {
+   "t": 1.2,
+   "nombre": "Curioso"
+  },
+  {
+   "t": 10.4,
+   "nombre": "Pensativo",
+   "valor": 0.6
+  },
+  {
+   "t": 15.0,
+   "nombre": "Feliz"
+  }
+ ],
+ "camara": "medio",
+ "encuadre": "izquierda",
+ "duracion_s": 20
+}

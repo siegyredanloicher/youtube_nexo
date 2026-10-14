@@ -1,0 +1,34 @@
+{
+ "accion": "caminar",
+ "params": {
+  "distancia": 0.7,
+  "direccion": "derecha",
+  "velocidad": 0.2
+ },
+ "expresiones": [
+  {
+   "t": 4.0,
+   "nombre": "Concentrado"
+  },
+  {
+   "t": 25.0,
+   "nombre": "Curioso"
+  },
+  {
+   "t": 33.4,
+   "nombre": "Pensativo"
+  },
+  {
+   "t": 37.7,
+   "nombre": "Feliz"
+  },
+  {
+   "t": 46.0,
+   "nombre": "Concentrado",
+   "valor": 0.7
+  }
+ ],
+ "camara": "completo",
+ "encuadre": "izquierda",
+ "duracion_s": 55
+}

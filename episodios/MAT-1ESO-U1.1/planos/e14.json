@@ -1,0 +1,49 @@
+{
+ "accion": "escribir",
+ "params": {
+  "duracion": 20.5,
+  "pizarra": "p1"
+ },
+ "props": [
+  {
+   "id": "p1",
+   "prop": "pizarra"
+  }
+ ],
+ "expresiones": [
+  {
+   "t": 3.0,
+   "nombre": "Motivado",
+   "valor": 0.6
+  },
+  {
+   "t": 21.0,
+   "nombre": "Feliz"
+  },
+  {
+   "t": 22.8,
+   "nombre": "Sorpresa",
+   "valor": 0.8
+  },
+  {
+   "t": 24.5,
+   "nombre": "Pensativo"
+  },
+  {
+   "t": 34.7,
+   "nombre": "Concentrado"
+  },
+  {
+   "t": 45.6,
+   "nombre": "Tranquilo"
+  },
+  {
+   "t": 52.0,
+   "nombre": "Feliz",
+   "valor": 0.6
+  }
+ ],
+ "camara": "completo",
+ "encuadre": "izquierda",
+ "duracion_s": 55
+}

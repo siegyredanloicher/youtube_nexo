@@ -1,0 +1,30 @@
+{
+ "accion": "saludar",
+ "params": {
+  "mano": "L",
+  "veces": 1,
+  "expresion": "Feliz"
+ },
+ "expresiones": [
+  {
+   "t": 2.5,
+   "nombre": "Tranquilo"
+  },
+  {
+   "t": 7.0,
+   "nombre": "Parpadeo"
+  },
+  {
+   "t": 9.5,
+   "nombre": "Concentrado",
+   "valor": 0.5
+  },
+  {
+   "t": 12.5,
+   "nombre": "Tranquilo"
+  }
+ ],
+ "camara": "completo",
+ "encuadre": "izquierda",
+ "duracion_s": 15
+}

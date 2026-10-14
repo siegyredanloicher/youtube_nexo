@@ -1,0 +1,45 @@
+{
+ "accion": "sostener",
+ "params": {
+  "prop": "m1",
+  "mano": "L",
+  "duracion": 45.0,
+  "expresion": "Tranquilo"
+ },
+ "props": [
+  {
+   "id": "m1",
+   "prop": "movil",
+   "params": {
+    "pantalla_encendida": true,
+    "orientacion": "vertical"
+   }
+  }
+ ],
+ "expresiones": [
+  {
+   "t": 14.0,
+   "nombre": "Curioso"
+  },
+  {
+   "t": 24.9,
+   "nombre": "Pensativo"
+  },
+  {
+   "t": 28.0,
+   "nombre": "Parpadeo"
+  },
+  {
+   "t": 30.2,
+   "nombre": "Feliz"
+  },
+  {
+   "t": 41.1,
+   "nombre": "Motivado",
+   "valor": 0.7
+  }
+ ],
+ "camara": "medio",
+ "encuadre": "izquierda",
+ "duracion_s": 45
+}

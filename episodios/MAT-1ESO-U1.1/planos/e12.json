@@ -1,0 +1,22 @@
+{
+ "accion": "escribir",
+ "params": {
+  "duracion": 15.0,
+  "pizarra": "p1"
+ },
+ "props": [
+  {
+   "id": "p1",
+   "prop": "pizarra"
+  }
+ ],
+ "expresiones": [
+  {
+   "t": 16.0,
+   "nombre": "Feliz"
+  }
+ ],
+ "camara": "completo",
+ "encuadre": "izquierda",
+ "duracion_s": 17
+}
