@@ -1,83 +1,87 @@
-# Revisión pedagógica · MAT-1ESO-U1.1 · Números grandes y aproximación · segunda vuelta
+# Revisión pedagógica · MAT-1ESO-U1.1 · Números grandes y aproximación · cuarta vuelta
 
-Revisor: pedagogo (nivel eso, 1º ESO, 12-13 años) · Guion revisado: `guion.md` (19 escenas, 1397 palabras, 665 s ≈ 11 min 05 s) con `cambios.md`
+Revisor: pedagogo (nivel eso, 1º ESO, 12-13 años) · Guion revisado: `guion.md` (17 escenas, 1169 palabras, 595 s ≈ 9 min 55 s) con `cambios.md` («Cuarta vuelta»).
+Criterios: los de siempre más las reglas nuevas, que son la regla 2 de CLAUDE.md («Ciencia pura») y, en `pedagogia-omnia`, la sección «Ciencia pura» y el problema inverso opcional.
 
-## Veredicto: **CAMBIOS** (un solo punto, de una frase)
+## Veredicto: **CAMBIOS** (una sola frase en e11)
 
-Los cinco imprescindibles de la primera vuelta están resueltos, y casi todos los recomendables también. El guion es ahora muy bueno para 1º ESO:
-- la idea se construye antes que la regla;
-- la regla lleva su porqué;
-- el acuerdo del caso del medio se presenta con honestidad, como acuerdo;
-- hay dos errores comunes asumidos por Nexo;
-- el problema inverso es inverso de verdad, y el gancho se cierra en e16.
+Las cuatro peticiones del responsable del canal están bien aplicadas, y el guion queda más limpio y más honesto que en la tercera vuelta:
+- el acuerdo de la mitad se presenta como acuerdo;
+- ya no se razona sobre «casi» ni sobre «unos»;
+- cada pregunta se cierra con una cifra;
+- el ejemplo es del mundo de un alumno de 12-13 años.
 
-Queda un único punto que bloquea: e16 presenta como deducción una conclusión que no es la única posible. Si se corrige, el guion queda **APROBADO** sin otra vuelta de revisión pedagógica.
-
----
-
-## Comprobación de los imprescindibles de la primera vuelta
-
-| # | Punto | Estado |
-| --- | --- | --- |
-| 1 | e09 · definir «redondear a los millares» | **Resuelto.** La definición es concreta («millares justos, de los que acaban en tres ceros») y va con los ceros iluminados. «Está a 354 de…» se entiende mejor y la pausa «¿A cuál está más cerca?» está bien colocada. |
-| 2 | Partir la antigua e11 | **Resuelto.** e11 (caso del medio) es un solo concepto, con pausa, y presenta el acuerdo como tal: «las matemáticas no deciden por ti» es justo la frase que hacía falta. e12 (regla) da el porqué en una frase, el ejemplo del 3 frente al 9 y enlaza con el titular. La tabla de cuatro filas va solo en pantalla, con la cifra que decide subrayada, así que la voz no lee la pantalla. |
-| 3 | e10 sin la tabla | **Resuelto.** Solo queda el contraste en la recta, con pausa. Dura 25 s y deja la intriga para e12. |
-| 4 | Festival nombrado y rótulo | **Resuelto.** El festival se nombra en e01 y en la portada, y «Ejemplo ficticio» es un rótulo fijo. e13 ya no interrumpe la voz para decirlo. |
-| 5 | e16 · «casi» como lectura del lenguaje y cierre del gancho | **Resuelto en lo pedido**: «Aquí entra el lenguaje», «normalmente», el rótulo «casi = sin llegar», «"Casi" no dice cuánto falta» y «El periódico no mintió». **Pero el razonamiento nuevo que se añadió tiene un salto lógico** (ver imprescindible 1 abajo). |
-
-## Imprescindible (segunda vuelta)
-
-### 1. e16 · «Así que redondeó a las decenas de millar» no es la única posibilidad
-El razonamiento descarta bien los millares: con «casi», la franja sería 99 500–99 999 y 99 354 no cabría. Pero de ahí no se deduce que redondeara a las decenas de millar. También encaja redondear a las **centenas de millar**: 99 354 → 100 000, y con «casi» la franja sería 50 000–99 999, que también contiene el número. La columna CM sale en la tabla de e05 y en e18, así que un alumno atento, o un profesor que use el vídeo en clase, lo puede notar. Esto contradice el principio de honestidad y la regla de rigor del canal.
-**Propuesta (cambia una frase, no hace falta tocar la imagen):**
-«…y nuestro número no cabría. Así que tuvo que redondear a una casilla más grande. Si fue a las decenas de millar, quedan desde noventa y cinco mil hasta noventa y nueve mil novecientos noventa y nueve.»
-El resto de la escena se queda igual. Si el verificador lo pide, la frase «una casilla más grande» no necesita un claim nuevo: es la negación de c74/c75. No hay que mencionar las centenas de millar en voz alta, porque recargaría la escena.
+Queda una frase que contradice la propia regla de «Ciencia pura»: en e11 se dice que el acuerdo lo «usamos todos», y eso es falso. Corregida esa frase, el guion queda **APROBADO** sin otra vuelta pedagógica.
 
 ---
 
-## Ritmo: respuesta a la consulta del coordinador
+## Imprescindible
 
-Velocidad medida sin contar las pausas: e04 a 137 palabras por minuto, e09 a 134, e12 a 132, e13 a 134, **e14 a 140**, e15 a 129. La media es de 126, buena para el nivel.
-
-- **e04 (137): basta como está.** Casi no tiene cifras: es una narración sobre los cubos, con un cambio visual continuo. Si se quiere aliviar sin añadir tiempo, se puede quitar «Así, una sola barra te ahorra contar diez veces» (repite «solo cambias diez cosas iguales por una más grande»). Se ahorran 8 palabras y queda en unas 127.
-- **e12 (132): basta.** Las cifras van subrayadas en pantalla mientras se dicen, y la tabla final va sin voz.
-- **e14 (140): recomiendo +5 s (50 → 55 s).** Es la escena más rápida del vídeo y también la más cargada de cifras dichas en voz alta (3449, 3450, 3500, 4000, 3000), y además es el error clave del redondeo. Con 55 s queda en unas 127 palabras por minuto. Si se aprovecha para alargar la pausa después de «cuatro mil» de 1 a 2 s, el alumno tiene tiempo de pensar «¿está bien?» antes del «No».
-
-Total con este ajuste: **670 s ≈ 11 min 10 s**, dentro del rango de 8 a 12 min y por debajo del objetivo de 11 min 30 s. No propongo dar +5 s a e04 ni a e12: no hace falta.
+### 1. e11 · «Es un acuerdo que usamos todos» es una afirmación universal falsa
+No todo el mundo redondea la mitad hacia arriba. En estadística y en informática se usa a menudo otro acuerdo: redondear la mitad hacia el número par. Por ejemplo, en Python `round(2.5)` da 2. El canal va a tener vídeos de programación (PRG) y de estadística, y esta frase quedaría desmentida por el propio canal. La regla de «Ciencia pura» pide presentar las convenciones como «el acuerdo que usamos» y decir por qué conviene un acuerdo. No pide afirmar que es universal.
+**Propuesta (sin tocar la imagen ni el rótulo «nuestro acuerdo: la mitad sube»):**
+«Ninguno está más cerca, así que hay que decidir. Nuestro acuerdo es este: en la mitad, se sube. Lo importante es usar siempre el mismo acuerdo, para que todos obtengamos el mismo resultado.»
+No hay que nombrar otros criterios: lo justo para el nivel. La frase deja de afirmar algo falso y mantiene el porqué del acuerdo.
 
 ---
 
-## Recomendables de la primera vuelta: valoración
+## Recomendable
 
-| # | Punto | Estado |
-| --- | --- | --- |
-| 1 | Ritmo | Casi resuelto. Falta e14 +5 s (ver arriba). |
-| 2 | e04 · reconocer lo que ya sabe el alumno | Resuelto. Con las dos primeras frases el tono es adulto desde el principio. |
-| 3 | e13 · una sola idea y una pausa | Resuelto. «Súmalo de cabeza» y 3 s de pausa: el alumno estima antes que Nexo. |
-| 4 | e06 · «número completo» y separador | Resuelto. Lo de la convención y el 9000 sin hueco al lado es mejor de lo que yo había propuesto. |
-| 5 | e07 · error al dictado | Resuelto, y creíble. «Me he saltado el cero de los millares» lo dice en primera persona. |
-| 6 | e14 · Nexo se equivoca en primera persona | Resuelto. Los empujones «+1, +50, +500» en pantalla hacen visible por qué se acumulan: muy buena aportación. |
-| 7 | e17 · el cartel sin la coletilla | Resuelto. |
-| 8 | e02 · anunciar el problema inverso | Resuelto. La presentación de Nexo sigue siendo sobria y sin género. |
-| 9 | e01 · primero el contador, luego el titular | Resuelto. 40 palabras en 20 s, y el titular llega como sorpresa. |
-| 10 | e15 · la idea de los bordes antes de las cifras | Resuelto, con las mitades marcadas en la recta. |
-| 11 | e08 · ritmo visual | Resuelto: cada palabra clave dispara un cambio en pantalla. Ya no hay tramos de más de 40 palabras con la pantalla parada. |
+### 1. e01 · «Al final de este vídeo lo sabrás» no es exacto
+La respuesta llega en e12, hacia el minuto 6, no al final. Con la regla de «nada en el aire», también las promesas deben ser precisas.
+**Propuesta:** «¿Es verdad? Antes de que acabe este vídeo lo sabrás con exactitud».
 
-## Comprobación final
+### 2. e08 · «Estimar» no es la razón de la creadora
+La pregunta es «¿por qué la creadora no escribe la cifra exacta?», pero la segunda razón (hacer cuentas de cabeza) no es suya, es una razón general. Además, «otro más sencillo que está muy cerca» es vago, aunque e09 lo precisa enseguida.
+**Propuesta:** «¿Por qué se usan cifras redondas? Por dos razones…» y cerrar con «Eso es redondear: cambiar un número por un número redondo cercano. Ahora vamos a ver cuál, exactamente». Así e08 anuncia la pregunta que e09 cierra.
 
-| Punto | Estado |
+### 3. e15 · La pista va antes de la pausa, no después
+Ahora es «(pausa 3 s) Piensa en las mitades». La pista llega cuando el alumno ya ha tenido que pensar.
+**Propuesta:** «¿Cuál es el número más pequeño que pudo ser? ¿Y el más grande? Piensa en las mitades. (pausa 3 s) El más pequeño…».
+
+### 4. e11 · Recuperar la pausa
+La escena del acuerdo es el mejor momento para que el alumno decida antes que Nexo. Al proponer él mismo un criterio, entiende que es una decisión y no un hecho.
+**Propuesta:** «Ninguno está más cerca. ¿Hacia dónde irías tú? (pausa 2 s) Hay que decidir, y nuestro acuerdo es…». Son +2 s; el total queda en 597 s.
+
+### 5. e13 · Dar un motivo para estimar
+La vida real es creíble (dos vídeos de un canal), pero no se dice para qué se estima. Antes, el motivo era prever agua o autobuses.
+**Propuesta:** «Alguien te pregunta cuántas visualizaciones suman sus dos vídeos, y no tienes papel». Es una frase y conecta con «la has hecho sin papel».
+
+---
+
+## Respuestas a las consultas del coordinador
+
+**Retirada de la práctica «unos 3000».** De acuerdo. Era un segundo problema inverso con la misma estructura que e15, o sea, un ejercicio más. Además se apoyaba en «unos», que ahora es justo lo que la regla de «Ciencia pura» excluye. Ya hay momentos en que el alumno trabaja por su cuenta: la pausa con cálculo de e13 y la de e15. Si se quiere una práctica, puede ir en la descripción del vídeo como reto, con su solución cerrada, sin alargar el vídeo.
+
+**«Su creadora»: ¿mejor neutro?** Recomiendo **mantener «creadora»**. Nexo tiene que ser sin género, pero los personajes secundarios pueden tenerlo, y una creadora de contenido en un vídeo de matemáticas es una representación positiva. Las alternativas neutras en castellano («la persona que lo ha subido», «quien lo creó») son forzadas, se repiten en e01, e08 y e12 y suenan menos naturales para un alumno de 12 años. En la versión inglesa, «the creator» es neutro por sí mismo. Solo hay que vigilar que la imagen de la publicación sea coherente: avatar genérico, sin rasgos estereotipados.
+
+**¿Aporta e15, la única escena de inverso?** **Sí, se queda.** Cumple dos de los criterios de la regla nueva:
+- **Fija la idea:** es el único sitio donde se ve la asimetría del acuerdo en los bordes (95 000 entra porque la mitad sube; 105 000 ya no).
+- **Desmonta un error:** que un número redondo «es» ese número. Al terminar con «nuestro 99 354 es uno de ellos», el gancho se cierra también desde el otro lado: «100 000» no es una cifra, es una franja de 10 000 números.
+
+Está bien planteado según la regla de «Ciencia pura»: el nivel de redondeo se da (no se interpreta), la pregunta tiene respuesta cerrada y los bordes se comprueban. El resumen (e16) recoge su idea en la tercera frase.
+
+**¿Encaja el ejemplo con un alumno de 12-13 años?** Sí. Las visualizaciones de un vídeo son su mundo, y una creadora que celebra los 100 000 sin haberlos alcanzado provoca justo la reacción del gancho («¿hace trampa?»). Es un acierto que la interfaz sea genérica y que no se afirme cómo muestra los números ninguna plataforma. Algunas plataformas abrevian truncando, sin redondear, y eso habría abierto un frente que este vídeo no debe tocar. Hay que mantener en el móvil la cifra completa, sin «K».
+
+---
+
+## Comprobación general
+
+| Criterio | Estado |
 | --- | --- |
-| Gancho ≤ 20 s, sin «hoy vamos a ver» | Sí |
-| La idea se construye antes de la regla; el porqué antes que el cómo | Sí (e04 → e05 → e09 → e11 → e12) |
-| Un concepto por escena | Sí |
-| Vocabulario definido | Sí (valor posicional, redondear a una casilla, acuerdo, franja con apoyo visual) |
-| Vida real creíble | Sí (estimación de asistentes para prever agua y autobuses) |
-| Problema inverso de verdad | Sí (e15-e17). Falta corregir la conclusión de e16 |
-| Errores comunes | Dos, asumidos por Nexo (e07, e14) |
-| Pausas para pensar | Ocho (e03, e07, e09, e10, e11, e13, e14, e15) y una más en e17 |
-| Nexo participa | Sí: coloca, camina la recta, escribe, se equivoca y estima |
-| Duración | 11 min 05 s (11 min 10 s con el ajuste de e14). Dentro de rango |
-| Resumen en tres frases y siguiente vídeo | Sí (e18, e19) |
-
-## Tercera vuelta (cierre)
-El único punto imprescindible (frase de e16) se ha corregido tal como proponía esta revisión, y e14 pasa a 55 s con la pausa de 2 s. Según lo indicado arriba («con este cambio, el guion queda APROBADO sin otra revisión pedagógica»): **APROBADO**.
+| Gancho ≤ 20 s, sin «hoy vamos a ver» | Sí (34 palabras en 20 s) |
+| La idea se construye antes de la regla; el porqué antes del cómo | Sí (bloques → tabla → recta → acuerdo → regla) |
+| Un concepto por escena | Sí. e12 es densa pero tiene un solo concepto (la regla y su aplicación) |
+| Vocabulario definido | Sí (valor posicional, redondear a los millares y a las decenas de millar con «tres ceros» y «cuatro ceros») |
+| Convenciones como convenciones | Sí: el hueco de los miles (e06) y la mitad (e11). Falta el ajuste de «todos» (imprescindible 1) |
+| Nada en el aire: cada pregunta se cierra | Sí: e01 → e12, e03 → e06, e09, e10, e11, e13 (diferencia exacta 1934), e15. La pregunta de e17 es un adelanto del siguiente vídeo, como pide el método |
+| Sin interpretaciones del lenguaje | Sí: se han eliminado «casi» y «unos» |
+| Vida real del mundo del espectador | Sí (visualizaciones de un canal ficticio) |
+| Problema inverso, solo si aporta | Sí, aporta (ver arriba) |
+| Error común | Dos, asumidos por Nexo: al dictado (e07) y el redondeo en cadena (e14) |
+| Pausas para pensar | e03, e07, e09, e10, e13, e14 y e15. Sugerida una en e11 |
+| Nexo participa | Sí: sostiene el móvil, coloca bloques, camina la recta, escribe y se equivoca |
+| Más de 40 palabras con la pantalla parada | No hay tramos así |
+| Ritmo | Todas las escenas a 132 palabras por minuto o menos (sin contar pausas). Media unas 118. Bien para el nivel; ya no hace falta añadir tiempo |
+| Duración | 595 s ≈ 9 min 55 s, dentro del rango de 8-12 min |
+| Resumen en tres frases y siguiente vídeo | Sí (e16, e17) |
