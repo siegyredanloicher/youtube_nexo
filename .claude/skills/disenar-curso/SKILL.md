@@ -22,7 +22,8 @@ El catálogo (`curriculo/catalogo.yaml`) dice qué cursos existen, su nivel de N
 ## Criterios de calidad de un mapa
 - Cada ficha responde «¿para qué sirve esto?» con un ejemplo que un estudiante de esa edad reconoce.
 - La ilustración con Nexo es una acción física (lanzar, medir, repartir, programar), no «Nexo explica».
-- Los problemas inversos son de verdad inversos (de la respuesta a los datos).
+- Los problemas inversos son de verdad inversos (de la respuesta a los datos); si no aportan, el campo se deja vacío.
+- Ejemplos del mundo del espectador según su edad (1º-2º ESO: móviles, vídeos, videojuegos, deporte, clase, compras pequeñas).
 - Progresión: lo que se usa en un vídeo se ha visto antes (requisitos).
 - Lista de props y acciones de Nexo que el curso necesita y aún no existen → `nexo/pendientes.md` (los construye `constructor-props`).
 

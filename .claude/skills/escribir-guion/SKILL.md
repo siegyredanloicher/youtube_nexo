@@ -41,7 +41,9 @@ Formato y tipos en `pipeline/verificar.py` (numero, simbolico, ecuacion, unidade
 Se escribe primero en castellano. La versión inglesa la hace `adaptador-en`: adapta (no traduce literalmente) ejemplos, unidades y notación.
 
 ## Antes de entregar
-- [ ] Están las cinco piezas obligatorias (gancho, de dónde sale, vida real, inverso, resumen).
+- [ ] Están las piezas obligatorias (gancho, de dónde sale, vida real, resumen). Problema inverso solo si aporta.
+- [ ] Ciencia pura: ninguna pregunta queda sin cerrar, ningún razonamiento depende de interpretar una palabra, las convenciones se presentan como acuerdos.
+- [ ] Los ejemplos son del mundo del espectador según su edad.
 - [ ] Hay al menos un error común tratado.
 - [ ] Duración estimada dentro del rango del curso (palabras / 150).
 - [ ] Cada número de la locución y de «Se ve» está en claims.json.

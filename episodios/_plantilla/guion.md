@@ -13,9 +13,9 @@ Duración estimada: <min> (<palabras> palabras) · Términos y colores: x → ma
 ## e04 · regla           (la fórmula o el procedimiento, como resumen de lo descubierto)
 ## e05 · vida_real       (Nexo participa)
 ## e06 · error_comun
-## e07 · inverso         (el mismo problema al revés)
+## e07 · inverso         (OPCIONAL: solo si aporta)
 ## e08 · resumen         (tres frases)
 ## e09 · siguiente       (adelanto del próximo vídeo del mapa)
 
 Secciones válidas: gancho, problema, origen, regla, ejemplo, vida_real, inverso, error_comun, demostracion, codigo,
-practica, resumen, siguiente. Se pueden repetir y reordenar; gancho, origen, vida_real, inverso y resumen son obligatorias.
+practica, resumen, siguiente. Se pueden repetir y reordenar; gancho, origen, vida_real y resumen son obligatorias; inverso, solo si aporta.

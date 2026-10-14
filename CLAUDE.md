@@ -4,13 +4,14 @@ Misión: educación accesible para cualquiera con conexión a internet. **Entend
 Empezamos por Matemáticas de 1º ESO y crecemos a física, química, programación, robótica e IA, hasta nivel universitario.
 
 ## Reglas que no se rompen
-1. **Pedagogía.** Todo vídeo explica de dónde sale la idea, la aplica a la vida real y la resuelve también al revés (problema inverso). Método completo: skill `pedagogia-omnia`.
-2. **Nexo** es el guía: sin género, serio y profesional, nada infantil. **Participa** en los ejemplos (lanza, mide, reparte, programa). Su color de nivel sigue el curso.
-3. **Identidad visual.** Colores y fuentes salen solo de `brand/tokens.json` (en código: `omnia.marca`). Nunca fondo negro.
-4. **Todo verificado.** Toda cifra, fórmula, unidad, fragmento de código o dato de un guion está en `claims.json` y pasa `pipeline/verificar.py`. Si falla, se corrige el guion. Nada se inventa.
-5. **Dos puntos de revisión humana:** (a) aprobar el guion, (b) aprobar el vídeo final. Los agentes nunca publican.
-6. **Idioma:** castellano, tuteo, tono cercano pero riguroso. Sin muletillas. La versión inglesa se adapta, no se traduce literal.
-7. **Reutilizar antes que repetir.** Lo que sirva para más de un vídeo va a la librería (`omnia/`, `nexo/props.py`, `nexo/acciones.py`), no al episodio.
+1. **Pedagogía.** Todo vídeo explica de dónde sale la idea y la aplica a la vida real. El problema inverso se incluye solo cuando aporta (fija la idea o desmonta un error); no es obligatorio. Método completo: skill `pedagogia-omnia`.
+2. **Ciencia pura.** Rigor total: nada queda en el aire más allá de lo imprescindible. Cada pregunta que se plantea se cierra; nada de interpretaciones del lenguaje, «depende» sin resolver ni afirmaciones vagas. Las convenciones (por ejemplo, redondear la mitad hacia arriba) se presentan como convenciones: un acuerdo que usamos, no una ley de la naturaleza.
+3. **Nexo** es el guía: sin género, serio y profesional, nada infantil. **Participa** en los ejemplos (lanza, mide, reparte, programa). Su color de nivel sigue el curso.
+4. **Identidad visual.** Colores y fuentes salen solo de `brand/tokens.json` (en código: `omnia.marca`). Nunca fondo negro.
+5. **Todo verificado.** Toda cifra, fórmula, unidad, fragmento de código o dato de un guion está en `claims.json` y pasa `pipeline/verificar.py`. Si falla, se corrige el guion. Nada se inventa.
+6. **Dos puntos de revisión humana:** (a) aprobar el guion, (b) aprobar el vídeo final. Los agentes nunca publican.
+7. **Idioma:** castellano, tuteo, tono cercano pero riguroso. Sin muletillas. La versión inglesa se adapta, no se traduce literal.
+8. **Reutilizar antes que repetir.** Lo que sirva para más de un vídeo va a la librería (`omnia/`, `nexo/props.py`, `nexo/acciones.py`), no al episodio.
 
 ## Mapa del repo
 | Ruta | Qué hay |

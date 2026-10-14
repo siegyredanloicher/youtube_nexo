@@ -8,12 +8,18 @@ description: Método de enseñanza de Omnia. Úsala siempre que haya que decidir
 Objetivo: que quien vea el vídeo **entienda de dónde sale la idea** y pueda usarla sin memorizarla.
 Lema: «Entender, no memorizar». Todo lo de abajo sirve a eso.
 
-## Las cinco piezas obligatorias de cada vídeo
+## Las piezas de cada vídeo
 1. **Gancho (≤ 20 s).** Una situación real o una pregunta que el espectador quiera resolver. Nada de «hoy vamos a ver…».
 2. **De dónde sale.** La idea se *construye* desde lo que ya se sabe (requisitos de la ficha). La fórmula aparece al final, como resumen de lo descubierto, nunca al principio.
 3. **Vida real.** Un ejemplo concreto y creíble, con números verificados. Nexo participa: lanza, mide, reparte, programa.
-4. **Problema inverso.** El mismo problema al revés (de la solución a los datos). Fija la idea y detecta si se ha entendido.
+4. **Problema inverso (opcional).** El mismo problema al revés (de la solución a los datos). Solo si aporta: si fija la idea, desmonta un error o abre la aplicación. Si sería un ejercicio más, se omite.
 5. **Resumen en tres frases** y adelanto del siguiente vídeo (enlaza con el mapa).
+
+## Ciencia pura (rigor total)
+- **Nada en el aire.** Toda pregunta que se plantea en el vídeo se responde de forma cerrada. Si algo depende de una condición, se fija la condición y se resuelve.
+- **Sin interpretaciones del lenguaje** («casi», «unos», «más o menos») como base de un razonamiento: se dice con precisión qué operación se hace y sobre qué.
+- **Convenciones como convenciones.** Lo que es un acuerdo humano (redondear la mitad hacia arriba, el orden de las operaciones, la coma decimal) se presenta como «el acuerdo que usamos», no como algo que dicta la naturaleza. Se dice por qué conviene un acuerdo.
+- **Lo justo.** Solo la información necesaria para entender la idea; los matices extra van al vídeo que toque.
 
 ## Principios
 - **Un concepto nuevo por escena.** Si una escena introduce dos, se parte en dos.
@@ -34,12 +40,12 @@ Lema: «Entender, no memorizar». Todo lo de abajo sirve a eso.
 | uni | 18+ | definiciones precisas, se nombran teoremas | demostración o esquema de demostración; casos límite | 12-20 min |
 | avanzado | posgrado/profesional | denso pero claro, referencias a literatura | formal; se citan fuentes | libre |
 
-En todos los niveles se mantiene: intuición primero, ejemplo real, problema inverso.
+En todos los niveles se mantiene: intuición primero, ejemplo real, rigor total.
 
 ## Estructuras según el tipo de vídeo
-- **Concepto** (qué es una fracción): gancho → problema → descubrimiento → definición → vida real → inverso → error común → resumen.
-- **Procedimiento** (resolver ecuaciones): gancho → por qué funciona (balanza) → pasos con razón → ejemplo guiado → ejemplo con trampa → inverso → resumen.
-- **Demostración** (Pitágoras): enunciado con un caso concreto → idea visual → demostración paso a paso → por qué importa → inverso → resumen.
+- **Concepto** (qué es una fracción): gancho → problema → descubrimiento → definición → vida real → error común → (inverso si aporta) → resumen.
+- **Procedimiento** (resolver ecuaciones): gancho → por qué funciona (balanza) → pasos con razón → ejemplo guiado → ejemplo con trampa → (inverso si aporta) → resumen.
+- **Demostración** (Pitágoras): enunciado con un caso concreto → idea visual → demostración paso a paso → por qué importa → resumen.
 - **Programación/robótica**: problema real → algoritmo en palabras → código mínimo que funciona → se rompe a propósito → se arregla → reto inverso (dada la salida, ¿qué entrada?).
 - **Experimento (física/química)**: predicción del espectador → experimento (Nexo) → medida → modelo → límites del modelo.
 
@@ -47,5 +53,8 @@ En todos los niveles se mantiene: intuición primero, ejemplo real, problema inv
 - La fórmula aparece antes que el ejemplo.
 - Hay más de 40 palabras seguidas sin que cambie nada en pantalla.
 - Se usa una palabra que el nivel no conoce sin definirla.
-- El problema inverso es el mismo problema con otros números (no es inverso).
+- El problema inverso es el mismo problema con otros números (no es inverso), o está solo para cumplir.
+- Una pregunta queda abierta, un «depende» no se resuelve o se razona sobre el significado de una palabra.
+- Un acuerdo humano se presenta como si fuera una verdad de la naturaleza.
+- Los ejemplos no son del mundo del espectador (para 12-13 años: móviles, vídeos, videojuegos, deporte, clase, compras pequeñas).
 - Nexo aparece de adorno: si se quita y no se pierde nada, sobra.
