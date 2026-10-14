@@ -66,3 +66,39 @@ Resultado: 19 escenas, 1395 palabras de locución, ≈ 11 min 10 s (670 s), 75 c
 4. **e14.** La escena pasa de 50 a 55 s y la pausa tras «cuatro mil», de 1 a 2 s.
 5. **e04.** Se quita «Así, una sola barra te ahorra contar diez veces», que repetía la idea anterior.
 6. **Cabecera y c66.** La cabecera se recalcula a 1395 palabras y 670 s. c66 suma ahora las duraciones nuevas (670 s).
+
+# Cuarta vuelta (revisión humana)
+
+Resultado: 17 escenas (antes 19), 1169 palabras de locución, ≈ 9 min 55 s (595 s), 59 claims, todos verificados.
+
+1. **La mitad se presenta como nuestro acuerdo** (e11): «Ninguno está más cerca, así que hay que decidir. Nuestra regla es esta: en la mitad, se sube. Es un acuerdo que usamos todos, para que todos obtengamos el mismo resultado». En pantalla, el rótulo dice «nuestro acuerdo: la mitad sube». Se quita «en clase y en la vida diaria» y no se mencionan otras reglas. e16 (resumen) lo repite: «en la mitad, por acuerdo, se sube».
+2. **Problema inverso: queda una sola escena** (e15), con el nivel de redondeo dicho y la respuesta cerrada. «Un número, redondeado a las decenas de millar, da cien mil»: el más pequeño es 95 000 y el más grande 104 999, con los bordes comprobados. Son 10 000 números, y 99 354 es uno de ellos (claim nuevo c76). Se eliminan:
+   - la escena del «casi» (antes e16);
+   - la franja a los millares (antes en e14);
+   - la escena de práctica «unos 3000» (antes e17), que era un segundo inverso.
+3. **Ciencia pura:**
+   - Se quitan los razonamientos sobre «casi» y «unos».
+   - e10 ya no dice «depende de a qué redondees» sin resolver: define las decenas de millar (cuatro ceros), da la distancia exacta y cierra con «al redondear, siempre se dice a qué casilla».
+   - e12 cierra el gancho con exactitud: «El vídeo no tiene cien mil visualizaciones exactas. Pero redondeado a las decenas de millar, el resultado es exactamente cien mil».
+   - e13 sustituye «muy cerca» por la diferencia exacta («se pasa en mil novecientas treinta y cuatro»; c65).
+   - e02 promete cerrar cada pregunta con una respuesta exacta, en lugar de anunciar el inverso.
+   - e01 promete la respuesta exacta.
+4. **Nuevo ejemplo: las visualizaciones de un vídeo** del «Canal Órbita», ficticio y sin plataformas reales.
+   - Gancho (e01): el contador marca 99 354 y la creadora celebra «¡100 000 visualizaciones!».
+   - e08: por qué la creadora redondea.
+   - Vida real (e13): dos vídeos, 99 354 + 48 712 ≈ 100 000 + 50 000 = 150 000, frente a 148 066 exactas.
+   - Se mantiene el rótulo «Ejemplo ficticio».
+   - En e04 se cambia «contar a la gente que entra» por «contar miles de cosas».
+5. **Se mantiene lo aprobado:**
+   - valor posicional con bloques (e04-e06);
+   - error al dictado (e07);
+   - la regla de la cifra siguiente separada del acuerdo de la mitad (e11/e12);
+   - redondeo en cadena con Nexo equivocándose (e14, 55 s, pausa de 2 s);
+   - la notación.
+6. **Claims:**
+   - Quitados: c06 (frase eliminada en la tercera vuelta), c37 (ya no se dice), c43-c45, c49 y c50 (franja a los millares), c53-c54 y c73-c75 («casi») y c55-c59 (práctica).
+   - Añadido: c76 (99 354 está dentro de 95 000-104 999).
+   - Notas de c01, c02, c24, c33-c36, c46, c47 y c65 adaptadas al nuevo ejemplo.
+   - c66 recalculado a 595 s.
+   - Campo `escena` regenerado desde el guion.
+7. **clips_pendientes.md:** se retiran la grada y el periódico. Se añade el prop `movil`, reutilizable, con la pantalla incrustable y sin interfaz de plataformas reales. El ticket, los bloques base 10, la recta en el suelo y la acción «colocar» se mantienen con sus nuevas escenas.

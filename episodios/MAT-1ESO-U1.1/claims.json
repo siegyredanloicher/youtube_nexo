@@ -4,16 +4,16 @@
   "tipo": "numero",
   "expr": "floor(99354/10**4 + 1/2)*10**4",
   "esperado": "100000",
-  "nota": "99 354 redondeado a las decenas de millar da el 100 000 del titular («casi 100 000»)",
-  "escena": "e01, e08"
+  "nota": "99 354 redondeado a las decenas de millar da exactamente 100 000 (lo que celebra la creadora)",
+  "escena": "e01, e08, e12"
  },
  {
   "id": "c02",
   "tipo": "numero",
   "expr": "100000 - 99354",
   "esperado": "646",
-  "nota": "99 354 es menor que 100 000 (le faltan 646): «casi» es correcto",
-  "escena": "e01, e09, e10"
+  "nota": "99 354 está a 646 de 100 000",
+  "escena": "e09, e10"
  },
  {
   "id": "c03",
@@ -37,14 +37,6 @@
   "expr": "10*10",
   "esperado": "100",
   "nota": "10 decenas = 1 centena = 100",
-  "escena": "e04"
- },
- {
-  "id": "c06",
-  "tipo": "numero",
-  "expr": "100/10",
-  "esperado": "10",
-  "nota": "una barra (decena) ahorra contar 10 unidades",
   "escena": "e04"
  },
  {
@@ -77,7 +69,7 @@
   "expr": "10**5/10**4",
   "esperado": "10",
   "nota": "cada casilla vale diez veces la de su derecha (valores 1, 10, 100, 1000, 10 000, 100 000 = 10^0…10^5)",
-  "escena": "e05, e18"
+  "escena": "e05, e16"
  },
  {
   "id": "c11",
@@ -165,7 +157,7 @@
   "expr": "floor(99354/10**3 + 1/2)*10**3",
   "esperado": "99000",
   "nota": "99 354 redondeado a los millares es 99 000 (la cifra siguiente, 3, es menor que 5)",
-  "escena": "e09, e10, e12, e18"
+  "escena": "e09, e10, e12, e16"
  },
  {
   "id": "c22",
@@ -188,7 +180,7 @@
   "tipo": "numero",
   "expr": "99354 - 90000",
   "esperado": "9354",
-  "nota": "a las decenas de millar, distancia a 90 000: 9354 (frente a 646 hasta 100 000)",
+  "nota": "a las decenas de millar, 99 354 está a 9354 de 90 000 (y a 646 de 100 000)",
   "escena": "e10"
  },
  {
@@ -213,7 +205,7 @@
   "expr": "floor(99354/10**4 + 1/2)*10**4",
   "esperado": "100000",
   "nota": "99 354 a las decenas de millar: 100 000",
-  "escena": "e10, e12, e18"
+  "escena": "e10, e12, e16"
  },
  {
   "id": "c28",
@@ -260,7 +252,7 @@
   "tipo": "numero",
   "expr": "floor(48712/10**4 + 1/2)*10**4",
   "esperado": "50000",
-  "nota": "48 712 a las decenas de millar: 50 000 (la cifra siguiente, 8, es 5 o más)",
+  "nota": "48 712 visualizaciones a las decenas de millar: 50 000 (la cifra siguiente, 8, es 5 o más)",
   "escena": "e13"
  },
  {
@@ -268,7 +260,7 @@
   "tipo": "numero",
   "expr": "100000 + 50000",
   "esperado": "150000",
-  "nota": "estimación: 100 000 + 50 000 = 150 000",
+  "nota": "estimación de las visualizaciones de los dos vídeos: 100 000 + 50 000 = 150 000",
   "escena": "e08, e13"
  },
  {
@@ -276,7 +268,7 @@
   "tipo": "numero",
   "expr": "99354 + 48712",
   "esperado": "148066",
-  "nota": "total exacto de los dos días: 148 066",
+  "nota": "suma exacta de visualizaciones de los dos vídeos: 148 066",
   "escena": "e13"
  },
  {
@@ -284,15 +276,7 @@
   "tipo": "numero",
   "expr": "floor(99354/10**4 + 1/2)*10**4",
   "esperado": "100000",
-  "nota": "día 1 redondeado a las decenas de millar: 100 000",
-  "escena": "e13"
- },
- {
-  "id": "c37",
-  "tipo": "numero",
-  "expr": "floor(148066/10**4 + 1/2)*10**4",
-  "esperado": "150000",
-  "nota": "la estimación 150 000 coincide con el total exacto redondeado a decenas de millar («muy cerca»)",
+  "nota": "primer vídeo redondeado a las decenas de millar: 100 000",
   "escena": "e13"
  },
  {
@@ -336,44 +320,20 @@
   "escena": "e14"
  },
  {
-  "id": "c43",
-  "tipo": "numero",
-  "expr": "floor(99500/10**3 + 1/2)*10**3",
-  "esperado": "100000",
-  "nota": "borde inferior al millar: 99 500 → 100 000 (cabe)",
-  "escena": "e15"
- },
- {
-  "id": "c44",
-  "tipo": "numero",
-  "expr": "floor(100499/10**3 + 1/2)*10**3",
-  "esperado": "100000",
-  "nota": "borde superior al millar: 100 499 → 100 000 (cabe)",
-  "escena": "e15"
- },
- {
-  "id": "c45",
-  "tipo": "numero",
-  "expr": "100499 - 99500 + 1",
-  "esperado": "1000",
-  "nota": "de 99 500 a 100 499 hay 1000 números posibles",
-  "escena": "e15"
- },
- {
   "id": "c46",
   "tipo": "numero",
   "expr": "floor(95000/10**4 + 1/2)*10**4",
   "esperado": "100000",
-  "nota": "borde inferior a decenas de millar: 95 000 → 100 000 (cabe)",
-  "escena": "e15, e18"
+  "nota": "el más pequeño que redondea a 100 000 en las decenas de millar: 95 000 (la mitad sube)",
+  "escena": "e15, e16"
  },
  {
   "id": "c47",
   "tipo": "numero",
   "expr": "floor(104999/10**4 + 1/2)*10**4",
   "esperado": "100000",
-  "nota": "borde superior a decenas de millar: 104 999 → 100 000 (cabe)",
-  "escena": "e15, e18"
+  "nota": "el más grande que redondea a 100 000 en las decenas de millar: 104 999",
+  "escena": "e15, e16"
  },
  {
   "id": "c48",
@@ -381,22 +341,6 @@
   "expr": "104999 - 95000 + 1",
   "esperado": "10000",
   "nota": "de 95 000 a 104 999 hay 10 000 números posibles",
-  "escena": "e15"
- },
- {
-  "id": "c49",
-  "tipo": "numero",
-  "expr": "floor(99499/10**3 + 1/2)*10**3",
-  "esperado": "99000",
-  "nota": "fuera por abajo al millar: 99 499 → 99 000",
-  "escena": "e15"
- },
- {
-  "id": "c50",
-  "tipo": "numero",
-  "expr": "floor(100500/10**3 + 1/2)*10**3",
-  "esperado": "101000",
-  "nota": "fuera por arriba al millar: 100 500 → 101 000",
   "escena": "e15"
  },
  {
@@ -416,68 +360,12 @@
   "escena": "e15"
  },
  {
-  "id": "c53",
-  "tipo": "numero",
-  "expr": "floor(99999/10**4 + 1/2)*10**4",
-  "esperado": "100000",
-  "nota": "con «casi» (menor que 100 000), el mayor posible es 99 999, que redondea a 100 000",
-  "escena": "e16"
- },
- {
-  "id": "c54",
-  "tipo": "numero",
-  "expr": "Max(95000, Min(99354, 99999))",
-  "esperado": "99354",
-  "nota": "99 354 está entre 95 000 y 99 999 (al acotarlo a ese intervalo no cambia)",
-  "escena": "e16"
- },
- {
-  "id": "c55",
-  "tipo": "numero",
-  "expr": "floor(2950/10**2 + 1/2)*10**2",
-  "esperado": "3000",
-  "nota": "borde inferior a las centenas: 2950 → 3000 (cabe)",
-  "escena": "e17"
- },
- {
-  "id": "c56",
-  "tipo": "numero",
-  "expr": "floor(3049/10**2 + 1/2)*10**2",
-  "esperado": "3000",
-  "nota": "borde superior a las centenas: 3049 → 3000 (cabe)",
-  "escena": "e17"
- },
- {
-  "id": "c57",
-  "tipo": "numero",
-  "expr": "3049 - 2950 + 1",
-  "esperado": "100",
-  "nota": "de 2950 a 3049 hay 100 números posibles",
-  "escena": "e17"
- },
- {
-  "id": "c58",
-  "tipo": "numero",
-  "expr": "floor(2949/10**2 + 1/2)*10**2",
-  "esperado": "2900",
-  "nota": "fuera por abajo: 2949 → 2900",
-  "escena": "e17"
- },
- {
-  "id": "c59",
-  "tipo": "numero",
-  "expr": "floor(3050/10**2 + 1/2)*10**2",
-  "esperado": "3100",
-  "nota": "fuera por arriba: 3050 → 3100",
-  "escena": "e17"
- },
- {
   "id": "c60",
   "tipo": "numero",
   "expr": "3*4 + 2",
   "esperado": "14",
   "nota": "adelanto U1.2: 3 bocadillos a 4 € y un refresco a 2 € = 14 € (multiplicación primero)",
-  "escena": "e19"
+  "escena": "e17"
  },
  {
   "id": "c61",
@@ -485,7 +373,7 @@
   "expr": "3*(4 + 2)",
   "esperado": "18",
   "nota": "adelanto U1.2: la otra calculadora da 18 (suma primero)",
-  "escena": "e19"
+  "escena": "e17"
  },
  {
   "id": "c62",
@@ -516,15 +404,15 @@
   "tipo": "numero",
   "expr": "150000 - 148066",
   "esperado": "1934",
-  "nota": "la estimación 150 000 queda a 1934 del total exacto 148 066 («muy cerca»)",
+  "nota": "la estimación 150 000 se pasa en 1934 del total exacto 148 066",
   "escena": "e13"
  },
  {
   "id": "c66",
   "tipo": "numero",
-  "expr": "20+15+25+50+30+35+30+25+55+25+30+50+45+55+55+45+35+25+20",
-  "esperado": "670",
-  "nota": "suma de duraciones de escena = 670 s (cabecera)",
+  "expr": "20+15+25+45+30+35+30+30+55+35+25+55+45+55+45+30+20",
+  "esperado": "595",
+  "nota": "suma de duraciones de escena = 595 s (cabecera)",
   "escena": "cabecera"
  },
  {
@@ -576,27 +464,11 @@
   "escena": "e14"
  },
  {
-  "id": "c73",
+  "id": "c76",
   "tipo": "numero",
-  "expr": "floor(99999/10**3 + 1/2)*10**3",
-  "esperado": "100000",
-  "nota": "con «casi» a los millares, el mayor posible es 99 999 (redondea a 100 000): franja 99 500–99 999",
-  "escena": "e16"
- },
- {
-  "id": "c74",
-  "tipo": "numero",
-  "expr": "Min(99354, 99500 - 1)",
+  "expr": "Max(95000, Min(99354, 104999))",
   "esperado": "99354",
-  "nota": "99 354 es menor que 99 500: a los millares no cabría en la franja de «casi 100 000»",
-  "escena": "e16"
- },
- {
-  "id": "c75",
-  "tipo": "numero",
-  "expr": "floor(99354/10**3 + 1/2)*10**3",
-  "esperado": "99000",
-  "nota": "a los millares, 99 354 daría 99 000, no 100 000: por eso no cabe y el periódico tuvo que redondear a una casilla más grande (por ejemplo, decenas de millar)",
-  "escena": "e16"
+  "nota": "99 354 está dentro de la franja 95 000–104 999 (al acotarlo a ese intervalo no cambia)",
+  "escena": "e15"
  }
 ]
