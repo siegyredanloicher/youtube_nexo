@@ -102,3 +102,29 @@ Resultado: 17 escenas (antes 19), 1169 palabras de locución, ≈ 9 min 55 s (59
    - c66 recalculado a 595 s.
    - Campo `escena` regenerado desde el guion.
 7. **clips_pendientes.md:** se retiran la grada y el periódico. Se añade el prop `movil`, reutilizable, con la pantalla incrustable y sin interfaz de plataformas reales. El ticket, los bloques base 10, la recta en el suelo y la acción «colocar» se mantienen con sus nuevas escenas.
+
+# Quinta vuelta
+
+Resultado: 17 escenas, 1211 palabras de locución, ≈ 10 min 05 s (605 s), 60 claims, todos verificados.
+
+## Imprescindibles
+- **F1 (e15 y e16): ahora se habla de números enteros.**
+  - e15 dice «Un número entero, redondeado a las decenas de millar, da cien mil. ¿Cuál es el número entero más pequeño…?» y «diez mil números enteros posibles».
+  - En pantalla: «número entero · a las decenas de millar → 100 000» y el contador «10 000 números enteros».
+  - e16 dice «franja exacta de números enteros».
+  - Nota de c48 actualizada.
+- **F2 (e04):** se quita «tardarías horas» y queda «Te pierdes enseguida», sin cifra de tiempo.
+- **e11:** «Es un acuerdo que usamos todos» pasa a «Nuestro acuerdo es este: en la mitad, se sube. Lo importante es usar siempre el mismo acuerdo, para que todos obtengamos el mismo resultado». No se nombran otros criterios.
+
+## Recomendables
+- **e01:** «Antes de que acabe este vídeo lo sabrás con exactitud». Se añade la indicación de que el móvil muestra siempre la cifra completa, nunca abreviada (sin «K»).
+- **e08:** la pregunta pasa a ser «¿Por qué se usan cifras redondas?». La escena termina con «cambiar un número por otro más sencillo. Ahora vemos exactamente por cuál», y se quita «muy cerca». Pasa a 25 s.
+- **e09:** «¿Y cuál es el número redondo correcto? Míralo en una recta» pasa a «¿Por qué número redondo se cambia, exactamente? Empecemos por los millares, sobre una recta».
+- **e11:** vuelve la pregunta «¿Hacia dónde irías tú?» con 2 s de pausa (Nexo piensa durante la pausa). Pasa a 30 s.
+- **e12 (opcional del verificador, aplicado):** se explica por qué la cifra siguiente indica la mitad: «Entre dos millares hay mil, y la mitad son quinientos: si las centenas son cinco o más, ya has pasado de la mitad». En pantalla, un tramo de recta con 99 500 marcado y las centenas 0-4 y 5-9 a cada lado. Claim nuevo c77 (1000 / 2 = 500). Pasa a 65 s.
+- **e13:** se da un motivo para estimar: «Imagina que te lo preguntan y no tienes papel». El cierre cambia «sin papel» por «de cabeza» para no repetir.
+- **e15:** la pista «Piensa en las mitades» va antes de la pausa.
+- Se mantiene «su creadora».
+
+## Cabecera y claims
+Cabecera recalculada. c66 suma ahora las duraciones nuevas. Se añade c77.

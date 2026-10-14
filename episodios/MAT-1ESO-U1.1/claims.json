@@ -340,7 +340,7 @@
   "tipo": "numero",
   "expr": "104999 - 95000 + 1",
   "esperado": "10000",
-  "nota": "de 95 000 a 104 999 hay 10 000 números posibles",
+  "nota": "de 95 000 a 104 999 hay 10 000 números enteros posibles",
   "escena": "e15"
  },
  {
@@ -410,9 +410,9 @@
  {
   "id": "c66",
   "tipo": "numero",
-  "expr": "20+15+25+45+30+35+30+30+55+35+25+55+45+55+45+30+20",
-  "esperado": "595",
-  "nota": "suma de duraciones de escena = 595 s (cabecera)",
+  "expr": "20+15+25+45+30+35+30+25+55+35+30+65+45+55+45+30+20",
+  "esperado": "605",
+  "nota": "suma de duraciones de escena = 605 s (cabecera)",
   "escena": "cabecera"
  },
  {
@@ -470,5 +470,13 @@
   "esperado": "99354",
   "nota": "99 354 está dentro de la franja 95 000–104 999 (al acotarlo a ese intervalo no cambia)",
   "escena": "e15"
+ },
+ {
+  "id": "c77",
+  "tipo": "numero",
+  "expr": "1000/2",
+  "esperado": "500",
+  "nota": "entre dos millares hay 1000; la mitad son 500: centenas 5 o más → has pasado la mitad",
+  "escena": "e12"
  }
 ]
