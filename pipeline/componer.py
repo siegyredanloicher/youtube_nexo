@@ -55,7 +55,7 @@ def escena(ep, e, dur, w, h, fps, borrador):
         pngs = sorted(carpeta.glob("[0-9][0-9][0-9][0-9].png")) if carpeta.exists() else []
         if pngs:
             meta = json.loads((carpeta / "plano_meta.json").read_text()) if (carpeta / "plano_meta.json").exists() else {}
-            entradas += ["-framerate", str(meta.get("fps", VIDEO.get("fps_nexo", 12))), "-i", carpeta / "%04d.png"]
+            entradas += ["-framerate", str(meta.get("fps", VIDEO.get("fps_nexo", VIDEO["fps"]))), "-i", carpeta / "%04d.png"]
         elif mov.exists():
             entradas += ["-i", mov]
         else:

@@ -40,7 +40,7 @@ python3 pipeline/render_nexo.py plano.json --salida /tmp/prueba --motor cycles -
 python3 pipeline/render_nexo.py plano.json --salida /tmp/prueba --motor cycles --prueba --fotograma 20
 ```
 El nivel (`--nivel eso|bach|uni|avanzado`) cambia el color del emblema y de props como la pelota.
-12 fps por defecto (`video.fps_nexo` de tokens.json: estilo «animación a doses»); `"fps": 24` en el plano si hace falta más fluidez.
+30 fps por defecto (`video.fps_nexo` de tokens.json, igual que el vídeo final: movimiento fluido). Las acciones se definen en segundos, así que funcionan a cualquier fps; `"fps": N` en el plano lo cambia solo para ese plano.
 `plano_meta.json` guarda duración real y, al lanzar, `lanzamiento` (v0, ángulo, altura h0 y radio del prop, instante y alcance del primer bote) para que la 2D dibuje la misma curva y el guion cite cifras verificables.
 
 ## Cuándo usar cada acción

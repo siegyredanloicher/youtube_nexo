@@ -22,7 +22,7 @@ Por cada escena: fondo de tokens → capa 2D → capa de Nexo en su `zona` (izqu
 ## Reglas
 - 1920×1080, 30 fps, H.264 (CRF 18), audio AAC 192 kbps normalizado a −14 LUFS (`loudnorm`).
 - Nunca fondo negro: si falta una capa, se usa `fondo.base`.
-- Los planos de Nexo a 12 fps se insertan tal cual (el estilo «a doses» es intencionado).
+- Los planos de Nexo se renderizan a 30 fps, como el vídeo; si un plano usa otros fps, `componer.py` lo convierte.
 - Subtítulos: archivo .srt aparte (YouTube) y quemados solo si se pide.
 - Miniatura `miniatura.png` (1280×720): fondo crema, título en Sora (máx. 4 palabras), Nexo expresivo con un prop del episodio (fotograma de un plano con `--fotograma`).
 

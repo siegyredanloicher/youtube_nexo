@@ -169,7 +169,7 @@ def main():
     escena = bpy.context.scene  # después de abrir el .blend
     nivel = op["nivel"] or plano.get("nivel", "eso")
     aplicar_nivel(nivel)
-    fps = int(plano.get("fps", VIDEO.get("fps_nexo", 12)))
+    fps = int(plano.get("fps", VIDEO.get("fps_nexo", VIDEO["fps"])))
     escena.render.fps = fps
     P = A.Plano(rig, ojos, fps)
 
