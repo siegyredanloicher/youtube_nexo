@@ -486,5 +486,45 @@
   "esperado": "18",
   "nota": "adelanto U1.2: la otra calculadora da 18 (suma primero)",
   "escena": "e18"
+ },
+ {
+  "id": "c62",
+  "tipo": "numero",
+  "expr": "Mod(floor(99354/10**2),10)",
+  "esperado": "3",
+  "nota": "cifra de las centenas de 99 354 (cifra que decide al redondear a millares): 3",
+  "escena": "e11"
+ },
+ {
+  "id": "c63",
+  "tipo": "numero",
+  "expr": "Mod(floor(3449/10**2),10)",
+  "esperado": "4",
+  "nota": "cifra de las centenas de 3449 (decide al redondear a millares): 4",
+  "escena": "e13"
+ },
+ {
+  "id": "c64",
+  "tipo": "numero",
+  "expr": "Mod(floor(48712/10**3),10)",
+  "esperado": "8",
+  "nota": "cifra de los millares de 48 712 (decide al redondear a decenas de millar): 8",
+  "escena": "e12"
+ },
+ {
+  "id": "c65",
+  "tipo": "numero",
+  "expr": "150000 - 148066",
+  "esperado": "1934",
+  "nota": "la estimación 150 000 queda a 1934 del total exacto 148 066 («muy cerca»)",
+  "escena": "e12"
+ },
+ {
+  "id": "c66",
+  "tipo": "numero",
+  "expr": "20+15+25+45+30+35+25+35+45+40+55+50+50+50+25+30+25+20",
+  "esperado": "620",
+  "nota": "suma de duraciones de escena = 620 s (cabecera)",
+  "escena": "cabecera"
  }
 ]
