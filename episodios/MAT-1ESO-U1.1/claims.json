@@ -522,9 +522,9 @@
  {
   "id": "c66",
   "tipo": "numero",
-  "expr": "20+15+25+50+30+35+30+25+55+25+30+50+45+50+55+45+35+25+20",
-  "esperado": "665",
-  "nota": "suma de duraciones de escena = 665 s (cabecera)",
+  "expr": "20+15+25+50+30+35+30+25+55+25+30+50+45+55+55+45+35+25+20",
+  "esperado": "670",
+  "nota": "suma de duraciones de escena = 670 s (cabecera)",
   "escena": "cabecera"
  },
  {
@@ -596,7 +596,7 @@
   "tipo": "numero",
   "expr": "floor(99354/10**3 + 1/2)*10**3",
   "esperado": "99000",
-  "nota": "a los millares, 99 354 daría 99 000, no 100 000: por eso no cabe y el periódico tuvo que redondear a las decenas de millar",
+  "nota": "a los millares, 99 354 daría 99 000, no 100 000: por eso no cabe y el periódico tuvo que redondear a una casilla más grande (por ejemplo, decenas de millar)",
   "escena": "e16"
  }
 ]

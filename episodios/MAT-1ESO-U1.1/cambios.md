@@ -55,3 +55,14 @@ Se han actualizado los números de escena (grada, periódico, ticket, recta). El
 ## No aplicado
 - El verificador proponía como opción meter U+202F en el .md. Se descarta por indicación del coordinador: el espacio fino lo pone el render.
 - Pedagogo, recomendable 1: pedía 125–130 palabras por minuto en las escenas densas. e04 y e14 quedan en unas 137 y e12 en unas 132, porque dar 5 s más a cada una superaría el objetivo de 11 min 30 s. El resto de escenas densas queda en 130 o menos, y la media es de 126.
+
+# Tercera vuelta
+
+Resultado: 19 escenas, 1395 palabras de locución, ≈ 11 min 10 s (670 s), 75 claims, todos verificados.
+
+1. **e16 (imprescindible).** «Así que redondeó a las decenas de millar: quedan…» pasa a «Así que tuvo que redondear a una casilla más grande. Si fue a las decenas de millar, quedan desde noventa y cinco mil hasta noventa y nueve mil novecientos noventa y nueve». Ya no se deduce algo que no se sigue, porque a las centenas de millar también saldría 100 000. La nota de c75 se ajusta en el mismo sentido.
+2. **e16 (opcional).** «las matemáticas te dan el margen máximo» pasa a «las matemáticas acotan el margen».
+3. **e16 (opcional, no aplicado).** Se mantiene «El periódico no mintió»: funciona mejor en voz y cierra directamente la pregunta del gancho. Es verdad para cualquier casilla más grande, porque 99 354 cabe en «casi 100 000» tanto a las decenas como a las centenas de millar.
+4. **e14.** La escena pasa de 50 a 55 s y la pausa tras «cuatro mil», de 1 a 2 s.
+5. **e04.** Se quita «Así, una sola barra te ahorra contar diez veces», que repetía la idea anterior.
+6. **Cabecera y c66.** La cabecera se recalcula a 1395 palabras y 670 s. c66 suma ahora las duraciones nuevas (670 s).

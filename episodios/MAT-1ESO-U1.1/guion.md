@@ -1,6 +1,6 @@
 # MAT-1ESO-U1.1 · Números grandes y aproximación
 Curso: Matemáticas · 1º ESO · Unidad: U1 · Nivel de Nexo: eso · Requisitos: ninguno (primer vídeo del canal)
-Duración estimada: ≈ 11 min 05 s (665 s sumando escenas, con pausas y tiempos visuales; unas 126 palabras por minuto de media) · 1397 palabras de locución (sin contar las pausas) · Tipo: concepto
+Duración estimada: ≈ 11 min 10 s (670 s sumando escenas, con pausas y tiempos visuales; unas 125 palabras por minuto de media) · 1395 palabras de locución (sin contar las pausas) · Tipo: concepto
 Términos y colores (se mantienen en todo el vídeo): unidades U → mates.a · decenas D → mates.b · centenas C → mates.c · millares UM → mates.d · decenas de millar DM → nivel.eso.texto · centenas de millar CM → tinta.suave · cifra que decide el redondeo → estado.aviso (subrayado)
 
 Escritura de números: en este guion, las cifras de cinco o más dígitos llevan un espacio normal como separador de miles (99 354, 100 000). En pantalla, el render lo sustituye por espacio fino sin separación (norma RAE/SI), para que la cifra no se parta. Los números de cuatro cifras van sin separador (3449, 3000). La locución escribe los números con letra, tal como se dicen. Multiplicación con «·», nunca «×».
@@ -26,7 +26,7 @@ Todas las cantidades son de un **ejemplo inventado**: el «Festival de las Cienc
 - Claims: c03
 
 ## e04 · origen · 50 s
-- Locución: Las unidades, decenas y centenas ya las conoces. Lo que quizá nadie te ha contado es por qué existen. Imagina que tienes que contar a la gente que entra, una persona tras otra. Con unas pocas, basta con contar. Con miles, te pierdes, y contar de una en una llevaría horas. La solución es agrupar. Cada vez que juntas diez unidades, las cambias por una barra: una decena. Diez decenas forman una placa: una centena, que son cien. No inventas nada nuevo. Solo cambias diez cosas iguales por una cosa más grande. Así, una sola barra te ahorra contar diez veces. Y al final solo tienes que decir cuántos grupos hay de cada tamaño.
+- Locución: Las unidades, decenas y centenas ya las conoces. Lo que quizá nadie te ha contado es por qué existen. Imagina que tienes que contar a la gente que entra, una persona tras otra. Con unas pocas, basta con contar. Con miles, te pierdes, y contar de una en una llevaría horas. La solución es agrupar. Cada vez que juntas diez unidades, las cambias por una barra: una decena. Diez decenas forman una placa: una centena, que son cien. No inventas nada nuevo. Solo cambias diez cosas iguales por una cosa más grande. Y al final solo tienes que decir cuántos grupos hay de cada tamaño.
 - Se ve: sobre el suelo, Nexo deja cubos sueltos en fila (bloque unidad, color mates.a). Al llegar a 10, los cubos se funden en una barra (mates.b) y aparece «10 U = 1 D». Se repite en rápido hasta tener 10 barras, que se funden en una placa (mates.c): «10 D = 1 C = 100».
 - Nexo: sostener (bloque) → coloca los bloques uno a uno (acción pendiente «colocar») · atento
 - Claims: c04, c05, c06
@@ -85,8 +85,8 @@ Todas las cantidades son de un **ejemplo inventado**: el «Festival de las Cienc
 - Nexo: caminar (por la grada) → pensar (calcula, durante la pausa) → senalar (150 000) · satisfecho
 - Claims: c33, c34, c35, c36, c37, c64, c65, c69
 
-## e14 · error_comun · 50 s
-- Locución: Ahora, una trampa en la que yo mismo caigo. Redondeo tres mil cuatrocientos cuarenta y nueve a los millares. Lo hago a pasos: primero a las decenas, tres mil cuatrocientos cincuenta. Luego a las centenas, tres mil quinientos. Y luego a los millares, cuatro mil. (pausa 1 s) No. Mira la recta: tres mil cuatrocientos cuarenta y nueve no llega a la mitad. Está más cerca de tres mil. A los millares, la cifra que decide es la de las centenas, un cuatro. Cuatro es menos de cinco: te quedas en tres mil. Mi error es que cada paso ha empujado hacia arriba, y los empujones se acumulan. Redondea siempre una sola vez, mirando el número original.
+## e14 · error_comun · 55 s
+- Locución: Ahora, una trampa en la que yo mismo caigo. Redondeo tres mil cuatrocientos cuarenta y nueve a los millares. Lo hago a pasos: primero a las decenas, tres mil cuatrocientos cincuenta. Luego a las centenas, tres mil quinientos. Y luego a los millares, cuatro mil. (pausa 2 s) No. Mira la recta: tres mil cuatrocientos cuarenta y nueve no llega a la mitad. Está más cerca de tres mil. A los millares, la cifra que decide es la de las centenas, un cuatro. Cuatro es menos de cinco: te quedas en tres mil. Mi error es que cada paso ha empujado hacia arriba, y los empujones se acumulan. Redondea siempre una sola vez, mirando el número original.
 - Se ve: Nexo escribe 3449 → 3450 → 3500 → 4000 en cadena; sobre cada flecha, en pequeño, el empujón: «+1», «+50», «+500», todo en estado.error. Se tacha 4000. Recta de 3000 a 4000 con el punto medio 3500 marcado; el punto 3449 queda a la izquierda de 3500. Se subraya el 4 de las centenas (estado.aviso): el resultado correcto es 3000.
 - Nexo: escribir (la cadena, rápido) → encoger → asentir · se corrige
 - Claims: c38, c39, c40, c41, c42, c63, c70, c71, c72
@@ -98,7 +98,7 @@ Todas las cantidades son de un **ejemplo inventado**: el «Festival de las Cienc
 - Claims: c43, c44, c45, c46, c47, c48, c49, c50, c51, c52
 
 ## e16 · inverso · 45 s
-- Locución: ¿Y «casi cien mil»? Aquí entra el lenguaje, no solo las matemáticas. Cuando decimos «casi», normalmente queremos decir que no se llega. Si el periódico hubiera redondeado a los millares, quedarían los números desde noventa y nueve mil quinientos hasta noventa y nueve mil novecientos noventa y nueve, y nuestro número no cabría. Así que redondeó a las decenas de millar: quedan desde noventa y cinco mil hasta noventa y nueve mil novecientos noventa y nueve. «Casi» no dice cuánto falta; las matemáticas te dan el margen máximo. Nuestro número está dentro. El periódico no mintió.
+- Locución: ¿Y «casi cien mil»? Aquí entra el lenguaje, no solo las matemáticas. Cuando decimos «casi», normalmente queremos decir que no se llega. Si el periódico hubiera redondeado a los millares, quedarían los números desde noventa y nueve mil quinientos hasta noventa y nueve mil novecientos noventa y nueve, y nuestro número no cabría. Así que tuvo que redondear a una casilla más grande. Si fue a las decenas de millar, quedan desde noventa y cinco mil hasta noventa y nueve mil novecientos noventa y nueve. «Casi» no dice cuánto falta; las matemáticas acotan el margen. Nuestro número está dentro. El periódico no mintió.
 - Se ve: rótulo «casi = sin llegar» (lectura del lenguaje). Primero, la franja de los millares, 99 500–100 499, pierde la parte desde 100 000: queda 99 500–99 999, y el punto 99 354 aparece fuera, a la izquierda. Después, la franja de las decenas de millar, 95 000–104 999, pierde la parte desde 100 000: queda 95 000–99 999, y el punto 99 354 aparece dentro y se ilumina. Al final vuelve la portada del periódico con una marca de visto bueno (estado.ok).
 - Nexo: pensar → senalar (el punto 99 354) → asentir · satisfecho
 - Claims: c53, c54, c73, c74, c75
