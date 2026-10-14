@@ -1,0 +1,129 @@
+{
+ "accion": "colocar",
+ "params": {
+  "prop": "b1",
+  "destino": [
+   -0.18,
+   -0.17,
+   0.0
+  ],
+  "veces": 10,
+  "fila": "derecha",
+  "mano": "auto"
+ },
+ "props": [
+  {
+   "id": "b1",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  },
+  {
+   "id": "b2",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  },
+  {
+   "id": "b3",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  },
+  {
+   "id": "b4",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  },
+  {
+   "id": "b5",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  },
+  {
+   "id": "b6",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  },
+  {
+   "id": "b7",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  },
+  {
+   "id": "b8",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  },
+  {
+   "id": "b9",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  },
+  {
+   "id": "b10",
+   "prop": "bloque",
+   "params": {
+    "forma": "unidad",
+    "lado": 0.03,
+    "col": "mates.a"
+   }
+  }
+ ],
+ "expresiones": [
+  {
+   "t": 17.0,
+   "nombre": "Feliz",
+   "valor": 0.6
+  },
+  {
+   "t": 21.5,
+   "nombre": "Curioso"
+  },
+  {
+   "t": 30.6,
+   "nombre": "Tranquilo"
+  },
+  {
+   "t": 39.7,
+   "nombre": "Concentrado",
+   "valor": 0.6
+  }
+ ],
+ "camara": "picado",
+ "encuadre": "izquierda",
+ "duracion_s": 45
+}

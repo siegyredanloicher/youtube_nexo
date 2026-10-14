@@ -6,6 +6,11 @@ Convenciones (las usa nexo/acciones.py):
   - El origen del objeto raíz es su punto de agarre (o el centro de la base si va en el suelo/mesa).
   - ob["agarre"] = "mano" | "suelo" | "mesa";  ob["radio"] = radio aproximado (para colocarlo en la palma).
   - ob["altura_superficie"] (mesa, pizarra...) = altura de la superficie de trabajo.
+  - Opcionales: ob["sep_mano"] = distancia palma-origen al llevarlo (si no, radio + 1,2 cm) y ob["desp_mano"] = [x hacia
+    el interior, y, z] ajuste extra en la mano;
+    ob["semialto"] = distancia del origen a la base (para dejarlo apoyado: acción colocar);
+    ob["pantalla"] = [ancho, alto, z del centro, (x del centro)] de una superficie donde el editor incrusta 2D
+    (mira a -Y) y ob["pantalla_objeto"] = nombre del objeto de esa superficie.
 Añadir uno nuevo: escribe la función, regístrala con @prop y ejecuta  python nexo/props.py --catalogo
 (o usa /nuevo-prop). Ver .claude/skills/nexo-actor/SKILL.md.
 """
@@ -209,10 +214,151 @@ def balanza(m=None, inclinacion=0.0):
     return _grupo("balanza", hijos, agarre="suelo", radio=0.35)
 
 
-@prop("mano", "Bloque unidad (cubo de 10 cm) en color de mates; params: col", ["contar", "volumen", "álgebra", "apilar"])
-def bloque(m=None, lado=0.1, col="mates.a"):
-    b = _caja("Bloque", (lado,) * 3, material=mat(f"bloque_{col}", col, 0.5), bisel=lado * 0.08, seg=3)
-    return _grupo("bloque", [b], agarre="mano", radio=lado * 0.6)
+def _cubitos(nombre, n, lado, material, holgura=0.06):
+    """Malla con n = (nx, ny, nz) cubitos biselados de `lado` (separados por una ranura fina), centrada en el origen.
+    Solo se generan los cubitos de la superficie y un núcleo tapa las ranuras por dentro."""
+    nx, ny, nz = n
+    plantilla = bmesh.new()
+    bmesh.ops.create_cube(plantilla, size=lado * (1 - holgura))
+    bmesh.ops.bevel(plantilla, geom=list(plantilla.edges) + list(plantilla.verts), offset=lado * 0.12, segments=2,
+                    affect="EDGES", profile=0.5)
+    v0 = [v.co.copy() for v in plantilla.verts]
+    f0 = [[v.index for v in f.verts] for f in plantilla.faces]
+    plantilla.free()
+    verts, caras = [], []
+    for i in range(nx):
+        for j in range(ny):
+            for k in range(nz):
+                if 0 < i < nx - 1 and 0 < j < ny - 1 and 0 < k < nz - 1:
+                    continue  # interior: no se ve
+                c = Vector(((i - (nx - 1) / 2) * lado, (j - (ny - 1) / 2) * lado, (k - (nz - 1) / 2) * lado))
+                base = len(verts)
+                verts += [v + c for v in v0]
+                caras += [[base + x for x in f] for f in f0]
+    me = bpy.data.meshes.new(nombre)
+    me.from_pydata([tuple(v) for v in verts], [], caras)
+    me.materials.append(material)
+    for p in me.polygons:
+        p.use_smooth = True
+    ob = bpy.data.objects.new(nombre, me)
+    bpy.context.scene.collection.objects.link(ob)
+    nucleo = _caja(nombre + "Nucleo", tuple(max(d - 0.3, 0.7) * lado for d in n), material=material, bisel=0)
+    return [ob, nucleo]
+
+
+def _emblema(nombre, r, centro, material):
+    """Emblema de Nexo (triángulo hueco con trazo central, como el de la mochila) mirando a +Y."""
+    cx, cy, cz = centro
+    bm = bmesh.new()
+
+    def tri(rr):
+        return [bm.verts.new((cx + rr * math.sin(a), cy, cz + rr * math.cos(a))) for a in (0, 2 * math.pi / 3, 4 * math.pi / 3)]
+    o, i_ = tri(r), tri(r * 0.7)
+    for k in range(3):
+        bm.faces.new((o[k], o[(k + 1) % 3], i_[(k + 1) % 3], i_[k]))
+    q = [bm.verts.new((cx + dx * r, cy, cz + dz * r)) for dx, dz in ((-0.1, -0.35), (0.1, -0.35), (0.1, 0.53), (-0.1, 0.53))]
+    bm.faces.new(q)
+    ob = _obj(nombre, bm, material, suave=False)
+    so = ob.modifiers.new("Grosor", "SOLIDIFY")
+    so.thickness = 0.0008
+    return ob
+
+
+FORMAS_BLOQUE = {"unidad": (1, 1, 1), "barra": (10, 1, 1), "placa": (10, 10, 1), "cubo_mil": (10, 10, 10)}
+
+
+@prop("mano", "Bloque de base 10 en color de mates, con cada cubito marcado. params: forma (unidad | barra 10×1×1 | "
+      "placa 10×10×1 | cubo_mil 10×10×10), lado (arista del cubito, 2 cm), col (mates.a-d), de_pie (barra vertical o "
+      "placa de cara a cámara en vez de tumbada)",
+      ["contar", "valor posicional", "base 10", "decimales", "área", "volumen", "álgebra", "apilar"])
+def bloque(m=None, lado=0.02, col="mates.a", forma="unidad", de_pie=False):
+    if forma not in FORMAS_BLOQUE:
+        raise ValueError(f"bloque: forma '{forma}' no existe ({', '.join(FORMAS_BLOQUE)})")
+    n = FORMAS_BLOQUE[forma]
+    if de_pie:  # la barra se pone vertical y la placa queda en el plano XZ, de cara a cámara (-Y)
+        n = {"barra": (1, 1, 10), "placa": (10, 1, 10)}.get(forma, n)
+    material = mat(f"bloque_{col}", col, 0.5)
+    hijos = _cubitos("Bloque", n, lado, material)
+    tam = [d * lado for d in n]
+    g = _grupo("bloque", hijos, agarre="mano", radio=max(tam) * 0.6, forma=forma, tam=tam,
+               semialto=tam[2] / 2, sep_mano=min(tam) / 2 + 0.012)
+    if de_pie and tam[2] > 2 * lado:  # de pie se coge por el borde inferior, con la cara libre hacia cámara
+        g["desp_mano"] = [0.0, 0.0, tam[2] / 2 - 0.02]
+    return g
+
+
+@prop("mano", "Teléfono móvil genérico (7×15 cm), marco marino y crema, sin marcas; la pantalla (objeto MovilPantalla) "
+      "es una superficie donde el editor incrusta 2D. params: pantalla_encendida, orientacion (vertical | horizontal)",
+      ["datos", "porcentajes", "gráficas", "temporizador", "código", "mensajes", "redes"])
+def movil(m=None, pantalla_encendida=True, orientacion="vertical", ancho=0.07, alto=0.15, grosor=0.008, nivel="eso"):
+    marino = mat("marino", "nexo.marino", 0.45)
+    crema = mat("crema", "nexo.crema", 0.5)
+    zc = alto * 0.4          # el agarre (origen) queda abajo: la pantalla asoma por encima de los dedos
+    cuerpo = _caja("MovilCuerpo", (ancho, grosor, alto), centro=(0, 0, zc), material=marino, bisel=grosor * 0.45, seg=4)
+    marco = _caja("MovilMarco", (ancho + 0.0016, grosor * 0.55, alto + 0.0016), centro=(0, 0, zc), material=crema,
+                  bisel=grosor * 0.27, seg=3)
+    pw, ph = ancho - 0.007, alto - 0.012
+    if pantalla_encendida:
+        mp = mat("movil_encendida", "fondo.oscuro", 0.25, emision=0.8)
+    else:
+        mp = mat("movil_apagada", "nexo.pantalla", 0.12)
+    pantalla = _caja("MovilPantalla", (pw, 0.0006, ph), centro=(0, -grosor / 2 - 0.0002, zc), material=mp, bisel=0)
+    altavoz = _caja("MovilAltavoz", (0.012, 0.0008, 0.0012), centro=(0, -grosor / 2 - 0.0001, zc + alto / 2 - 0.0035),
+                    material=crema, bisel=0)
+    botones = [_caja("MovilBoton", (0.0016, 0.004, l), centro=(ancho / 2 + 0.0006, 0, zc + z), material=crema, bisel=0.0006)
+               for z, l in ((0.035, 0.018), (0.01, 0.01))]
+    camara = _caja("MovilCamara", (0.018, 0.0016, 0.018), centro=(-ancho / 2 + 0.014, grosor / 2 + 0.0006, zc + alto / 2 - 0.014),
+                   material=crema, bisel=0.004)
+    lente = _cilindro("MovilLente", 0.0042, 0.002, centro=(-ancho / 2 + 0.014, grosor / 2 + 0.0016, zc + alto / 2 - 0.014),
+                      material=mat("pantalla_vidrio", "nexo.pantalla", 0.1), eje="Y", seg=24, bisel=0)
+    tri = _emblema("MovilEmblema", 0.012, (0, grosor / 2 + 0.0003, zc + 0.01), mat(f"nivel_{nivel}", nivel_color(nivel), 0.4, emision=0.3))
+    hijos = [cuerpo, marco, pantalla, altavoz, camara, lente, tri] + botones
+    ancho_p, alto_p = pw, ph
+    if orientacion == "horizontal":  # gira el móvil 90° en el plano de la pantalla (eje Y); el agarre sigue en el origen
+        rot = Matrix.Rotation(math.radians(90), 4, "Y")
+        for h in hijos:
+            h.data.transform(rot)
+        ancho_p, alto_p = ph, pw
+        centro_p = rot @ Vector((0, 0, zc))
+    else:
+        centro_p = Vector((0, 0, zc))
+    g = _grupo("movil", hijos, agarre="mano", radio=alto * 0.35, sep_mano=0.02, desp_mano=[0.0, -0.025, 0.0], semialto=grosor / 2,
+               pantalla_objeto=pantalla.name, orientacion=orientacion, encendida=bool(pantalla_encendida))
+    # ancho, alto, altura del centro y desplazamiento lateral (x) del centro, en coordenadas del prop; la cara mira a -Y
+    g["pantalla"] = [ancho_p, alto_p, centro_p.z, centro_p.x]
+    return g
+
+
+def _papel_dentado(nombre, ancho, alto, dientes, material, grosor=0.0005):
+    """Hoja en el plano XZ (centrada en el origen) con los bordes superior e inferior dentados, como un tique cortado."""
+    pts = []
+    for k in range(dientes + 1):
+        pts.append((-ancho / 2 + ancho * k / dientes, -alto / 2 + (0.0025 if k % 2 else 0)))
+    for k in range(dientes, -1, -1):
+        pts.append((-ancho / 2 + ancho * k / dientes, alto / 2 - (0.0025 if k % 2 else 0)))
+    bm = bmesh.new()
+    vs = [bm.verts.new((x, 0, z)) for x, z in pts]
+    bm.faces.new(vs)
+    bmesh.ops.triangulate(bm, faces=bm.faces[:])
+    ob = _obj(nombre, bm, material, suave=False)
+    s = ob.modifiers.new("Grosor", "SOLIDIFY")
+    s.thickness, s.offset = grosor, 0
+    return ob
+
+
+@prop("mano", "Tique de caja de papel (8×18 cm); la zona de texto (objeto TicketTexto) es una superficie donde el editor "
+      "incrusta 2D", ["cuentas", "compras", "precios", "operaciones", "porcentajes", "IVA"])
+def ticket(m=None, ancho=0.08, alto=0.18):
+    zc = alto * 0.4
+    papel = _papel_dentado("TicketPapel", ancho, alto, 16, mat("papel", "fondo.superficie", 0.9))
+    papel.location = (0, 0, zc)
+    tw, th = ancho - 0.012, alto - 0.024
+    texto = _caja("TicketTexto", (tw, 0.0003, th), centro=(0, -0.0005, zc), material=mat("papel_texto", "fondo.superficie", 0.85),
+                  bisel=0)
+    g = _grupo("ticket", [papel, texto], agarre="mano", radio=alto * 0.35, sep_mano=0.02, desp_mano=[0.0, -0.025, 0.0], semialto=0.0005,
+               pantalla_objeto=texto.name)
+    g["pantalla"] = [tw, th, zc, 0.0]
+    return g
 
 
 @prop("mano", "Regla de 30 cm con marcas", ["medir", "longitud", "geometría"])

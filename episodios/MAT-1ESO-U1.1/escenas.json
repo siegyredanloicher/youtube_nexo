@@ -1,0 +1,1126 @@
+{
+ "id": "MAT-1ESO-U1.1",
+ "idioma": "es",
+ "nivel": "eso",
+ "terminos": {
+  "U": "mates.a",
+  "D": "mates.b",
+  "C": "mates.c",
+  "UM": "mates.d"
+ },
+ "escenas": [
+  {
+   "id": "e01",
+   "seccion": "gancho",
+   "duracion_s": 20,
+   "claims": [
+    "c01"
+   ],
+   "locucion": "El contador de un vídeo marca noventa y nueve mil trescientas cincuenta y cuatro visualizaciones. Y su creadora lo celebra: «¡Cien mil visualizaciones!». ¿Es verdad? Antes de que acabe este vídeo lo sabrás con exactitud.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "plano": {
+      "accion": "mostrar",
+      "params": {
+       "prop": "m1",
+       "mano": "L",
+       "duracion": 19.0
+      },
+      "props": [
+       {
+        "id": "m1",
+        "prop": "movil",
+        "params": {
+         "pantalla_encendida": true,
+         "orientacion": "vertical"
+        }
+       }
+      ],
+      "expresiones": [
+       {
+        "t": 1.2,
+        "nombre": "Curioso"
+       },
+       {
+        "t": 6.5,
+        "nombre": "Parpadeo"
+       },
+       {
+        "t": 13.3,
+        "nombre": "Pensativo",
+        "valor": 0.7
+       },
+       {
+        "t": 16.6,
+        "nombre": "Curioso"
+       }
+      ],
+      "camara": "medio",
+      "encuadre": "izquierda",
+      "duracion_s": 20
+     }
+    },
+    {
+     "tipo": "2d",
+     "zona": "derecha",
+     "descripcion": "Zona derecha (Nexo a la izquierda). (0 s) Rótulo fijo «Ejemplo ficticio» abajo a la derecha, estilo pie en tinta.suave; queda en todo el vídeo. PANTALLA DEL MÓVIL (la incrusta el editor en MovilPantalla del prop m1; vertical, 9:19,5): interfaz genérica con la marca de Omnia, sin marcas reales: miniatura de vídeo, nombre «Canal Órbita» y contador «99 354 visualizaciones» (cifra completa, nunca abreviada, espacio fino como separador). Si la incrustación no se lee en el borrador, la misma pantalla se muestra ampliada en un panel junto a la mano de Nexo. (0,5-6 s) A la derecha, la cifra «99 354» del contador aparece ampliada (FadeIn shift arriba) en tinta.principal. (≈10 s, «su creadora lo celebra») entra al lado una tarjeta de publicación (panel fondo.superficie) del «Canal Órbita»: «¡100 000 visualizaciones!». (≈13 s, «¿Es verdad?») las dos cifras quedan una junto a otra, 99 354 a la izquierda y 100 000 a la derecha, y se dibuja (Write) un «?» grande entre ellas. Nada más se mueve hasta el final.",
+     "componentes": [
+      "panel",
+      "texto",
+      "formula"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Guion: sostener → mostrar. Un plano admite una acción: 'mostrar' ya incluye coger el móvil delante del pecho (0-0,4 s) y levantarlo a cámara; se mantiene levantado los 19 s. Cámara 'medio' para que la pantalla del móvil sea legible."
+  },
+  {
+   "id": "e02",
+   "seccion": "gancho",
+   "duracion_s": 15,
+   "claims": [],
+   "locucion": "Soy Nexo, y te acompaño en Omnia. Aquí no memorizamos reglas: las construimos desde cero, y cada pregunta que hacemos la cerramos con una respuesta exacta. Empezamos por los números grandes.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "plano": {
+      "accion": "saludar",
+      "params": {
+       "mano": "L",
+       "veces": 1,
+       "expresion": "Feliz"
+      },
+      "expresiones": [
+       {
+        "t": 2.5,
+        "nombre": "Tranquilo"
+       },
+       {
+        "t": 7.0,
+        "nombre": "Parpadeo"
+       },
+       {
+        "t": 9.5,
+        "nombre": "Concentrado",
+        "valor": 0.5
+       },
+       {
+        "t": 12.5,
+        "nombre": "Tranquilo"
+       }
+      ],
+      "camara": "completo",
+      "encuadre": "izquierda",
+      "duracion_s": 15
+     }
+    },
+    {
+     "tipo": "2d",
+     "zona": "derecha",
+     "descripcion": "Zona derecha. (0 s) La composición de e01 se reduce: la pantalla del móvil (99 354 visualizaciones, «Canal Órbita») queda como miniatura en un panel pequeño abajo a la derecha (el móvil 3D no aparece en este plano: Nexo saluda con las manos libres). (≈1 s, «Soy Nexo») el logotipo de Omnia (brand/logo/omnia_logo_horizontal.svg) aparece arriba a la izquierda de la zona derecha; (≈4 s, «no memorizamos reglas») debajo, en una línea, «Entender, no memorizar» (subtitulo, tinta.principal). (≈12 s, «los números grandes») la miniatura del móvil se resalta brevemente (resaltar) como puente a e03.",
+     "componentes": [
+      "texto",
+      "panel",
+      "resaltar",
+      "logo (SVG de brand/logo)"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Guion: saludar (una vez, mano L, sobrio) → asentir. Se usa 'saludar' con veces=1; el asentimiento se sustituye por el cambio a Tranquilo/Concentrado (un plano = una acción; ver clips_pendientes.md, mejoras)."
+  },
+  {
+   "id": "e03",
+   "seccion": "problema",
+   "duracion_s": 25,
+   "claims": [
+    "c03"
+   ],
+   "locucion": "Para responder, primero hay que leer bien el número. Noventa y nueve mil trescientos cincuenta y cuatro tiene cinco cifras. Hay dos nueves, y no valen lo mismo. ¿De qué depende lo que vale cada nueve? Piénsalo un momento. (pausa 2 s) La respuesta está en cómo contamos.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Pantalla completa, sin Nexo. (0 s) «99 354» grande en el centro (formula, tinta.principal; espacio fino). (≈6 s, al nombrarlo) se escribe debajo, en pie, «5 cifras». (≈12 s, «Hay dos nueves») los dos 9 se iluminan a la vez (resaltar, mismo color neutro tinta.principal: aún no sabemos su casilla, así que no llevan color de posición); bajo el primero aparece «¿?» y bajo el segundo otro «¿?» (FadeIn). (≈19,4-21,4 s, pausa de 2 s) nada cambia. (≈22 s, «en cómo contamos») los «¿?» se desvanecen y el número sube un poco para dejar paso a e04.",
+     "componentes": [
+      "formula",
+      "texto",
+      "resaltar"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ]
+  },
+  {
+   "id": "e04",
+   "seccion": "origen",
+   "duracion_s": 45,
+   "claims": [
+    "c04",
+    "c05"
+   ],
+   "locucion": "Las unidades, decenas y centenas ya las conoces. Lo que quizá nadie te ha contado es por qué existen. Imagina que tienes que contar miles de cosas, una tras otra. Te pierdes enseguida. La solución es agrupar. Cada vez que juntas diez unidades, las cambias por una barra: una decena. Diez decenas forman una placa: una centena, que son cien. No inventas nada nuevo. Solo cambias diez cosas iguales por una cosa más grande. Y al final solo tienes que decir cuántos grupos hay de cada tamaño.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "plano": {
+      "accion": "colocar",
+      "params": {
+       "prop": "b1",
+       "destino": [
+        -0.18,
+        -0.17,
+        0.0
+       ],
+       "veces": 10,
+       "fila": "derecha",
+       "mano": "auto"
+      },
+      "props": [
+       {
+        "id": "b1",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       },
+       {
+        "id": "b2",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       },
+       {
+        "id": "b3",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       },
+       {
+        "id": "b4",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       },
+       {
+        "id": "b5",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       },
+       {
+        "id": "b6",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       },
+       {
+        "id": "b7",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       },
+       {
+        "id": "b8",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       },
+       {
+        "id": "b9",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       },
+       {
+        "id": "b10",
+        "prop": "bloque",
+        "params": {
+         "forma": "unidad",
+         "lado": 0.03,
+         "col": "mates.a"
+        }
+       }
+      ],
+      "expresiones": [
+       {
+        "t": 17.0,
+        "nombre": "Feliz",
+        "valor": 0.6
+       },
+       {
+        "t": 21.5,
+        "nombre": "Curioso"
+       },
+       {
+        "t": 30.6,
+        "nombre": "Tranquilo"
+       },
+       {
+        "t": 39.7,
+        "nombre": "Concentrado",
+        "valor": 0.6
+       }
+      ],
+      "camara": "picado",
+      "encuadre": "izquierda",
+      "duracion_s": 45
+     }
+    },
+    {
+     "tipo": "2d",
+     "zona": "derecha",
+     "descripcion": "Zona derecha; Nexo coloca en el suelo 10 cubos unidad (bloque forma unidad, mates.a) en fila, de 0 a ≈16 s (plano_meta.colocar da cada destino e instante). (0-3 s, «unidades, decenas y centenas») arriba, tres etiquetas pequeñas U (mates.a), D (mates.b), C (mates.c). (≈1,5-16 s) cada vez que un cubo toca el suelo, a la derecha aparece su cuadrado 2D (mates.a) en una fila y un contador en pie sube 1, 2, … 10 (ritmo marcado por plano_meta). (≈18,5 s, «La solución es agrupar») la fila 2D de 10 cuadrados se agrupa con un marco. (≈21,5-25 s, «diez unidades, las cambias por una barra») los 10 cuadrados se funden (Transform) en una barra de 10 casillas en mates.b y aparece «10 U = 1 D» (formula con U en mates.a y D en mates.b). (≈25-27 s) en rápido aparecen barras hasta tener 10 en columna (contador 1…10 de barras). (≈27,6-30 s, «una placa: una centena, que son cien») las 10 barras se funden en una placa 10×10 en mates.c y aparece «10 D = 1 C = 100». (≈30,6-39 s) la placa, la barra y un cubo quedan en fila, de mayor a menor, cada uno con su color (repaso visual de «cambiar diez cosas iguales por una más grande»). (≈39,7-45 s, «cuántos grupos hay de cada tamaño») bajo cada pieza aparece su etiqueta C, D, U, que anticipa las columnas de la tabla de e05.",
+     "componentes": [
+      "formula",
+      "texto",
+      "panel",
+      "resaltar"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Acción 'colocar' con veces=10 y bloques b1..b10 (lado 3 cm para que la fila de 10, con paso auto 4 cm, quepa en el alcance de ±0,2 m: de x=−0,18 a x=+0,18). Cámara 'picado' para ver el suelo. La fusión en barra y placa la hace la 2D. El guion pide 'sostener (bloque)' antes: 'colocar' ya empieza con el bloque en la mano."
+  },
+  {
+   "id": "e05",
+   "seccion": "origen",
+   "duracion_s": 30,
+   "claims": [
+    "c07",
+    "c08",
+    "c09",
+    "c10"
+   ],
+   "locucion": "Ahora sigue el mismo juego. Diez centenas hacen un millar, que son mil. Diez millares hacen una decena de millar: diez mil. Y diez de esas, una centena de millar: cien mil. Cada casilla de la tabla vale diez veces la de su derecha. Por eso a esto se le llama valor posicional: lo que vale una cifra depende de la casilla en que está.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Pantalla completa, sin Nexo. La tabla de posiciones se construye de derecha a izquierda: (0 s) aparecen las columnas U (mates.a), D (mates.b) y C (mates.c) con la placa, la barra y el cubo de e04 encogidos sobre ellas; sobre cada columna, su valor: 1, 10, 100. (≈3 s, «Diez centenas hacen un millar») entra la columna UM (mates.d) con «1000». (≈8,3 s) entra DM (nivel.eso.texto) con «10 000». (≈11-15 s) entra CM (tinta.suave) con «100 000». Cada columna entra con una flecha curva «· 10» que la une a su vecina de la derecha (flecha, texto pie). (≈16,4-21 s, «Cada casilla … vale diez veces») las cinco flechas «· 10» se resaltan una tras otra de derecha a izquierda. (≈21,7 s, «valor posicional») el término «valor posicional» se escribe encima de la tabla (subtitulo) y se queda. Aviso de color: nivel.eso.texto (DM) tiene el mismo hex que mates.c (C); para distinguirlas, cada columna lleva siempre su rótulo (U, D, C, UM, DM, CM) en la cabecera.",
+     "componentes": [
+      "tabla",
+      "texto",
+      "flecha",
+      "resaltar"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ]
+  },
+  {
+   "id": "e06",
+   "seccion": "ejemplo",
+   "duracion_s": 35,
+   "claims": [
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16"
+   ],
+   "locucion": "Volvamos al contador. Colocamos cada cifra en su casilla. El primer nueve está en las decenas de millar: vale noventa mil. El segundo, en los millares: vale nueve mil. Luego tres centenas, cinco decenas y cuatro unidades. Si sumas todo, recuperas el número completo. Por convención, en los números largos se deja un hueco cada tres cifras, y así se leen por bloques: noventa y nueve mil… trescientos cincuenta y cuatro. Con cuatro cifras no hace falta.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Pantalla completa, sin Nexo. Tabla de e05 (CM a U) arriba. (≈0,3 s) a la izquierda reaparece el contador «99 354 visualizaciones» del móvil en pequeño. (≈2,9 s, «Colocamos cada cifra») 99 354 entra en la tabla, una cifra por columna, de izquierda a derecha: 9 en DM, 9 en UM, 3 en C, 5 en D, 4 en U (CM queda vacía). Debajo de cada cifra, su valor en el color de la columna, al ritmo de la locución: (≈5,6 s) 90 000 en nivel.eso.texto, (≈10,9 s) 9000 en mates.d, (≈13,5-16 s) 300 en mates.c, 50 en mates.b, 4 en mates.a. (≈16,2-21 s) se suman en vertical (línea y signo +) y el resultado vuelve a ser 99 354, con cada cifra en el color de su columna. (≈21,5-29 s, «Por convención … un hueco cada tres cifras») se ilumina (resaltar) el hueco entre 99 y 354 y los dos bloques se subrayan por separado al decir «noventa y nueve mil… trescientos cincuenta y cuatro». (≈32 s, «Con cuatro cifras») al lado aparece 9000, sin hueco.",
+     "componentes": [
+      "tabla",
+      "formula",
+      "resaltar",
+      "subrayar"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ]
+  },
+  {
+   "id": "e07",
+   "seccion": "error_comun",
+   "duracion_s": 30,
+   "claims": [
+    "c17",
+    "c18",
+    "c19",
+    "c20"
+   ],
+   "locucion": "Un fallo muy común aparece al escribir al dictado. Treinta mil cuatrocientos cinco. Yo lo escribo así: tres, cuatro, cero, cinco. (pausa 1 s) No. Eso es tres mil cuatrocientos cinco. Me he saltado el cero de los millares. El cero no vale nada por sí mismo, pero guarda su sitio. Si lo quitas, el tres baja de casilla y vale diez veces menos.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "plano": {
+      "accion": "escribir",
+      "params": {
+       "duracion": 9.5,
+       "pizarra": "p1"
+      },
+      "props": [
+       {
+        "id": "p1",
+        "prop": "pizarra"
+       }
+      ],
+      "expresiones": [
+       {
+        "t": 10.6,
+        "nombre": "Sorpresa",
+        "valor": 0.7
+       },
+       {
+        "t": 12.0,
+        "nombre": "Pensativo"
+       },
+       {
+        "t": 20.0,
+        "nombre": "Concentrado",
+        "valor": 0.7
+       },
+       {
+        "t": 27.5,
+        "nombre": "Tranquilo"
+       }
+      ],
+      "camara": "completo",
+      "encuadre": "izquierda",
+      "duracion_s": 30
+     }
+    },
+    {
+     "tipo": "2d",
+     "zona": "derecha",
+     "descripcion": "Zona derecha, incrustada por el editor en la superficie de la pizarra (p1), que queda a la derecha de Nexo. (0-3 s) rótulo «al dictado» con un icono de oído arriba. (≈5,8 s, «Treinta mil cuatrocientos cinco») nada escrito aún. (≈7-9,8 s, «tres, cuatro, cero, cinco») mientras Nexo escribe, aparece a mano alzada 3405, cifra a cifra, en tinta.principal. (≈10,6 s, «No.») 3405 pasa a estado.error y se tacha (Cross). (≈12-15 s, «Eso es tres mil cuatrocientos cinco») bajo él, en pequeño, «= tres mil cuatrocientos cinco». (≈15-19 s) debajo, la tabla DM-UM-C-D-U y 30 405 entra en ella: 3 en DM (nivel.eso.texto), 0 en UM (mates.d), 4 en C (mates.c), 0 en D (mates.b), 5 en U (mates.a); bajo el 3, «30 000». (≈17,4 s, «el cero de los millares») el 0 de UM se ilumina (resaltar). (≈25,6-30 s, «Si lo quitas») el 0 de UM se desvanece, el 3 se desliza una columna a la derecha (a UM, toma mates.d) y su etiqueta cambia de 30 000 a 3000 (TransformMatchingTex); el número queda 3405, igual que el tachado.",
+     "componentes": [
+      "texto",
+      "tabla",
+      "formula",
+      "resaltar",
+      "Cross (Manim)"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Guion: escribir → encoger → asentir. Un plano = una acción: se usa 'escribir' (Nexo comete el error a la vista) y la corrección se lleva con expresiones (Sorpresa en «No.», luego Pensativo y Concentrado). Encoger/asentir encadenados: ver clips_pendientes.md, mejoras."
+  },
+  {
+   "id": "e08",
+   "seccion": "problema",
+   "duracion_s": 25,
+   "claims": [
+    "c01",
+    "c34"
+   ],
+   "locucion": "Ya sabemos leer el número. Ahora, ¿por qué se usan cifras redondas? Por dos razones. La primera, comunicar: una cifra redonda se recuerda y se entiende al instante. La segunda, estimar: con números redondos puedes hacer cuentas de cabeza. Eso es redondear: cambiar un número por otro más sencillo. Ahora vemos exactamente por cuál.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Pantalla completa, sin Nexo. (0 s) el número exacto «99 354» a la izquierda, con «exacto» en pie debajo. (≈3 s, «¿por qué se usan cifras redondas?») un «?» discreto en el centro. (≈8,3 s, «comunicar») a la derecha aparece la tarjeta de publicación «¡100 000 visualizaciones!» de e01 y la palabra «comunicar» como etiqueta. (≈13,6 s, «estimar») bajo la tarjeta, un esquema mínimo «100 000 + 50 000» (formula) con la etiqueta «estimar»; se reutiliza en e13. (≈19 s, «Eso es redondear») la palabra «redondear» se escribe encima (titulo) y una flecha une 99 354 con 100 000. (≈21,6-25 s) el «?» se queda sobre la flecha: «¿por cuál?».",
+     "componentes": [
+      "texto",
+      "panel",
+      "formula",
+      "flecha",
+      "titulo"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "El guion pide a Nexo 'sostener (móvil) → senalar (la publicación)'. Se omite en el borrador: la escena funciona igual con la 2D a pantalla completa (la publicación es 2D) y reduce planos sin GPU."
+  },
+  {
+   "id": "e09",
+   "seccion": "origen",
+   "duracion_s": 55,
+   "claims": [
+    "c02",
+    "c21",
+    "c22",
+    "c23",
+    "c29"
+   ],
+   "locucion": "¿Por qué número redondo se cambia, exactamente? Empecemos por los millares, sobre una recta. Redondear a los millares quiere decir quedarte con un número de millares justos, de los que acaban en tres ceros. Los dos más cercanos a nuestro número son noventa y nueve mil y cien mil. Está a trescientos cincuenta y cuatro de noventa y nueve mil, y a seiscientos cuarenta y seis de cien mil. ¿A cuál está más cerca? (pausa 2 s) A noventa y nueve mil. La mitad del camino está en noventa y nueve mil quinientos, y nuestro número no llega. Redondear es elegir el número redondo más cercano. A los millares, ese número es noventa y nueve mil.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Recta en el tercio inferior, de lado a lado; Nexo camina sobre ella. (0-3,5 s) la recta de 99 000 a 100 000 se dibuja (Create) de izquierda a derecha mientras Nexo camina sobre ella: el 99 000 queda bajo sus pies al empezar y la posición final de Nexo marca 99 354 (alinear con el primer y el último fotograma del plano; la recta mide 0,7/0,354 ≈ 1,98 m del mundo). Marcas cada 100, etiquetas solo en 99 000, 99 500 y 100 000 (las demás sin número para que no se amontonen). (≈3,5 s) un punto (Dot, tinta.principal) a los pies de Nexo con «99 354» debajo. (≈8,6-16 s, «números de millares justos … tres ceros») los tres ceros finales de 99 000 y de 100 000 se iluminan en mates.d. (≈25-33 s) dos llaves bajo la recta (Brace): de 99 000 al punto «354» (≈25 s) y del punto a 100 000 «646» (≈30,7 s). (34,4-36,4 s, pausa de 2 s) nada cambia. (≈37,7 s, «A noventa y nueve mil») la llave corta (354) se ilumina. (≈40,5 s, «La mitad del camino») se marca 99 500 con una línea vertical discontinua y la etiqueta «mitad». (≈46-55 s, «Redondear es elegir … noventa y nueve mil») el punto se desliza a 99 000 (Nexo se queda donde está) y arriba a la derecha queda «a los millares → 99 000».",
+     "componentes": [
+      "recta_numerica",
+      "Brace (Manim)",
+      "resaltar",
+      "texto"
+     ]
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "plano": {
+      "accion": "caminar",
+      "params": {
+       "distancia": 0.7,
+       "direccion": "derecha",
+       "velocidad": 0.2
+      },
+      "expresiones": [
+       {
+        "t": 4.0,
+        "nombre": "Concentrado"
+       },
+       {
+        "t": 25.0,
+        "nombre": "Curioso"
+       },
+       {
+        "t": 33.4,
+        "nombre": "Pensativo"
+       },
+       {
+        "t": 37.7,
+        "nombre": "Feliz"
+       },
+       {
+        "t": 46.0,
+        "nombre": "Concentrado",
+        "valor": 0.7
+       }
+      ],
+      "camara": "completo",
+      "encuadre": "izquierda",
+      "duracion_s": 55
+     }
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Recta en el suelo: basta 'caminar' + 2D (clips_pendientes). Nexo camina 0,7 m hacia la derecha de la imagen en 3,5 s y se queda sobre 99 354. El 'senalar (99 000)' final del guion se omite (un plano = una acción). La capa 2D va debajo de Nexo."
+  },
+  {
+   "id": "e10",
+   "seccion": "ejemplo",
+   "duracion_s": 35,
+   "claims": [
+    "c02",
+    "c21",
+    "c24",
+    "c27"
+   ],
+   "locucion": "Ahora redondea a las decenas de millar: números que acaban en cuatro ceros. Los vecinos son noventa mil y cien mil. ¿Cuál está más cerca? (pausa 2 s) Cien mil: está a seiscientos cuarenta y seis, y noventa mil está a nueve mil trescientos cincuenta y cuatro. El mismo número da resultados distintos según la casilla. Por eso, al redondear, siempre se dice a qué casilla.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Pantalla completa, sin Nexo. (0-3 s) la recta de e09 cambia de escala (Transform): ahora de 90 000 a 100 000, marcas cada 1000, etiquetas en 90 000, 95 000 y 100 000; el punto 99 354 queda casi pegado a 100 000. (≈3,3-9 s, «cuatro ceros») los cuatro ceros finales de 90 000 y de 100 000 se iluminan en nivel.eso.texto. (≈9,4 s, «noventa mil y cien mil») los dos extremos se resaltan. (13-15 s, pausa de 2 s) nada cambia. (≈17-25 s) llaves bajo la recta: «646» (punto → 100 000) y «9354» (90 000 → punto); la corta se ilumina. (≈20 s) el punto se desliza a 100 000. (≈26-35 s, «resultados distintos según la casilla») arriba, dos etiquetas en columna: «a los millares → 99 000» (la de e09) y «a las decenas de millar → 100 000»; la palabra de la casilla se subraya en cada una.",
+     "componentes": [
+      "recta_numerica",
+      "Brace (Manim)",
+      "resaltar",
+      "subrayar",
+      "texto"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "El guion pide caminar → senalar; se omite Nexo en el borrador porque repite el gesto de e09 y la 2D lo cuenta entera."
+  },
+  {
+   "id": "e11",
+   "seccion": "regla",
+   "duracion_s": 30,
+   "claims": [
+    "c30",
+    "c31",
+    "c32"
+   ],
+   "locucion": "¿Y si el número cae justo en medio? Noventa y nueve mil quinientos está a quinientos de cada lado. ¿Hacia dónde irías tú? (pausa 2 s) Ninguno está más cerca, así que hay que decidir. Nuestro acuerdo es este: en la mitad, se sube. Lo importante es usar siempre el mismo acuerdo, para que todos obtengamos el mismo resultado.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Pantalla completa, sin Nexo. (0 s) recta de 99 000 a 100 000 (marcas cada 100). (≈3-6 s, «justo en medio») un punto en 99 500, exactamente en el centro, con su etiqueta. (≈6-11 s) dos llaves iguales «500» a cada lado. (11,4-13,4 s, pausa de 2 s) nada cambia. (≈13,4-19 s, «hay que decidir») las dos llaves parpadean a la vez (empate). (≈19,2 s, «Nuestro acuerdo») aparece una flecha hacia arriba con el rótulo «nuestro acuerdo: la mitad sube» sobre una píldora en nivel.eso.relleno (texto en tinta.principal); este es el color del acuerdo que reutiliza e12. (≈22 s) el punto se desliza a 100 000. (≈25-30 s) el rótulo queda fijo.",
+     "componentes": [
+      "recta_numerica",
+      "Brace (Manim)",
+      "flecha",
+      "nota",
+      "texto"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "El guion pide pensar → senalar → asentir; se omite Nexo en el borrador (la pausa con la recta quieta basta). Si hay presupuesto de render, un plano 'pensar' de 13 s a la izquierda aportaría."
+  },
+  {
+   "id": "e12",
+   "seccion": "regla",
+   "duracion_s": 65,
+   "claims": [
+    "c01",
+    "c21",
+    "c25",
+    "c26",
+    "c27",
+    "c28",
+    "c62",
+    "c67",
+    "c68",
+    "c69",
+    "c77"
+   ],
+   "locucion": "De ahí sale una regla rápida. Miras la cifra justo a la derecha de la casilla a la que redondeas. Si es cinco o más, subes. Si es menos de cinco, te quedas. ¿Por qué funciona? Porque esa cifra te dice en qué mitad del camino estás. Entre dos millares hay mil, y la mitad son quinientos: si las centenas son cinco o más, estás en la mitad o más allá, y con nuestro acuerdo, subes. A los millares, en nuestro número decide la cifra de las centenas: un tres. Te quedas en noventa y nueve mil. A las decenas de millar, decide la cifra de los millares: un nueve. Subes a cien mil. Así que ya tienes la respuesta. El vídeo no tiene cien mil visualizaciones exactas. Pero redondeado a las decenas de millar, el resultado es exactamente cien mil.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "entra_s": 35,
+     "sale_s": 52,
+     "plano": {
+      "accion": "escribir",
+      "params": {
+       "duracion": 15.0,
+       "pizarra": "p1"
+      },
+      "props": [
+       {
+        "id": "p1",
+        "prop": "pizarra"
+       }
+      ],
+      "expresiones": [
+       {
+        "t": 16.0,
+        "nombre": "Feliz"
+       }
+      ],
+      "camara": "completo",
+      "encuadre": "izquierda",
+      "duracion_s": 17
+     }
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Tres tramos. (0-35 s, pantalla completa, sin Nexo) la regla en dos líneas, arriba: «cifra siguiente 5, 6, 7, 8, 9 → subes» y «0, 1, 2, 3, 4 → te quedas» (aparecen a ≈8,5 s y ≈13,9 s). (≈16,6 s, «¿Por qué funciona?») junto a la regla, un tramo de recta de 99 000 a 100 000 con la mitad 99 500 marcada; (≈22-30 s) bajo la mitad de abajo aparece «centenas 0-4» y bajo la de arriba «centenas 5-9»; el propio 99 500 se marca del lado de arriba con el color del acuerdo de e11 (nivel.eso.relleno) y (≈33 s) reaparece en pequeño el rótulo «nuestro acuerdo: la mitad sube». (35-52 s, Nexo a la izquierda escribe en la pizarra; la 2D pasa a la zona derecha y se incrusta en la pizarra) la regla se reduce a una franja arriba a la derecha. En la pizarra, cuatro filas, cada una con la cifra que decide subrayada en estado.aviso: (≈35-37 s, rápidas) «a las decenas: 4 → 99 350» y «a las centenas: 5 → 99 400»; (≈36-44 s, «A los millares … un tres. Te quedas») «99 354» con el 3 de las centenas subrayado y la fila «a los millares: 3 → 99 000»; (≈46,6-52 s, «A las decenas de millar … un nueve. Subes») otra vez «99 354» con el 9 de los millares subrayado y la fila «a las decenas de millar: 9 → 100 000». Así 99 354 aparece dos veces, como pide el guion. (52-65 s, pantalla completa; Nexo sale con fundido) vuelve el móvil, como pantalla ampliada en 2D: «99 354 visualizaciones» y, al lado, «a las decenas de millar: 100 000» (≈60 s) con una marca de visto bueno en estado.ok (≈63 s, «exactamente cien mil»). Aviso de color: estado.aviso tiene el mismo hex que mates.d (UM); el subrayado es lo que marca «la cifra que decide».",
+     "componentes": [
+      "texto",
+      "recta_numerica",
+      "tabla",
+      "subrayar",
+      "nota",
+      "panel"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Nexo solo entre 35 y 52 s (capa con entra_s/sale_s, fundidos de 0,4 s): escribe las filas en la pizarra. El 'senalar (la regla)' y el 'asentir' del guion se omiten (un plano = una acción). La capa 2D va encima de la capa Nexo porque se incrusta en la pizarra."
+  },
+  {
+   "id": "e13",
+   "seccion": "vida_real",
+   "duracion_s": 45,
+   "claims": [
+    "c33",
+    "c34",
+    "c35",
+    "c36",
+    "c64",
+    "c65",
+    "c69"
+   ],
+   "locucion": "Ahora, a estimar. El canal tiene dos vídeos. El primero lleva noventa y nueve mil trescientas cincuenta y cuatro visualizaciones. El segundo, cuarenta y ocho mil setecientas doce. Imagina que te lo preguntan y no tienes papel. ¿Cuántas suman entre los dos? Redondea cada uno a las decenas de millar y súmalo de cabeza. (pausa 3 s) Cien mil más cincuenta mil: ciento cincuenta mil. La suma exacta da ciento cuarenta y ocho mil sesenta y seis. La estimación se pasa en mil novecientas treinta y cuatro, y la has hecho de cabeza.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "plano": {
+      "accion": "sostener",
+      "params": {
+       "prop": "m1",
+       "mano": "L",
+       "duracion": 45.0,
+       "expresion": "Tranquilo"
+      },
+      "props": [
+       {
+        "id": "m1",
+        "prop": "movil",
+        "params": {
+         "pantalla_encendida": true,
+         "orientacion": "vertical"
+        }
+       }
+      ],
+      "expresiones": [
+       {
+        "t": 14.0,
+        "nombre": "Curioso"
+       },
+       {
+        "t": 24.9,
+        "nombre": "Pensativo"
+       },
+       {
+        "t": 28.0,
+        "nombre": "Parpadeo"
+       },
+       {
+        "t": 30.2,
+        "nombre": "Feliz"
+       },
+       {
+        "t": 41.1,
+        "nombre": "Motivado",
+        "valor": 0.7
+       }
+      ],
+      "camara": "medio",
+      "encuadre": "izquierda",
+      "duracion_s": 45
+     }
+    },
+    {
+     "tipo": "2d",
+     "zona": "derecha",
+     "descripcion": "PANTALLA DEL MÓVIL (incrustada en MovilPantalla de m1; si no se lee, se muestra ampliada en un panel junto a Nexo): lista de dos vídeos del «Canal Órbita», «99 354 visualizaciones» (≈5,8 s) y «48 712 visualizaciones» (≈11,2 s), cifras completas. Zona derecha: (≈5,8 y ≈11,2 s) cada contador se copia ampliado a la derecha, uno bajo otro. (≈19,4 s, «Redondea … a las decenas de millar») rótulo pequeño «a las decenas de millar». (24,9-27,9 s, pausa de 3 s) los dos contadores parpadean. (≈28-30 s) se subraya en estado.aviso el 9 de los millares de 99 354 y el 8 de los millares de 48 712, y cada número se transforma (TransformMatchingTex) en su redondeo: 100 000 y 50 000. (≈30,2 s) suma: «100 000 + 50 000 = 150 000» (el esquema de e08). (≈32,9 s) debajo, la suma exacta «99 354 + 48 712 = 148 066». (≈38,4 s) entre las dos, «diferencia: 1934» (flecha entre 150 000 y 148 066). (≈43 s) se resalta 150 000.",
+     "componentes": [
+      "formula",
+      "cadena",
+      "subrayar",
+      "flecha",
+      "texto",
+      "panel",
+      "resaltar"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Guion: sostener → pensar → senalar. Se usa 'sostener' del móvil toda la escena (el móvil es el dato) con cámara 'medio'; el pensar de la pausa va como expresión Pensativo (24,9 s)."
+  },
+  {
+   "id": "e14",
+   "seccion": "error_comun",
+   "duracion_s": 55,
+   "claims": [
+    "c38",
+    "c39",
+    "c40",
+    "c41",
+    "c42",
+    "c63",
+    "c70",
+    "c71",
+    "c72"
+   ],
+   "locucion": "Ahora, una trampa en la que yo mismo caigo. Redondeo tres mil cuatrocientos cuarenta y nueve a los millares. Lo hago a pasos: primero a las decenas, tres mil cuatrocientos cincuenta. Luego a las centenas, tres mil quinientos. Y luego a los millares, cuatro mil. (pausa 2 s) No. Mira la recta: tres mil cuatrocientos cuarenta y nueve no llega a la mitad. Está más cerca de tres mil. A los millares, la cifra que decide es la de las centenas, un cuatro. Cuatro es menos de cinco: te quedas en tres mil. Mi error es que cada paso ha empujado hacia arriba, y los empujones se acumulan. Redondea siempre una sola vez, mirando el número original.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "plano": {
+      "accion": "escribir",
+      "params": {
+       "duracion": 20.5,
+       "pizarra": "p1"
+      },
+      "props": [
+       {
+        "id": "p1",
+        "prop": "pizarra"
+       }
+      ],
+      "expresiones": [
+       {
+        "t": 3.0,
+        "nombre": "Motivado",
+        "valor": 0.6
+       },
+       {
+        "t": 21.0,
+        "nombre": "Feliz"
+       },
+       {
+        "t": 22.8,
+        "nombre": "Sorpresa",
+        "valor": 0.8
+       },
+       {
+        "t": 24.5,
+        "nombre": "Pensativo"
+       },
+       {
+        "t": 34.7,
+        "nombre": "Concentrado"
+       },
+       {
+        "t": 45.6,
+        "nombre": "Tranquilo"
+       },
+       {
+        "t": 52.0,
+        "nombre": "Feliz",
+        "valor": 0.6
+       }
+      ],
+      "camara": "completo",
+      "encuadre": "izquierda",
+      "duracion_s": 55
+     }
+    },
+    {
+     "tipo": "2d",
+     "zona": "derecha",
+     "descripcion": "Zona derecha, incrustada en la pizarra (p1). (≈3-8 s) arriba, 3449 escrito a mano. Nexo escribe la cadena al ritmo de la locución: (≈11-14 s) → 3450, con «+1» en pequeño sobre la flecha; (≈16,7-19 s) → 3500, «+50»; (≈19,5-20,8 s) → 4000, «+500»; flechas, empujones y resultados intermedios en estado.error. (20,8-22,8 s, pausa de 2 s) nada cambia. (≈23 s, «No.») 4000 se tacha (Cross). (≈24-30 s, «Mira la recta») debajo, recta de 3000 a 4000 con el punto medio 3500 marcado; el punto 3449 queda a la izquierda de 3500 (resaltado). (≈31,9 s) flecha corta del punto hacia 3000. (≈34,7-40 s) se subraya en estado.aviso el 4 de las centenas de 3449; (≈40-43 s) resultado correcto «3000» en tinta.principal con marca estado.ok. (≈45,6-50 s, «los empujones se acumulan») los tres empujones +1, +50, +500 se resaltan uno tras otro. (≈51-55 s) nota final: «Redondea una sola vez, mirando el número original» (nota).",
+     "componentes": [
+      "cadena",
+      "formula",
+      "recta_numerica",
+      "subrayar",
+      "resaltar",
+      "nota",
+      "Cross (Manim)"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Guion: escribir → encoger → asentir. Un plano = una acción: 'escribir' durante la cadena (0-20,5 s); la corrección va con expresiones (Sorpresa en «No.», Pensativo, Concentrado). Encadenar encoger/asentir: ver clips_pendientes.md, mejoras."
+  },
+  {
+   "id": "e15",
+   "seccion": "inverso",
+   "duracion_s": 50,
+   "claims": [
+    "c46",
+    "c47",
+    "c48",
+    "c51",
+    "c52",
+    "c76"
+   ],
+   "locucion": "Le damos la vuelta. Las visualizaciones se cuentan de una en una, sin decimales. Un vídeo tiene cien mil visualizaciones, redondeadas a las decenas de millar. ¿Cuál es el número de visualizaciones más pequeño que pudo tener? ¿Y el más grande? Piensa en las mitades. (pausa 3 s) El más pequeño es noventa y cinco mil: justo la mitad por abajo, y la mitad sube. El más grande es ciento cuatro mil novecientos noventa y nueve, porque ciento cinco mil ya subiría a ciento diez mil. En total, diez mil cantidades posibles de visualizaciones. Nuestras noventa y nueve mil trescientas cincuenta y cuatro visualizaciones son una de esas cantidades.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Pantalla completa. (0-13 s) arriba, el enunciado en dos líneas: «visualizaciones (de una en una, sin decimales)» y «a las decenas de millar → 100 000». (≈13-19 s) las preguntas «¿mínimo?» y «¿máximo?» a los lados. (19,8-22,8 s, pausa de 3 s) en el tercio inferior, una recta vacía de 90 000 a 110 000 (marcas cada 1000; etiquetas en 90 000, 100 000 y 110 000) con las mitades 95 000 y 105 000 marcadas con líneas discontinuas. (≈23,5 s) Nexo aparece sobre la recta en 95 000 y camina hacia 105 000 (alinear: 95 000 bajo sus pies en el primer fotograma, 105 000 en el último; 10 000 = 1,2 m del mundo). (≈23,7-29 s, «El más pequeño … la mitad sube») a su paso se pinta la franja de 95 000 a 104 999 en nivel.eso.texto; «95 000» = mínimo. (≈31,5-39 s) «104 999» = máximo; comprobación en los bordes, arriba a la derecha: «94 999 → 90 000» y «105 000 → 110 000 (fuera)», ambos en tinta.suave con una marca de fuera. (≈39,3-44 s) contador «10 000 cantidades posibles». (≈44,5-50 s) el punto 99 354 aparece dentro de la franja y se ilumina (resaltar).",
+     "componentes": [
+      "texto",
+      "recta_numerica",
+      "resaltar",
+      "nota"
+     ]
+    },
+    {
+     "tipo": "nexo",
+     "zona": "centro",
+     "entra_s": 23.5,
+     "plano": {
+      "accion": "caminar",
+      "params": {
+       "distancia": 1.2,
+       "direccion": "derecha",
+       "velocidad": 0.2
+      },
+      "expresiones": [
+       {
+        "t": 0.3,
+        "nombre": "Concentrado"
+       },
+       {
+        "t": 8.0,
+        "nombre": "Curioso"
+       },
+       {
+        "t": 16.0,
+        "nombre": "Feliz"
+       },
+       {
+        "t": 21.0,
+        "nombre": "Feliz",
+        "valor": 0.6
+       }
+      ],
+      "camara": "completo",
+      "encuadre": "centro",
+      "duracion_s": 26.5
+     }
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Nexo entra a los 23,5 s (tras la pausa) con fundido y recorre la franja de borde a borde en 6 s. El 'pensar' de la pausa y el 'senalar (99 354)' del guion se omiten (un plano = una acción). La 2D va debajo de Nexo."
+  },
+  {
+   "id": "e16",
+   "seccion": "resumen",
+   "duracion_s": 30,
+   "claims": [
+    "c10",
+    "c21",
+    "c27",
+    "c46",
+    "c47"
+   ],
+   "locucion": "Lo que vale una cifra depende de su casilla: cada casilla vale diez veces la de su derecha. Redondear es elegir el número redondo más cercano en la casilla que digas, y en la mitad, por acuerdo, se sube. Y al revés: si sabes a qué casilla se redondeó, una cifra redonda de visualizaciones representa una franja exacta de cantidades posibles.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Pantalla completa, sin Nexo. Tres tarjetas (panel) que aparecen una a una, de izquierda a derecha, al ritmo de la locución: (≈0,3 s) tabla U-D-C-UM-DM-CM con sus colores y las flechas «· 10»; (≈8,9 s) recta con 99 354 → 99 000 (a los millares) y → 100 000 (a las decenas de millar), con el rótulo «la mitad sube» en el color del acuerdo (nivel.eso.relleno) al decir «por acuerdo» (≈17 s); (≈20,3 s) la franja 95 000–104 999 en nivel.eso.texto bajo «100 000, a las decenas de millar». Cada tarjeta se resalta mientras se nombra.",
+     "componentes": [
+      "panel",
+      "tabla",
+      "recta_numerica",
+      "texto",
+      "resaltar"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "El guion pide asentir → idle; se omite Nexo en el borrador (resumen visual a pantalla completa)."
+  },
+  {
+   "id": "e17",
+   "seccion": "siguiente",
+   "duracion_s": 20,
+   "claims": [
+    "c60",
+    "c61"
+   ],
+   "locucion": "En el próximo vídeo, una cuenta de cafetería: tres bocadillos a cuatro euros y un refresco a dos. Dos calculadoras dan dos resultados distintos. Solo una tiene razón, y vas a ver por qué.",
+   "capas": [
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "plano": {
+      "accion": "mostrar",
+      "params": {
+       "prop": "t1",
+       "mano": "L",
+       "duracion": 14.0
+      },
+      "props": [
+       {
+        "id": "t1",
+        "prop": "ticket"
+       }
+      ],
+      "expresiones": [
+       {
+        "t": 1.2,
+        "nombre": "Curioso"
+       },
+       {
+        "t": 10.4,
+        "nombre": "Pensativo",
+        "valor": 0.6
+       },
+       {
+        "t": 15.0,
+        "nombre": "Feliz"
+       }
+      ],
+      "camara": "medio",
+      "encuadre": "izquierda",
+      "duracion_s": 20
+     }
+    },
+    {
+     "tipo": "2d",
+     "zona": "derecha",
+     "descripcion": "TICKET (incrustado en TicketTexto de t1; si no se lee, se muestra ampliado en un panel junto a la mano de Nexo): «3 bocadillos · 4 €» y «1 refresco · 2 €». Zona derecha: (≈3,7-10 s) el ticket se copia ampliado a la derecha si hace falta. (≈10,4 s, «Dos calculadoras») dos calculadoras sencillas en panel: una muestra 14 y la otra 18. (≈13,7 s) un «?» entre ellas. (≈16 s) rótulo «Operaciones y jerarquía» (titulo). (≈18 s) logotipo de Omnia debajo.",
+     "componentes": [
+      "panel",
+      "texto",
+      "titulo",
+      "logo (SVG de brand/logo)"
+     ]
+    },
+    {
+     "tipo": "texto",
+     "zona": "esquina",
+     "texto": "Ejemplo ficticio",
+     "estilo": "pie"
+    }
+   ],
+   "notas": "Guion: mostrar (ticket) → saludar. Se usa 'mostrar' 14 s; el saludo final se omite (un plano = una acción) y queda Feliz. Cámara 'medio' para leer el ticket."
+  }
+ ]
+}

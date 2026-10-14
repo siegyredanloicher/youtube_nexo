@@ -6,7 +6,7 @@ Comprueba:
   - ids de escena únicos y en orden; cada claim citado existe en claims.json
   - cada acción y prop de Nexo existe en nexo/catalogo.json; las expresiones existen
   - duración total estimada por palabras (≈150 palabras/min) dentro de la duración del curso
-  - hay problema inverso y ejemplo de vida real (reglas del canal)
+  - hay ejemplo de vida real (regla del canal; el problema inverso es opcional)
 Sale con código 1 si hay errores; los avisos no bloquean.
 """
 import json
@@ -40,7 +40,7 @@ def validar(ep):
     cat = cargar(RAIZ / "nexo/catalogo.json")
     acciones, props = set(cat["acciones"]), set(cat["props"])
     secciones = {e["seccion"] for e in esc["escenas"]}
-    for falta in ("inverso", "vida_real"):
+    for falta in ("vida_real",):
         if falta not in secciones:
             errores.append(f"no hay ninguna escena de tipo '{falta}' (regla del canal)")
 

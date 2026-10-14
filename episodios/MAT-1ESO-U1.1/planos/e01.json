@@ -1,0 +1,40 @@
+{
+ "accion": "mostrar",
+ "params": {
+  "prop": "m1",
+  "mano": "L",
+  "duracion": 19.0
+ },
+ "props": [
+  {
+   "id": "m1",
+   "prop": "movil",
+   "params": {
+    "pantalla_encendida": true,
+    "orientacion": "vertical"
+   }
+  }
+ ],
+ "expresiones": [
+  {
+   "t": 1.2,
+   "nombre": "Curioso"
+  },
+  {
+   "t": 6.5,
+   "nombre": "Parpadeo"
+  },
+  {
+   "t": 13.3,
+   "nombre": "Pensativo",
+   "valor": 0.7
+  },
+  {
+   "t": 16.6,
+   "nombre": "Curioso"
+  }
+ ],
+ "camara": "medio",
+ "encuadre": "izquierda",
+ "duracion_s": 20
+}

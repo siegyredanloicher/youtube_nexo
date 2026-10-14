@@ -12,8 +12,8 @@ pelota cuya parábola estudiamos, reparte la pizza, programa el robot). Nunca es
 | Archivo | Qué es |
 | --- | --- |
 | `nexo/nexo3.py` → `nexo/nexo.blend` | el modelo con rig IK y expresiones (shape keys) |
-| `nexo/props.py` | objetos reutilizables en su estilo (pelota, dado, pizarra, portátil, balanza, bloque, regla, puntero, coche, mesa, matraz, robot, vaso, libro) |
-| `nexo/acciones.py` | gestos con parámetros (idle, saludar, senalar, pensar, sostener, mostrar, lanzar, celebrar, asentir, encoger, escribir, teclear, caminar) |
+| `nexo/props.py` | objetos reutilizables en su estilo (pelota, dado, pizarra, portátil, balanza, bloque, regla, puntero, coche, mesa, matraz, robot, vaso, libro, movil, ticket) |
+| `nexo/acciones.py` | gestos con parámetros (idle, saludar, senalar, pensar, sostener, mostrar, lanzar, celebrar, asentir, encoger, escribir, teclear, caminar, colocar) |
 | `nexo/catalogo.json` | lista de props y acciones con sus parámetros y usos: **consúltala siempre** |
 | `pipeline/render_nexo.py` | renderiza un plano JSON a PNG con alfa (y .mov ProRes 4444) |
 

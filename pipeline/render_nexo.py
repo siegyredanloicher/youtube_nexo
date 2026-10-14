@@ -175,7 +175,7 @@ def main():
 
     for p in plano.get("props", []):
         params = {k: v for k, v in p.get("params", {}).items()}
-        if p["prop"] in ("pelota", "puntero", "coche", "matraz", "robot", "vaso") and "nivel" not in params:
+        if p["prop"] in ("pelota", "puntero", "coche", "matraz", "robot", "vaso", "movil") and "nivel" not in params:
             params["nivel"] = nivel
         ob = PR.construir(p["prop"], **params)
         ob.name = p["id"]
@@ -219,6 +219,8 @@ def main():
     meta = dict(accion=plano["accion"], fps=fps, fotogramas=n_frames, duracion_s=n_frames / fps,
                 resolucion=[escena.render.resolution_x, escena.render.resolution_y], motor=op["motor"],
                 camara=plano.get("camara", "completo"), encuadre=plano.get("encuadre", "centro"))
+    if hasattr(P, "_colocar"):
+        meta["colocar"] = P._colocar
     if hasattr(P, "_lanzamiento"):
         meta["lanzamiento"] = P._lanzamiento
     (salida / "plano_meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")

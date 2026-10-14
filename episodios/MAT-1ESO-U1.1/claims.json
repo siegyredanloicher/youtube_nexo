@@ -1,0 +1,482 @@
+[
+ {
+  "id": "c01",
+  "tipo": "numero",
+  "expr": "floor(99354/10**4 + 1/2)*10**4",
+  "esperado": "100000",
+  "nota": "99 354 redondeado a las decenas de millar da exactamente 100 000 (lo que celebra la creadora)",
+  "escena": "e01, e08, e12"
+ },
+ {
+  "id": "c02",
+  "tipo": "numero",
+  "expr": "100000 - 99354",
+  "esperado": "646",
+  "nota": "99 354 está a 646 de 100 000",
+  "escena": "e09, e10"
+ },
+ {
+  "id": "c03",
+  "tipo": "numero",
+  "expr": "floor(log(99354, 10)) + 1",
+  "esperado": "5",
+  "nota": "99 354 tiene cinco cifras",
+  "escena": "e03"
+ },
+ {
+  "id": "c04",
+  "tipo": "numero",
+  "expr": "10*1",
+  "esperado": "10",
+  "nota": "10 unidades = 1 decena = 10",
+  "escena": "e04"
+ },
+ {
+  "id": "c05",
+  "tipo": "numero",
+  "expr": "10*10",
+  "esperado": "100",
+  "nota": "10 decenas = 1 centena = 100",
+  "escena": "e04"
+ },
+ {
+  "id": "c07",
+  "tipo": "numero",
+  "expr": "10*100",
+  "esperado": "1000",
+  "nota": "10 centenas = 1 millar = 1000",
+  "escena": "e05"
+ },
+ {
+  "id": "c08",
+  "tipo": "numero",
+  "expr": "10*1000",
+  "esperado": "10000",
+  "nota": "10 millares = 1 decena de millar = 10 000",
+  "escena": "e05"
+ },
+ {
+  "id": "c09",
+  "tipo": "numero",
+  "expr": "10*10000",
+  "esperado": "100000",
+  "nota": "10 decenas de millar = 1 centena de millar = 100 000",
+  "escena": "e05"
+ },
+ {
+  "id": "c10",
+  "tipo": "numero",
+  "expr": "10**5/10**4",
+  "esperado": "10",
+  "nota": "cada casilla vale diez veces la de su derecha (valores 1, 10, 100, 1000, 10 000, 100 000 = 10^0…10^5)",
+  "escena": "e05, e16"
+ },
+ {
+  "id": "c11",
+  "tipo": "numero",
+  "expr": "9*10**4",
+  "esperado": "90000",
+  "nota": "el primer 9 (decenas de millar) vale 90 000",
+  "escena": "e06"
+ },
+ {
+  "id": "c12",
+  "tipo": "numero",
+  "expr": "9*10**3",
+  "esperado": "9000",
+  "nota": "el segundo 9 (millares) vale 9000",
+  "escena": "e06"
+ },
+ {
+  "id": "c13",
+  "tipo": "numero",
+  "expr": "3*10**2",
+  "esperado": "300",
+  "nota": "3 centenas = 300",
+  "escena": "e06"
+ },
+ {
+  "id": "c14",
+  "tipo": "numero",
+  "expr": "5*10",
+  "esperado": "50",
+  "nota": "5 decenas = 50",
+  "escena": "e06"
+ },
+ {
+  "id": "c15",
+  "tipo": "numero",
+  "expr": "4*1",
+  "esperado": "4",
+  "nota": "4 unidades = 4",
+  "escena": "e06"
+ },
+ {
+  "id": "c16",
+  "tipo": "numero",
+  "expr": "90000 + 9000 + 300 + 50 + 4",
+  "esperado": "99354",
+  "nota": "la suma de los valores recupera 99 354",
+  "escena": "e06"
+ },
+ {
+  "id": "c17",
+  "tipo": "numero",
+  "expr": "3*10**4 + 0*10**3 + 4*10**2 + 0*10 + 5",
+  "esperado": "30405",
+  "nota": "30 405 = 3 DM, 0 UM, 4 C, 0 D, 5 U: treinta mil cuatrocientos cinco",
+  "escena": "e07"
+ },
+ {
+  "id": "c18",
+  "tipo": "numero",
+  "expr": "3*10**3 + 4*10**2 + 5",
+  "esperado": "3405",
+  "nota": "la lectura errónea (sin el cero) sería 3405, tres mil cuatrocientos cinco",
+  "escena": "e07"
+ },
+ {
+  "id": "c19",
+  "tipo": "numero",
+  "expr": "3*10**4",
+  "esperado": "30000",
+  "nota": "el 3 en las decenas de millar vale 30 000",
+  "escena": "e07"
+ },
+ {
+  "id": "c20",
+  "tipo": "numero",
+  "expr": "30000/3000",
+  "esperado": "10",
+  "nota": "si el 3 baja una casilla (a 3000), vale diez veces menos",
+  "escena": "e07"
+ },
+ {
+  "id": "c21",
+  "tipo": "numero",
+  "expr": "floor(99354/10**3 + 1/2)*10**3",
+  "esperado": "99000",
+  "nota": "99 354 redondeado a los millares es 99 000 (la cifra siguiente, 3, es menor que 5)",
+  "escena": "e09, e10, e12, e16"
+ },
+ {
+  "id": "c22",
+  "tipo": "numero",
+  "expr": "99354 - 99000",
+  "esperado": "354",
+  "nota": "a 99 000 le separan 354",
+  "escena": "e09"
+ },
+ {
+  "id": "c23",
+  "tipo": "numero",
+  "expr": "Min(354, 646)",
+  "esperado": "354",
+  "nota": "la menor de las dos distancias (354 frente a 646) es 354: 99 000 es el millar más cercano",
+  "escena": "e09"
+ },
+ {
+  "id": "c24",
+  "tipo": "numero",
+  "expr": "99354 - 90000",
+  "esperado": "9354",
+  "nota": "a las decenas de millar, 99 354 está a 9354 de 90 000 (y a 646 de 100 000)",
+  "escena": "e10"
+ },
+ {
+  "id": "c25",
+  "tipo": "numero",
+  "expr": "floor(99354/10**1 + 1/2)*10**1",
+  "esperado": "99350",
+  "nota": "99 354 a las decenas: 99 350",
+  "escena": "e12"
+ },
+ {
+  "id": "c26",
+  "tipo": "numero",
+  "expr": "floor(99354/10**2 + 1/2)*10**2",
+  "esperado": "99400",
+  "nota": "99 354 a las centenas: 99 400",
+  "escena": "e12"
+ },
+ {
+  "id": "c27",
+  "tipo": "numero",
+  "expr": "floor(99354/10**4 + 1/2)*10**4",
+  "esperado": "100000",
+  "nota": "99 354 a las decenas de millar: 100 000",
+  "escena": "e10, e12, e16"
+ },
+ {
+  "id": "c28",
+  "tipo": "numero",
+  "expr": "floor(99354/10**3 + 1/2)*10**3",
+  "esperado": "99000",
+  "nota": "99 354 a los millares: 99 000 (fila de la tabla de la pizarra)",
+  "escena": "e12"
+ },
+ {
+  "id": "c29",
+  "tipo": "numero",
+  "expr": "(99000 + 100000)/2 - 99000",
+  "esperado": "500",
+  "nota": "la mitad del camino entre 99 000 y 100 000 (99 500) está a 500 de 99 000; 99 354 no llega a esa mitad",
+  "escena": "e09"
+ },
+ {
+  "id": "c30",
+  "tipo": "numero",
+  "expr": "99500 - 99000",
+  "esperado": "500",
+  "nota": "99 500 está a 500 de 99 000",
+  "escena": "e11"
+ },
+ {
+  "id": "c31",
+  "tipo": "numero",
+  "expr": "100000 - 99500",
+  "esperado": "500",
+  "nota": "y a 500 de 100 000: justo en medio",
+  "escena": "e11"
+ },
+ {
+  "id": "c32",
+  "tipo": "numero",
+  "expr": "floor(99500/10**3 + 1/2)*10**3",
+  "esperado": "100000",
+  "nota": "por acuerdo, el caso del medio sube: 99 500 a los millares es 100 000",
+  "escena": "e11"
+ },
+ {
+  "id": "c33",
+  "tipo": "numero",
+  "expr": "floor(48712/10**4 + 1/2)*10**4",
+  "esperado": "50000",
+  "nota": "48 712 visualizaciones a las decenas de millar: 50 000 (la cifra siguiente, 8, es 5 o más)",
+  "escena": "e13"
+ },
+ {
+  "id": "c34",
+  "tipo": "numero",
+  "expr": "100000 + 50000",
+  "esperado": "150000",
+  "nota": "estimación de las visualizaciones de los dos vídeos: 100 000 + 50 000 = 150 000",
+  "escena": "e08, e13"
+ },
+ {
+  "id": "c35",
+  "tipo": "numero",
+  "expr": "99354 + 48712",
+  "esperado": "148066",
+  "nota": "suma exacta de visualizaciones de los dos vídeos: 148 066",
+  "escena": "e13"
+ },
+ {
+  "id": "c36",
+  "tipo": "numero",
+  "expr": "floor(99354/10**4 + 1/2)*10**4",
+  "esperado": "100000",
+  "nota": "primer vídeo redondeado a las decenas de millar: 100 000",
+  "escena": "e13"
+ },
+ {
+  "id": "c38",
+  "tipo": "numero",
+  "expr": "floor(3449/10**1 + 1/2)*10**1",
+  "esperado": "3450",
+  "nota": "cadena errónea, paso 1: 3449 a las decenas = 3450",
+  "escena": "e14"
+ },
+ {
+  "id": "c39",
+  "tipo": "numero",
+  "expr": "floor(3450/10**2 + 1/2)*10**2",
+  "esperado": "3500",
+  "nota": "cadena errónea, paso 2: 3450 a las centenas = 3500 (caso del medio, sube)",
+  "escena": "e14"
+ },
+ {
+  "id": "c40",
+  "tipo": "numero",
+  "expr": "floor(3500/10**3 + 1/2)*10**3",
+  "esperado": "4000",
+  "nota": "cadena errónea, paso 3: 3500 a los millares = 4000",
+  "escena": "e14"
+ },
+ {
+  "id": "c41",
+  "tipo": "numero",
+  "expr": "floor(3449/10**3 + 1/2)*10**3",
+  "esperado": "3000",
+  "nota": "correcto: 3449 a los millares es 3000 (cifra siguiente 4 < 5)",
+  "escena": "e14"
+ },
+ {
+  "id": "c42",
+  "tipo": "numero",
+  "expr": "(3000 + 4000)/2",
+  "esperado": "3500",
+  "nota": "la mitad entre 3000 y 4000 es 3500; 3449 queda por debajo",
+  "escena": "e14"
+ },
+ {
+  "id": "c46",
+  "tipo": "numero",
+  "expr": "floor(95000/10**4 + 1/2)*10**4",
+  "esperado": "100000",
+  "nota": "la menor cantidad de visualizaciones que redondea a 100 000 en las decenas de millar: 95 000 (la mitad sube)",
+  "escena": "e15, e16"
+ },
+ {
+  "id": "c47",
+  "tipo": "numero",
+  "expr": "floor(104999/10**4 + 1/2)*10**4",
+  "esperado": "100000",
+  "nota": "la mayor cantidad de visualizaciones que redondea a 100 000 en las decenas de millar: 104 999",
+  "escena": "e15, e16"
+ },
+ {
+  "id": "c48",
+  "tipo": "numero",
+  "expr": "104999 - 95000 + 1",
+  "esperado": "10000",
+  "nota": "de 95 000 a 104 999 hay 10 000 cantidades posibles de visualizaciones (se cuentan de una en una, sin decimales)",
+  "escena": "e15"
+ },
+ {
+  "id": "c51",
+  "tipo": "numero",
+  "expr": "floor(94999/10**4 + 1/2)*10**4",
+  "esperado": "90000",
+  "nota": "fuera por abajo a decenas de millar: 94 999 → 90 000",
+  "escena": "e15"
+ },
+ {
+  "id": "c52",
+  "tipo": "numero",
+  "expr": "floor(105000/10**4 + 1/2)*10**4",
+  "esperado": "110000",
+  "nota": "fuera por arriba a decenas de millar: 105 000 → 110 000",
+  "escena": "e15"
+ },
+ {
+  "id": "c60",
+  "tipo": "numero",
+  "expr": "3*4 + 2",
+  "esperado": "14",
+  "nota": "adelanto U1.2: 3 bocadillos a 4 € y un refresco a 2 € = 14 € (multiplicación primero)",
+  "escena": "e17"
+ },
+ {
+  "id": "c61",
+  "tipo": "numero",
+  "expr": "3*(4 + 2)",
+  "esperado": "18",
+  "nota": "adelanto U1.2: la otra calculadora da 18 (suma primero)",
+  "escena": "e17"
+ },
+ {
+  "id": "c62",
+  "tipo": "numero",
+  "expr": "Mod(floor(99354/10**2),10)",
+  "esperado": "3",
+  "nota": "cifra de las centenas de 99 354 (cifra que decide al redondear a millares): 3",
+  "escena": "e12"
+ },
+ {
+  "id": "c63",
+  "tipo": "numero",
+  "expr": "Mod(floor(3449/10**2),10)",
+  "esperado": "4",
+  "nota": "cifra de las centenas de 3449 (decide al redondear a millares): 4",
+  "escena": "e14"
+ },
+ {
+  "id": "c64",
+  "tipo": "numero",
+  "expr": "Mod(floor(48712/10**3),10)",
+  "esperado": "8",
+  "nota": "cifra de los millares de 48 712 (decide al redondear a decenas de millar): 8",
+  "escena": "e13"
+ },
+ {
+  "id": "c65",
+  "tipo": "numero",
+  "expr": "150000 - 148066",
+  "esperado": "1934",
+  "nota": "la estimación 150 000 se pasa en 1934 del total exacto 148 066",
+  "escena": "e13"
+ },
+ {
+  "id": "c66",
+  "tipo": "numero",
+  "expr": "20+15+25+45+30+35+30+25+55+35+30+65+45+55+50+30+20",
+  "esperado": "610",
+  "nota": "suma de duraciones de escena = 610 s (cabecera)",
+  "escena": "cabecera"
+ },
+ {
+  "id": "c67",
+  "tipo": "numero",
+  "expr": "Mod(99354, 10)",
+  "esperado": "4",
+  "nota": "a las decenas, decide la cifra de las unidades de 99 354: 4 → se queda (99 350)",
+  "escena": "e12"
+ },
+ {
+  "id": "c68",
+  "tipo": "numero",
+  "expr": "Mod(floor(99354/10), 10)",
+  "esperado": "5",
+  "nota": "a las centenas, decide la cifra de las decenas de 99 354: 5 → sube (99 400)",
+  "escena": "e12"
+ },
+ {
+  "id": "c69",
+  "tipo": "numero",
+  "expr": "Mod(floor(99354/10**3), 10)",
+  "esperado": "9",
+  "nota": "a las decenas de millar, decide la cifra de los millares de 99 354: 9 → sube a 100 000 (el titular)",
+  "escena": "e12, e13"
+ },
+ {
+  "id": "c70",
+  "tipo": "numero",
+  "expr": "3450 - 3449",
+  "esperado": "1",
+  "nota": "empujón del paso 1 de la cadena: +1",
+  "escena": "e14"
+ },
+ {
+  "id": "c71",
+  "tipo": "numero",
+  "expr": "3500 - 3450",
+  "esperado": "50",
+  "nota": "empujón del paso 2 de la cadena: +50",
+  "escena": "e14"
+ },
+ {
+  "id": "c72",
+  "tipo": "numero",
+  "expr": "4000 - 3500",
+  "esperado": "500",
+  "nota": "empujón del paso 3 de la cadena: +500",
+  "escena": "e14"
+ },
+ {
+  "id": "c76",
+  "tipo": "numero",
+  "expr": "Max(95000, Min(99354, 104999))",
+  "esperado": "99354",
+  "nota": "99 354 está dentro de la franja 95 000–104 999 (al acotarlo a ese intervalo no cambia)",
+  "escena": "e15"
+ },
+ {
+  "id": "c77",
+  "tipo": "numero",
+  "expr": "1000/2",
+  "esperado": "500",
+  "nota": "entre dos millares hay 1000 y la mitad son 500: con centenas 5 o más estás en la mitad (99 500) o más allá, y con nuestro acuerdo se sube",
+  "escena": "e12"
+ }
+]

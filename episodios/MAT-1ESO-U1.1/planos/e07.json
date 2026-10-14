@@ -1,0 +1,36 @@
+{
+ "accion": "escribir",
+ "params": {
+  "duracion": 9.5,
+  "pizarra": "p1"
+ },
+ "props": [
+  {
+   "id": "p1",
+   "prop": "pizarra"
+  }
+ ],
+ "expresiones": [
+  {
+   "t": 10.6,
+   "nombre": "Sorpresa",
+   "valor": 0.7
+  },
+  {
+   "t": 12.0,
+   "nombre": "Pensativo"
+  },
+  {
+   "t": 20.0,
+   "nombre": "Concentrado",
+   "valor": 0.7
+  },
+  {
+   "t": 27.5,
+   "nombre": "Tranquilo"
+  }
+ ],
+ "camara": "completo",
+ "encuadre": "izquierda",
+ "duracion_s": 30
+}

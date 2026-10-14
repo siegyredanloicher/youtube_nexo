@@ -30,3 +30,7 @@ Todo pasa por `pipeline/verificar.py`: `numero`, `simbolico` (derivadas, integra
 
 ## Progresión
 ESO: intuición y cálculo con sentido · Bachillerato: análisis (límites, derivadas, integrales), geometría analítica, probabilidad · Universidad: cálculo riguroso, álgebra lineal, EDO, probabilidad y estadística · Avanzado: análisis real, topología, optimización.
+
+## Convenciones que se presentan como tales
+- Redondeo: «la mitad sube» (5 o más, hacia arriba) es **nuestro acuerdo**, el que se usa en clase y en la mayoría de calculadoras. Se dice que es un acuerdo para que todos obtengamos lo mismo; no se presenta como algo de la naturaleza. (Existen otros acuerdos, como redondear al par, que se ven en cursos superiores si hace falta.)
+- Orden de las operaciones, coma decimal, separador de miles: acuerdos para entendernos.
