@@ -324,7 +324,7 @@
   "tipo": "numero",
   "expr": "floor(95000/10**4 + 1/2)*10**4",
   "esperado": "100000",
-  "nota": "el más pequeño que redondea a 100 000 en las decenas de millar: 95 000 (la mitad sube)",
+  "nota": "la menor cantidad de visualizaciones que redondea a 100 000 en las decenas de millar: 95 000 (la mitad sube)",
   "escena": "e15, e16"
  },
  {
@@ -332,7 +332,7 @@
   "tipo": "numero",
   "expr": "floor(104999/10**4 + 1/2)*10**4",
   "esperado": "100000",
-  "nota": "el más grande que redondea a 100 000 en las decenas de millar: 104 999",
+  "nota": "la mayor cantidad de visualizaciones que redondea a 100 000 en las decenas de millar: 104 999",
   "escena": "e15, e16"
  },
  {
@@ -340,7 +340,7 @@
   "tipo": "numero",
   "expr": "104999 - 95000 + 1",
   "esperado": "10000",
-  "nota": "de 95 000 a 104 999 hay 10 000 números enteros posibles",
+  "nota": "de 95 000 a 104 999 hay 10 000 cantidades posibles de visualizaciones (se cuentan de una en una, sin decimales)",
   "escena": "e15"
  },
  {
@@ -410,9 +410,9 @@
  {
   "id": "c66",
   "tipo": "numero",
-  "expr": "20+15+25+45+30+35+30+25+55+35+30+65+45+55+45+30+20",
-  "esperado": "605",
-  "nota": "suma de duraciones de escena = 605 s (cabecera)",
+  "expr": "20+15+25+45+30+35+30+25+55+35+30+65+45+55+50+30+20",
+  "esperado": "610",
+  "nota": "suma de duraciones de escena = 610 s (cabecera)",
   "escena": "cabecera"
  },
  {
@@ -476,7 +476,7 @@
   "tipo": "numero",
   "expr": "1000/2",
   "esperado": "500",
-  "nota": "entre dos millares hay 1000; la mitad son 500: centenas 5 o más → has pasado la mitad",
+  "nota": "entre dos millares hay 1000 y la mitad son 500: con centenas 5 o más estás en la mitad (99 500) o más allá, y con nuestro acuerdo se sube",
   "escena": "e12"
  }
 ]

@@ -128,3 +128,13 @@ Resultado: 17 escenas, 1211 palabras de locución, ≈ 10 min 05 s (605 s), 60 c
 
 ## Cabecera y claims
 Cabecera recalculada. c66 suma ahora las duraciones nuevas. Se añade c77.
+
+# Sexta vuelta
+
+1. **e12 (imprescindible).** «si las centenas son cinco o más, ya has pasado de la mitad» pasa a «si las centenas son cinco o más, estás en la mitad o más allá, y con nuestro acuerdo, subes». En pantalla, 99 500 se marca en el lado de arriba con el color del rótulo del acuerdo de e11. Nota de c77 ajustada.
+2. **e15 y e16: «número entero» se sustituye por visualizaciones**, porque los enteros llegan en U3.
+   - e15 dice «Las visualizaciones se cuentan de una en una, sin decimales. Un vídeo tiene cien mil visualizaciones, redondeadas a las decenas de millar. ¿Cuál es el número de visualizaciones más pequeño que pudo tener? ¿Y el más grande?» y «diez mil cantidades posibles de visualizaciones».
+   - En pantalla: «visualizaciones (de una en una, sin decimales)» y el contador «10 000 cantidades posibles».
+   - e16 dice «una cifra redonda de visualizaciones representa una franja exacta de cantidades posibles».
+   - Notas de c46, c47 y c48 ajustadas.
+3. **Duraciones.** e15 pasa de 45 a 50 s por la frase añadida. La cabecera y c66 se recalculan: 610 s.
