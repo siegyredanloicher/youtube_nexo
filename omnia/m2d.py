@@ -93,12 +93,26 @@ def nota(s: str, nivel: str = "eso") -> VGroup:
     return VGroup(fondo, t.move_to(fondo))
 
 
+def num_tex(x: float, decimales: int | None = None) -> str:
+    """Número para LaTeX con coma decimal (castellano) y los decimales justos: 0.5 -> '0{,}5', 2.0 -> '2'."""
+    if decimales is None:
+        decimales = 0 if abs(x - round(x)) < 1e-9 else len(f"{x:.6f}".rstrip("0").split(".")[1])
+    t = f"{x:.{decimales}f}".replace("-", "{-}")
+    return t.replace(".", "{,}")
+
+
+def _marcas(desde, hasta, paso):
+    n = int(round((hasta - desde) / paso))
+    return [desde + i * paso for i in range(n + 1)]
+
+
 def recta_numerica(a: int, b: int, paso: int = 1, largo: float = 10, marcas: dict | None = None) -> VGroup:
     """Recta numérica; marcas = {valor: 'mates.a'} pinta puntos destacados."""
-    r = NumberLine(x_range=[a, b, paso], length=largo, color=TINTA, include_numbers=True,
-                   decimal_number_config={"color": TINTA, "num_decimal_places": 0}, font_size=tam("cuerpo") * 0.8,
-                   stroke_width=3)
+    r = NumberLine(x_range=[a, b, paso], length=largo, color=TINTA, include_numbers=False, stroke_width=3)
     g = VGroup(r)
+    for v in _marcas(a, b, paso):
+        g.add(MathTex(num_tex(v), tex_template=PLANTILLA, color=TINTA, font_size=tam("cuerpo") * 0.8)
+              .next_to(r.n2p(v), DOWN, buff=0.2))
     for v, c in (marcas or {}).items():
         from manim import Dot
         g.add(Dot(r.n2p(v), radius=0.11, color=mc(c)))
@@ -107,11 +121,14 @@ def recta_numerica(a: int, b: int, paso: int = 1, largo: float = 10, marcas: dic
 
 def ejes(x_range, y_range, largo_x: float = 9, largo_y: float = 5.5, etiquetas=("x", "y")) -> Axes:
     ax = Axes(x_range=x_range, y_range=y_range, x_length=largo_x, y_length=largo_y,
-              axis_config={"color": TINTA, "stroke_width": 3, "include_tip": True,
-                           "decimal_number_config": {"color": TINTA, "num_decimal_places": 0},
-                           "font_size": tam("cuerpo") * 0.8},
-              tips=True)
-    ax.add_coordinates()
+              axis_config={"color": TINTA, "stroke_width": 3, "include_tip": True}, tips=True)
+    fs = tam("cuerpo") * 0.8
+    for v in _marcas(*x_range):  # marcas propias: coma decimal y sin redondeos engañosos
+        if abs(v) > 1e-9:
+            ax.add(MathTex(num_tex(v), tex_template=PLANTILLA, color=TINTA, font_size=fs).next_to(ax.c2p(v, y_range[0]), DOWN, buff=0.2))
+    for v in _marcas(*y_range):
+        if abs(v) > 1e-9:
+            ax.add(MathTex(num_tex(v), tex_template=PLANTILLA, color=TINTA, font_size=fs).next_to(ax.c2p(x_range[0], v), LEFT, buff=0.2))
     ex = MathTex(etiquetas[0], tex_template=PLANTILLA, color=TINTA, font_size=tam("cuerpo")).next_to(ax.x_axis, RIGHT)
     ey = MathTex(etiquetas[1], tex_template=PLANTILLA, color=TINTA, font_size=tam("cuerpo")).next_to(ax.y_axis, UP)
     ax.add(ex, ey)

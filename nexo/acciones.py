@@ -305,7 +305,10 @@ def lanzar(P, prop="p1", v0=4.0, angulo=45.0, hacia="derecha", rebotes=1, mano="
     P.expr("Sorpresa", t_rel + 0.3)
     P.expr("Feliz", t_rel + t_vuelo)
     P.relajado(t_rel + t_vuelo + 0.3)
-    P._lanzamiento = dict(v0=v0, angulo=angulo, h0=pos0.z, t_vuelo=t_vuelo, alcance=pts[-1][1])
+    t_bote = pts[80][0]  # fin del primer vuelo (trayectoria con n=80 puntos por tramo)
+    # h0 y radio: la altura del CENTRO del prop es h0 + vy·t − g·t²/2 y toca el suelo cuando vale radio
+    P._lanzamiento = dict(v0=v0, angulo=angulo, h0=pos0.z, radio=r, t_primer_bote=t_bote, alcance_primer_bote=pts[80][1],
+                          t_total=t_vuelo, rebotes=rebotes)
     return t_rel + t_vuelo + 0.8
 
 

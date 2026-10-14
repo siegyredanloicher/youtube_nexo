@@ -2,21 +2,82 @@
  "id": "MAT-1ESO-U13.3",
  "idioma": "es",
  "nivel": "eso",
- "terminos": {"t": "mates.a", "h": "mates.b"},
+ "terminos": {
+  "t": "mates.a",
+  "h": "mates.b"
+ },
  "escenas": [
-  {"id": "e01", "seccion": "vida_real", "duracion_s": 4.5, "claims": ["c02"],
+  {
+   "id": "e01",
+   "seccion": "vida_real",
+   "duracion_s": 4.5,
+   "claims": [
+    "c02"
+   ],
    "locucion": "Nexo lanza la pelota a cuatro metros por segundo. Mira cómo la gráfica cuenta su vuelo: sube, se frena arriba y cae.",
    "capas": [
-    {"tipo": "fondo", "color": "fondo.base"},
-    {"tipo": "2d", "zona": "derecha", "descripcion": "Ejes tiempo (s) frente a altura (m) a la derecha; la curva h(t) se dibuja al ritmo del vuelo de la pelota, con la física de omnia.fisica y los datos de plano_meta.json", "componentes": ["ejes", "formula"]},
-    {"tipo": "nexo", "zona": "izquierda", "plano": {"accion": "lanzar", "params": {"prop": "p1", "v0": 4, "angulo": 50, "hacia": "derecha", "rebotes": 1},
-      "props": [{"id": "p1", "prop": "pelota"}], "camara": "completo", "encuadre": "izquierda", "duracion_s": 4.5}}
-   ]},
-  {"id": "e02", "seccion": "inverso", "duracion_s": 4.0, "claims": ["c01"],
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "derecha",
+     "descripcion": "Ejes tiempo (s) frente a altura (m) a la derecha; la curva h(t) se dibuja al ritmo del vuelo de la pelota, con la física de omnia.fisica y los datos de plano_meta.json",
+     "componentes": [
+      "ejes",
+      "formula"
+     ]
+    },
+    {
+     "tipo": "nexo",
+     "zona": "izquierda",
+     "plano": {
+      "accion": "lanzar",
+      "params": {
+       "prop": "p1",
+       "v0": 4,
+       "angulo": 50,
+       "hacia": "derecha",
+       "rebotes": 1
+      },
+      "props": [
+       {
+        "id": "p1",
+        "prop": "pelota"
+       }
+      ],
+      "camara": "completo",
+      "encuadre": "izquierda",
+      "duracion_s": 4.5
+     }
+    }
+   ]
+  },
+  {
+   "id": "e02",
+   "seccion": "inverso",
+   "duracion_s": 6.0,
+   "claims": [
+    "c01"
+   ],
    "locucion": "Y al revés: si sabes que salió a cincuenta grados, ¿qué parte de la velocidad la hizo subir? Tres coma cero seis metros por segundo.",
    "capas": [
-    {"tipo": "fondo", "color": "fondo.base"},
-    {"tipo": "2d", "zona": "completa", "descripcion": "Pregunta y cadena: v_y = 4 · sen 50° ≈ 3,06 m/s, resaltada", "componentes": ["titulo", "cadena", "resaltar"]}
-   ]}
+    {
+     "tipo": "fondo",
+     "color": "fondo.base"
+    },
+    {
+     "tipo": "2d",
+     "zona": "completa",
+     "descripcion": "Pregunta y cadena: v_y = 4 · sen 50° ≈ 3,06 m/s, resaltada",
+     "componentes": [
+      "titulo",
+      "cadena",
+      "resaltar"
+     ]
+    }
+   ]
+  }
  ]
 }
