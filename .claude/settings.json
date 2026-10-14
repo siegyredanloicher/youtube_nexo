@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python pipeline/*)",
+      "Bash(python3 pipeline/*)",
+      "Bash(python nexo/*)",
+      "Bash(python3 nexo/*)",
+      "Bash(PYTHONPATH=. manim *)",
+      "Bash(manim *)",
+      "Bash(ffmpeg *)",
+      "Bash(ffprobe *)",
+      "Bash(blender -b *)"
+    ]
+  }
+}

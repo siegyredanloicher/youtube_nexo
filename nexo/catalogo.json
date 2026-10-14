@@ -1,0 +1,305 @@
+{
+ "props": {
+  "balanza": {
+   "agarre": "suelo",
+   "descripcion": "Balanza de dos platos; params: inclinacion (-1 a 1)",
+   "usos": [
+    "ecuaciones",
+    "igualdad",
+    "equilibrio",
+    "masa"
+   ]
+  },
+  "bloque": {
+   "agarre": "mano",
+   "descripcion": "Bloque unidad (cubo de 10 cm) en color de mates; params: col",
+   "usos": [
+    "contar",
+    "volumen",
+    "álgebra",
+    "apilar"
+   ]
+  },
+  "coche": {
+   "agarre": "suelo",
+   "descripcion": "Coche de juguete; se desplaza para hablar de velocidad y funciones",
+   "usos": [
+    "movimiento",
+    "velocidad",
+    "funciones",
+    "taxi"
+   ]
+  },
+  "dado": {
+   "agarre": "mano",
+   "descripcion": "Dado de seis caras con puntos marino",
+   "usos": [
+    "probabilidad",
+    "estadística",
+    "azar"
+   ]
+  },
+  "libro": {
+   "agarre": "mano",
+   "descripcion": "Libro de tapa marino",
+   "usos": [
+    "estudiar",
+    "leer",
+    "historia de la ciencia"
+   ]
+  },
+  "matraz": {
+   "agarre": "mano",
+   "descripcion": "Matraz Erlenmeyer con líquido del color del nivel",
+   "usos": [
+    "química",
+    "reacciones",
+    "disoluciones"
+   ]
+  },
+  "mesa": {
+   "agarre": "suelo",
+   "descripcion": "Mesa baja a la altura de Nexo sentado o de pie",
+   "usos": [
+    "trabajar",
+    "teclear",
+    "experimentos"
+   ]
+  },
+  "pelota": {
+   "agarre": "mano",
+   "descripcion": "Pelota blanda con franjas del nivel",
+   "usos": [
+    "lanzar",
+    "parábolas",
+    "gravedad",
+    "física"
+   ]
+  },
+  "pizarra": {
+   "agarre": "suelo",
+   "descripcion": "Pizarra con caballete; la superficie es una pantalla donde el editor incrusta 2D",
+   "usos": [
+    "explicar",
+    "escribir",
+    "fórmulas"
+   ]
+  },
+  "portatil": {
+   "agarre": "mesa",
+   "descripcion": "Portátil abierto con el triángulo de Nexo en la tapa",
+   "usos": [
+    "programación",
+    "datos",
+    "investigar"
+   ]
+  },
+  "puntero": {
+   "agarre": "mano",
+   "descripcion": "Puntero con punta del color del nivel",
+   "usos": [
+    "señalar",
+    "explicar"
+   ]
+  },
+  "regla": {
+   "agarre": "mano",
+   "descripcion": "Regla de 30 cm con marcas",
+   "usos": [
+    "medir",
+    "longitud",
+    "geometría"
+   ]
+  },
+  "robot": {
+   "agarre": "suelo",
+   "descripcion": "Robot móvil pequeño con dos ruedas, sensor y antena",
+   "usos": [
+    "robótica",
+    "sensores",
+    "algoritmos",
+    "programación"
+   ]
+  },
+  "vaso": {
+   "agarre": "mano",
+   "descripcion": "Vaso medidor graduado con líquido; params: lleno (0-1)",
+   "usos": [
+    "fracciones",
+    "capacidad",
+    "medir"
+   ]
+  }
+ },
+ "acciones": {
+  "asentir": {
+   "descripcion": "Asiente con la cabeza",
+   "params": {
+    "veces": 2
+   },
+   "props": [],
+   "usos": [
+    "confirmar",
+    "sí"
+   ]
+  },
+  "caminar": {
+   "descripcion": "Camina una distancia en una dirección del suelo",
+   "params": {
+    "distancia": 1.0,
+    "direccion": "derecha"
+   },
+   "props": [],
+   "usos": [
+    "entrar en plano",
+    "recorrer una recta numérica",
+    "transición"
+   ]
+  },
+  "celebrar": {
+   "descripcion": "Celebra: brazos arriba y saltito",
+   "params": {
+    "duracion": 2.0
+   },
+   "props": [],
+   "usos": [
+    "resultado correcto",
+    "final"
+   ]
+  },
+  "encoger": {
+   "descripcion": "Encoge los hombros: «no está tan claro»",
+   "params": {
+    "duracion": 1.8
+   },
+   "props": [],
+   "usos": [
+    "error común",
+    "duda"
+   ]
+  },
+  "escribir": {
+   "descripcion": "Escribe en la pizarra (la pizarra queda a la derecha de la imagen)",
+   "params": {
+    "duracion": 3.0
+   },
+   "props": [
+    "pizarra"
+   ],
+   "usos": [
+    "desarrollar una fórmula",
+    "dibujar"
+   ]
+  },
+  "idle": {
+   "descripcion": "Reposo natural: respira, mira alrededor y parpadea",
+   "params": {
+    "duracion": 4.0
+   },
+   "props": [],
+   "usos": [
+    "escuchar",
+    "transición"
+   ]
+  },
+  "lanzar": {
+   "descripcion": "Lanza un prop con física real (tiro parabólico). Usa omnia.fisica: la 2D puede dibujar la misma curva",
+   "params": {
+    "prop": "pelota",
+    "v0": 4.0,
+    "angulo": 45,
+    "hacia": "derecha",
+    "rebotes": 1
+   },
+   "props": [
+    "pelota",
+    "dado",
+    "bloque"
+   ],
+   "usos": [
+    "parábolas",
+    "gravedad",
+    "funciones cuadráticas",
+    "probabilidad (dado)"
+   ]
+  },
+  "mostrar": {
+   "descripcion": "Muestra un prop a cámara levantándolo",
+   "params": {
+    "prop": "dado",
+    "mano": "L"
+   },
+   "props": [],
+   "usos": [
+    "enseñar",
+    "sorpresa"
+   ]
+  },
+  "pensar": {
+   "descripcion": "Piensa con la mano en la barbilla",
+   "params": {
+    "duracion": 3.0
+   },
+   "props": [],
+   "usos": [
+    "plantear una pregunta",
+    "dudar",
+    "problema inverso"
+   ]
+  },
+  "saludar": {
+   "descripcion": "Saluda con la mano",
+   "params": {
+    "mano": "L",
+    "veces": 3
+   },
+   "props": [],
+   "usos": [
+    "intro",
+    "despedida"
+   ]
+  },
+  "senalar": {
+   "descripcion": "Señala un punto (a su izquierda/derecha o [x,y,z] en metros)",
+   "params": {
+    "objetivo": "derecha",
+    "mano": "auto"
+   },
+   "props": [],
+   "usos": [
+    "explicar",
+    "presentar un resultado",
+    "dirigir la mirada"
+   ]
+  },
+  "sostener": {
+   "descripcion": "Sostiene un prop delante del pecho",
+   "params": {
+    "prop": "pelota",
+    "mano": "L"
+   },
+   "props": [
+    "cualquiera de mano"
+   ],
+   "usos": [
+    "presentar un objeto",
+    "hablar de él"
+   ]
+  },
+  "teclear": {
+   "descripcion": "Teclea en el portátil sobre la mesa",
+   "params": {
+    "duracion": 3.0
+   },
+   "props": [
+    "mesa",
+    "portatil"
+   ],
+   "usos": [
+    "programación",
+    "calcular",
+    "buscar datos"
+   ]
+  }
+ }
+}

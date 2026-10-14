@@ -1,0 +1,805 @@
+{
+ "id": "MAT-1ESO",
+ "materia": "matematicas",
+ "curso": "1eso",
+ "titulo": "Matemáticas · 1º ESO",
+ "nivel_nexo": "eso",
+ "duracion_min": [
+  8,
+  12
+ ],
+ "idiomas": [
+  "es",
+  "en"
+ ],
+ "marco": "LOMLOE",
+ "nota": "Fuente: doc «Mapa de 1º ESO: Matemáticas» (claude.ai). Este archivo es ahora la fuente de verdad; MAPA.md se genera con pipeline/curriculo.py.",
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Números naturales y potencias",
+   "descripcion": "La unidad de entrada: 4 vídeos que fijan el orden de las operaciones y presentan las potencias como multiplicación repetida."
+  },
+  {
+   "id": "U2",
+   "titulo": "Divisibilidad",
+   "descripcion": "Tres vídeos que convierten \"múltiplos y divisores\" en repartos y ciclos que se ven."
+  },
+  {
+   "id": "U3",
+   "titulo": "Números enteros",
+   "descripcion": "Tres vídeos para que los negativos tengan sentido físico: ascensores, temperaturas y saldos."
+  },
+  {
+   "id": "U4",
+   "titulo": "Fracciones",
+   "descripcion": "Cuatro vídeos que parten siempre de trozos reales (pizzas, vasos, botellas) antes de llegar a las reglas."
+  },
+  {
+   "id": "U5",
+   "titulo": "Números decimales",
+   "descripcion": "Tres vídeos que presentan el decimal como otra forma de escribir una fracción, con precios y cronómetros."
+  },
+  {
+   "id": "U6",
+   "titulo": "Proporcionalidad y porcentajes",
+   "descripcion": "Cuatro vídeos con la aplicación más útil del curso. En 1º solo se ve la proporcionalidad directa; la inversa llega en 2º."
+  },
+  {
+   "id": "U7",
+   "titulo": "Álgebra y ecuaciones",
+   "descripcion": "Cuatro vídeos que llevan de la letra como número a resolver problemas con ecuaciones de primer grado. Las de segundo grado (Episodio 1 del canal) llegan en 3º-4º."
+  },
+  {
+   "id": "U8",
+   "titulo": "Sistema métrico decimal",
+   "descripcion": "Dos vídeos que enseñan a pasar de una unidad a otra entendiendo por qué se multiplica por 10, 100 o 1.000."
+  },
+  {
+   "id": "U9",
+   "titulo": "Rectas y ángulos",
+   "descripcion": "Dos vídeos que arrancan la geometría con calles, relojes y construcciones con regla y compás."
+  },
+  {
+   "id": "U10",
+   "titulo": "Polígonos y triángulos",
+   "descripcion": "Tres vídeos que terminan en Pitágoras demostrado con áreas, no solo enunciado."
+  },
+  {
+   "id": "U11",
+   "titulo": "Cuadriláteros y circunferencia",
+   "descripcion": "Dos vídeos para clasificar formas y entender por qué la rueda es redonda."
+  },
+  {
+   "id": "U12",
+   "titulo": "Perímetros y áreas",
+   "descripcion": "Tres vídeos donde cada fórmula se obtiene cortando y recolocando figuras, sin memorizar."
+  },
+  {
+   "id": "U13",
+   "titulo": "Funciones y gráficas",
+   "descripcion": "Tres vídeos que preparan el terreno de las funciones lineales de 2º y 3º, siempre contando una historia con la gráfica."
+  },
+  {
+   "id": "U14",
+   "titulo": "Estadística y probabilidad",
+   "descripcion": "Tres vídeos que cierran el curso con datos reales de la clase y un dado en la mano de Nexo."
+  },
+  {
+   "id": "T",
+   "titulo": "Series transversales",
+   "descripcion": "Lo que la LOMLOE añade (educación financiera, patrones y pensamiento computacional) va en 3 series de 7 vídeos en total. Se publican entre unidades y reutilizan lo ya visto."
+  }
+ ],
+ "videos": [
+  {
+   "codigo": "U1.1",
+   "id": "MAT-1ESO-U1.1",
+   "unidad": "U1",
+   "titulo": "Números grandes y aproximación",
+   "idea_clave": "El valor de una cifra depende de su posición (10 unidades = 1 decena). Redondear es elegir el número \"redondo\" más cercano.",
+   "vida_real": "Una noticia dice \"casi 100.000 espectadores\" cuando había 99.354.",
+   "nexo": "Nexo recorre las gradas de un estadio mientras una tabla de posiciones se llena de bloques de 10.",
+   "problema_inverso": "Si se dice \"unos 100.000\", ¿qué cantidades reales caben?",
+   "requisitos": [],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U1.2",
+   "id": "MAT-1ESO-U1.2",
+   "unidad": "U1",
+   "titulo": "Operaciones y jerarquía",
+   "idea_clave": "Multiplicar es sumar repetido y agrupado, por eso va antes que sumar. Es un acuerdo universal para que todos obtengan el mismo resultado.",
+   "vida_real": "Ticket de una cafetería: 3 bocadillos a 4 € y un refresco a 2 €.",
+   "nexo": "Nexo pide en la cafetería; dos calculadoras dan 14 y 18 según el orden.",
+   "problema_inverso": "Con los mismos números, ¿qué paréntesis dan 14 y cuáles 18?",
+   "requisitos": [],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U1.3",
+   "id": "MAT-1ESO-U1.3",
+   "unidad": "U1",
+   "titulo": "Potencias",
+   "idea_clave": "Una potencia es multiplicar un número por sí mismo; el exponente cuenta las veces. Por qué a⁰ = 1: bajar de 2³ a 2², 2¹, 2⁰ divide siempre entre 2.",
+   "vida_real": "Doblar un folio: cada doblez duplica las capas. Un rumor que cada persona cuenta a 2 más.",
+   "nexo": "Nexo dobla un folio; la pila de capas supera su altura.",
+   "problema_inverso": "¿Cuántos dobleces dan 1.024 capas? (exponente desconocido)",
+   "requisitos": [
+    "U1.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U1.4",
+   "id": "MAT-1ESO-U1.4",
+   "unidad": "U1",
+   "titulo": "Raíz cuadrada",
+   "idea_clave": "Es la operación inversa de elevar al cuadrado: el lado de un cuadrado de área 49 es 7.",
+   "vida_real": "Baldosas: un suelo cuadrado de 64 baldosas tiene 8 por lado.",
+   "nexo": "Nexo coloca baldosas formando cuadrados de 1, 4, 9, 16...",
+   "problema_inverso": "√50 no es exacta: está entre 7 y 8. ¿Cuánto más o menos?",
+   "requisitos": [
+    "U1.3"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U2.1",
+   "id": "MAT-1ESO-U2.1",
+   "unidad": "U2",
+   "titulo": "Múltiplos y divisores",
+   "idea_clave": "Un divisor reparte sin que sobre nada; un múltiplo es la \"tabla\" de un número.",
+   "vida_real": "Colocar 24 sillas en filas iguales: 1×24, 2×12, 3×8, 4×6.",
+   "nexo": "Nexo coloca las sillas y cada reparto posible se enciende como una fila.",
+   "problema_inverso": "Si un grupo debe tener 6, ¿qué cantidades entre 1 y 50 se pueden repartir?",
+   "requisitos": [
+    "U1.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U2.2",
+   "id": "MAT-1ESO-U2.2",
+   "unidad": "U2",
+   "titulo": "Números primos y criterios",
+   "idea_clave": "Un primo solo se divide entre 1 y entre sí mismo. Criterio del 3: como 10 = 9 + 1, solo cuenta la suma de las cifras. Todo número se descompone en primos.",
+   "vida_real": "Los primos protegen contraseñas y pagos online (idea general, sin entrar en el código).",
+   "nexo": "Nexo tacha múltiplos en una cuadrícula del 1 al 100 (criba de Eratóstenes).",
+   "problema_inverso": "Si un número es 2² · 3 · 5, ¿cuál es?",
+   "requisitos": [
+    "U2.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U2.3",
+   "id": "MAT-1ESO-U2.3",
+   "unidad": "U2",
+   "titulo": "M.c.d. y m.c.m.",
+   "idea_clave": "El m.c.m. es el primer momento en que coinciden dos ciclos; el m.c.d. es el mayor grupo común que reparte sin sobrar.",
+   "vida_real": "Dos autobuses salen cada 12 y 18 minutos: coinciden a los 36.",
+   "nexo": "Nexo en la parada mirando dos relojes que avanzan a distinto ritmo.",
+   "problema_inverso": "Si coinciden cada 60 minutos, ¿qué frecuencias son posibles?",
+   "requisitos": [
+    "U2.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U3.1",
+   "id": "MAT-1ESO-U3.1",
+   "unidad": "U3",
+   "titulo": "Qué son los negativos",
+   "idea_clave": "Los números a la izquierda del cero en la recta sirven para \"menos que nada\". Orden y valor absoluto.",
+   "vida_real": "Ascensor con sótanos, −5 °C, saldo en rojo.",
+   "nexo": "Nexo en un ascensor que baja por debajo de la planta 0, con la recta numérica vertical al lado.",
+   "problema_inverso": "Si el ascensor marca −2, ¿cuántas plantas hay hasta la 3?",
+   "requisitos": [
+    "U1.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U3.2",
+   "id": "MAT-1ESO-U3.2",
+   "unidad": "U3",
+   "titulo": "Sumar y restar",
+   "idea_clave": "Sumar es avanzar en la recta y restar es retroceder. Restar un negativo es quitar una deuda.",
+   "vida_real": "Tienes −8 € y te perdonan una deuda de 5 €: −8 − (−5) = −3.",
+   "nexo": "Nexo camina sobre la recta siguiendo cada operación.",
+   "problema_inverso": "¿Qué número sumado a −4 da 3?",
+   "requisitos": [
+    "U3.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U3.3",
+   "id": "MAT-1ESO-U3.3",
+   "unidad": "U3",
+   "titulo": "Multiplicar, dividir y combinar",
+   "idea_clave": "Multiplicar por un negativo invierte el sentido. Por qué (−)·(−) = (+): el patrón 2·(−2) = −4, 1·(−2) = −2, 0·(−2) = 0, (−1)·(−2) = 2. Operaciones con paréntesis.",
+   "vida_real": "La temperatura baja 3 °C cada hora durante 4 horas: 4·(−3) = −12.",
+   "nexo": "Nexo con la tabla del patrón que se sigue completando hacia atrás.",
+   "problema_inverso": "Si el producto es −12, ¿qué parejas de enteros lo dan?",
+   "requisitos": [
+    "U3.2",
+    "U1.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U4.1",
+   "id": "MAT-1ESO-U4.1",
+   "unidad": "U4",
+   "titulo": "Qué es una fracción",
+   "idea_clave": "Partir un todo en partes iguales: el denominador dice en cuántas, el numerador cuántas cojo.",
+   "vida_real": "Una pizza de 8 trozos de la que se comen 3: 3/8.",
+   "nexo": "Nexo corta la pizza y los trozos se colorean al nombrarlos.",
+   "problema_inverso": "Si 3 trozos son 3/8 de la pizza, ¿cuántos trozos tiene entera?",
+   "requisitos": [
+    "U2.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U4.2",
+   "id": "MAT-1ESO-U4.2",
+   "unidad": "U4",
+   "titulo": "Equivalentes y comparar",
+   "idea_clave": "El mismo trozo con distinto corte: multiplicar arriba y abajo no cambia la cantidad. Para comparar, mismo denominador.",
+   "vida_real": "¿Qué botella está más llena, la de 2/3 o la de 3/5? (10/15 frente a 9/15)",
+   "nexo": "Nexo pone dos botellas transparentes con marcas cada vez más finas.",
+   "problema_inverso": "¿Qué fracción con denominador 12 es igual a 2/3?",
+   "requisitos": [
+    "U4.1",
+    "U2.3"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U4.3",
+   "id": "MAT-1ESO-U4.3",
+   "unidad": "U4",
+   "titulo": "Sumar y restar",
+   "idea_clave": "Solo se pueden sumar trozos del mismo tamaño, por eso hace falta denominador común (el m.c.m.).",
+   "vida_real": "Receta: 1/2 taza más 1/3 de taza son 5/6 de taza.",
+   "nexo": "Nexo con vasos medidores que se llenan a la vez.",
+   "problema_inverso": "Si ya hay 5/6 de taza, ¿cuánto falta para llenarla?",
+   "requisitos": [
+    "U4.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U4.4",
+   "id": "MAT-1ESO-U4.4",
+   "unidad": "U4",
+   "titulo": "Multiplicar y dividir",
+   "idea_clave": "Una fracción \"de\" una cantidad es multiplicar; dividir pregunta cuántas veces cabe.",
+   "vida_real": "Los 2/3 de 30 alumnos son 20. En 3 pizzas caben 12 porciones de 1/4.",
+   "nexo": "Nexo reparte porciones y las cuenta.",
+   "problema_inverso": "Si los 2/3 de una cantidad son 20, ¿cuál es esa cantidad?",
+   "requisitos": [
+    "U4.3"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U5.1",
+   "id": "MAT-1ESO-U5.1",
+   "unidad": "U5",
+   "titulo": "Qué son y cómo se ordenan",
+   "idea_clave": "Un decimal es una fracción de denominador 10, 100, 1000... La coma separa enteros de partes. 0,5 = 1/2.",
+   "vida_real": "El récord de 100 m es 9,58 s: la diferencia entre atletas son centésimas.",
+   "nexo": "Nexo en una pista con cronómetros que amplían cada cifra decimal.",
+   "problema_inverso": "¿Qué decimal hay entre 0,3 y 0,4?",
+   "requisitos": [
+    "U4.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U5.2",
+   "id": "MAT-1ESO-U5.2",
+   "unidad": "U5",
+   "titulo": "Operaciones y aproximación",
+   "idea_clave": "Alinear la coma es alinear posiciones. Al multiplicar, se cuentan los decimales de los factores.",
+   "vida_real": "0,75 kg de queso a 12,40 €/kg cuestan 9,30 €.",
+   "nexo": "Nexo en una tienda con báscula y precio por kilo.",
+   "problema_inverso": "Si he pagado 9,30 € por 0,75 kg, ¿cuál es el precio por kilo?",
+   "requisitos": [
+    "U5.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U5.3",
+   "id": "MAT-1ESO-U5.3",
+   "unidad": "U5",
+   "titulo": "De fracción a decimal",
+   "idea_clave": "Dividir numerador entre denominador. Decimales exactos y periódicos: por qué 1/3 = 0,333...",
+   "vida_real": "Repartir 10 € entre 3 amigos: 3,33 € cada uno y sobra 1 céntimo.",
+   "nexo": "Nexo hace la división larga y ve repetirse el resto.",
+   "problema_inverso": "¿Qué fracción da 0,25? ¿Y 0,666...?",
+   "requisitos": [
+    "U5.2",
+    "U4.4"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U6.1",
+   "id": "MAT-1ESO-U6.1",
+   "unidad": "U6",
+   "titulo": "Razón y proporción",
+   "idea_clave": "Una razón compara dos cantidades dividiendo; una proporción son dos razones iguales.",
+   "vida_real": "Receta de arroz: 2 tazas de agua por cada taza de arroz. Escala de un mapa.",
+   "nexo": "Nexo cocina para 2 y para 6 personas; los ingredientes crecen a la vez.",
+   "problema_inverso": "Si usamos 9 tazas de agua, ¿para cuántas personas es?",
+   "requisitos": [
+    "U4.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U6.2",
+   "id": "MAT-1ESO-U6.2",
+   "unidad": "U6",
+   "titulo": "Proporcionalidad directa y regla de tres",
+   "idea_clave": "Si una cantidad se duplica, la otra también. La regla de tres sale de buscar el valor de una unidad.",
+   "vida_real": "3 entradas de cine cuestan 21 €, así que 5 cuestan 35 €.",
+   "nexo": "Nexo ante la taquilla; una tabla se completa multiplicando por el mismo factor.",
+   "problema_inverso": "Si pago 49 €, ¿cuántas entradas compré?",
+   "requisitos": [
+    "U6.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U6.3",
+   "id": "MAT-1ESO-U6.3",
+   "unidad": "U6",
+   "titulo": "Porcentajes",
+   "idea_clave": "Un porcentaje es una fracción de denominador 100. El 20 % de 60 es 0,20 · 60.",
+   "vida_real": "Zapatillas de 60 € con un 20 % de descuento: pagas 48 €.",
+   "nexo": "Nexo en una tienda con carteles de rebajas y una barra dividida en 100 partes.",
+   "problema_inverso": "Si 60 € pasan a 45 €, ¿qué porcentaje de descuento hay?",
+   "requisitos": [
+    "U6.2",
+    "U5.3"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U6.4",
+   "id": "MAT-1ESO-U6.4",
+   "unidad": "U6",
+   "titulo": "Aumentos y disminuciones",
+   "idea_clave": "Un aumento del 15 % es multiplicar por 1,15; una rebaja del 20 %, por 0,80.",
+   "vida_real": "Un IVA del 21 % convierte 100 € en 121 €. Subir un 10 % y luego bajar un 10 % deja 99 €, no 100.",
+   "nexo": "Nexo ve cómo un precio sube y baja sobre una gráfica con los dos pasos separados.",
+   "problema_inverso": "Si el precio final con IVA es 121 €, ¿cuál era sin IVA?",
+   "requisitos": [
+    "U6.3"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U7.1",
+   "id": "MAT-1ESO-U7.1",
+   "unidad": "U7",
+   "titulo": "Letras que son números",
+   "idea_clave": "Una variable es un número que puede cambiar. El lenguaje algebraico traduce frases a expresiones.",
+   "vida_real": "Un taxi cobra 3 € de bajada más 1,20 € por km: 3 + 1,20x.",
+   "nexo": "Nexo en un taxi; el contador del precio cambia al mover una barra de km.",
+   "problema_inverso": "Con 15 €, ¿cuántos km se pueden recorrer?",
+   "requisitos": [
+    "U5.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U7.2",
+   "id": "MAT-1ESO-U7.2",
+   "unidad": "U7",
+   "titulo": "Expresiones y monomios",
+   "idea_clave": "Los términos semejantes se suman como objetos iguales: 3 bolsas de x caramelos más 2 bolsas son 5x.",
+   "vida_real": "Contar bolsas iguales en una tienda sin abrirlas.",
+   "nexo": "Nexo con bolsas opacas etiquetadas con x.",
+   "problema_inverso": "Si 5x = 40 caramelos, ¿cuántos hay en cada bolsa?",
+   "requisitos": [
+    "U7.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U7.3",
+   "id": "MAT-1ESO-U7.3",
+   "unidad": "U7",
+   "titulo": "Ecuaciones: la balanza",
+   "idea_clave": "Una ecuación es una balanza equilibrada: lo que haces en un lado lo haces en el otro.",
+   "vida_real": "x + 5 = 12 con pesas en una balanza.",
+   "nexo": "Nexo quita pesas de los dos platos para dejar la x sola.",
+   "problema_inverso": "Inventar una ecuación cuya solución sea 7.",
+   "requisitos": [
+    "U7.2",
+    "U3.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U7.4",
+   "id": "MAT-1ESO-U7.4",
+   "unidad": "U7",
+   "titulo": "Problemas con ecuaciones",
+   "idea_clave": "Traducir el enunciado, resolver y comprobar.",
+   "vida_real": "\"Pienso un número, lo triplico y resto 4: sale 11.\" 3x − 4 = 11, x = 5. Dividir la cuenta de un restaurante.",
+   "nexo": "Nexo adivina el número que piensa el espectador.",
+   "problema_inverso": "Dada la ecuación, inventar un enunciado que la tenga como modelo.",
+   "requisitos": [
+    "U7.3"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U8.1",
+   "id": "MAT-1ESO-U8.1",
+   "unidad": "U8",
+   "titulo": "Longitud, masa y capacidad",
+   "idea_clave": "Cada unidad es 10 veces mayor que la anterior: una escalera de kilo, hecto, deca, unidad, deci, centi, mili.",
+   "vida_real": "Una maratón son 42,195 km = 42.195 m. Una botella de 1,5 L son 1.500 mL.",
+   "nexo": "Nexo sube y baja una escalera de unidades; cada peldaño multiplica o divide por 10.",
+   "problema_inverso": "¿Cuántas botellas de 1,5 L hacen falta para llenar 30 L?",
+   "requisitos": [
+    "U5.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U8.2",
+   "id": "MAT-1ESO-U8.2",
+   "unidad": "U8",
+   "titulo": "Superficie, volumen y densidad",
+   "idea_clave": "Las áreas cambian de 100 en 100 porque hay dos dimensiones; los volúmenes de 1.000 en 1.000. 1 L = 1 dm³. Densidad = masa entre volumen.",
+   "vida_real": "Una piscina de 5 × 3 × 1,5 m son 22,5 m³ = 22.500 L. El aceite flota sobre el agua porque es menos denso.",
+   "nexo": "Nexo llena un cubo de 10 cm de lado: 1 litro. Vierte aceite y agua en un vaso.",
+   "problema_inverso": "¿Qué profundidad necesita esa piscina para contener 30.000 L? (2 m)",
+   "requisitos": [
+    "U8.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U9.1",
+   "id": "MAT-1ESO-U9.1",
+   "unidad": "U9",
+   "titulo": "Rectas, segmentos y ángulos",
+   "idea_clave": "Rectas paralelas, secantes y perpendiculares. Un ángulo mide cuánto se gira entre dos rectas. Agudo, recto, obtuso, llano.",
+   "vida_real": "Las calles de una ciudad en cuadrícula y las que se cruzan en diagonal.",
+   "nexo": "Nexo camina por un plano de calles y gira en cada cruce; el giro se dibuja como un arco.",
+   "problema_inverso": "Dado un ángulo de 60°, ¿qué giro hay que hacer para volver a la dirección inicial?",
+   "requisitos": [],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U9.2",
+   "id": "MAT-1ESO-U9.2",
+   "unidad": "U9",
+   "titulo": "Medir y operar ángulos",
+   "idea_clave": "El sistema sexagesimal funciona como las horas: 1 grado = 60 minutos. Sumar y restar ángulos. Transportador y compás.",
+   "vida_real": "En un reloj, a las 3:00 las agujas forman 90° y a las 4:00, 120°.",
+   "nexo": "Nexo señala las agujas de un reloj enorme y traza con el compás una bisectriz.",
+   "problema_inverso": "¿A qué hora forman las agujas 150°? (a las 5:00)",
+   "requisitos": [
+    "U9.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U10.1",
+   "id": "MAT-1ESO-U10.1",
+   "unidad": "U10",
+   "titulo": "Polígonos y ángulos del triángulo",
+   "idea_clave": "Un polígono cierra una zona con lados rectos. Los tres ángulos de un triángulo suman 180°: se rasgan las esquinas y se juntan en línea recta.",
+   "vida_real": "Señales de tráfico y las celdas hexagonales de un panal.",
+   "nexo": "Nexo recorta las esquinas de un triángulo de papel y las alinea formando una línea.",
+   "problema_inverso": "Si dos ángulos miden 50° y 70°, ¿cuánto mide el tercero? (60°)",
+   "requisitos": [
+    "U9.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U10.2",
+   "id": "MAT-1ESO-U10.2",
+   "unidad": "U10",
+   "titulo": "Clasificar triángulos y puntos notables",
+   "idea_clave": "Se clasifican por lados y por ángulos. Con tres palos de 3, 4 y 8 no se forma triángulo. El baricentro es el punto de equilibrio.",
+   "vida_real": "Una estructura metálica de triángulos no se deforma. Un triángulo de cartón se sostiene sobre un dedo en su baricentro.",
+   "nexo": "Nexo prueba a cerrar triángulos con palos y equilibra un triángulo de cartón.",
+   "problema_inverso": "Si dos lados miden 3 y 4, ¿entre qué valores puede estar el tercero? (entre 1 y 7)",
+   "requisitos": [
+    "U10.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U10.3",
+   "id": "MAT-1ESO-U10.3",
+   "unidad": "U10",
+   "titulo": "Teorema de Pitágoras",
+   "idea_clave": "En un triángulo rectángulo, el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos. Se ve con las áreas de tres cuadrados.",
+   "vida_real": "Una escalera de 5 m con la base a 3 m de la pared llega a 4 m de altura.",
+   "nexo": "Nexo sube la escalera mientras tres cuadrados se pintan sobre los lados del triángulo.",
+   "problema_inverso": "Si la escalera de 5 m debe llegar a 4 m, ¿a qué distancia de la pared se apoya? (3 m)",
+   "requisitos": [
+    "U1.4",
+    "U10.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U11.1",
+   "id": "MAT-1ESO-U11.1",
+   "unidad": "U11",
+   "titulo": "Cuadriláteros",
+   "idea_clave": "Paralelogramos (cuadrado, rectángulo, rombo, romboide), trapecios y trapezoides. Sus ángulos suman 360° porque se parten en dos triángulos.",
+   "vida_real": "Un marco rectangular se deforma si se empuja; con una diagonal ya no.",
+   "nexo": "Nexo empuja un marco articulado y luego añade una diagonal.",
+   "problema_inverso": "Si tres ángulos de un cuadrilátero miden 90°, 80° y 100°, ¿cuánto mide el cuarto? (90°)",
+   "requisitos": [
+    "U10.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U11.2",
+   "id": "MAT-1ESO-U11.2",
+   "unidad": "U11",
+   "titulo": "Circunferencia y círculo",
+   "idea_clave": "Todos los puntos están a la misma distancia del centro. Radio, diámetro, cuerda, arco. Polígonos regulares dentro de una circunferencia.",
+   "vida_real": "Las ruedas ruedan suave porque el eje siempre está a la misma distancia del suelo.",
+   "nexo": "Nexo prueba una rueda cuadrada y una redonda sobre un camino.",
+   "problema_inverso": "Dado un diámetro de 10 cm, ¿cuánto mide el radio? ¿Y la cuerda más larga?",
+   "requisitos": [
+    "U11.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U12.1",
+   "id": "MAT-1ESO-U12.1",
+   "unidad": "U12",
+   "titulo": "Perímetro y longitud de la circunferencia",
+   "idea_clave": "El perímetro es la longitud del borde. π sale de medir: cualquier circunferencia mide unas 3,14 veces su diámetro.",
+   "vida_real": "La rueda de una bici de 0,7 m de diámetro avanza unos 2,2 m por vuelta.",
+   "nexo": "Nexo hace rodar una rueda sobre una cinta métrica y marca una vuelta.",
+   "problema_inverso": "Si una rueda avanza 2 m por vuelta, ¿qué diámetro tiene? (unos 0,64 m)",
+   "requisitos": [
+    "U11.2",
+    "U5.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U12.2",
+   "id": "MAT-1ESO-U12.2",
+   "unidad": "U12",
+   "titulo": "Área de paralelogramos, triángulos y trapecios",
+   "idea_clave": "El área cuenta cuántos cuadrados unidad caben. Un paralelogramo se corta y recoloca como rectángulo; el triángulo es la mitad de un paralelogramo.",
+   "vida_real": "Cuántas baldosas o cuánta pintura para un suelo de 4 × 3 m = 12 m².",
+   "nexo": "Nexo corta un trozo del paralelogramo y lo desliza para formar un rectángulo.",
+   "problema_inverso": "Un triángulo de altura 6 y área 15 tiene base 5. ¿Por qué?",
+   "requisitos": [
+    "U8.2",
+    "U11.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U12.3",
+   "id": "MAT-1ESO-U12.3",
+   "unidad": "U12",
+   "titulo": "Área del círculo",
+   "idea_clave": "El círculo se corta en sectores y se recoloca como un rectángulo de base πr y altura r, de ahí πr².",
+   "vida_real": "Una pizza de 40 cm de diámetro (1.257 cm²) tiene más superficie que dos de 28 cm (1.232 cm² en total).",
+   "nexo": "Nexo corta una pizza en sectores y los coloca alternados.",
+   "problema_inverso": "Si el área de un círculo es 78,5 cm², ¿cuánto mide el radio? (5 cm)",
+   "requisitos": [
+    "U12.1",
+    "U12.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U13.1",
+   "id": "MAT-1ESO-U13.1",
+   "unidad": "U13",
+   "titulo": "Coordenadas",
+   "idea_clave": "Dos números localizan un punto: primero horizontal (x), luego vertical (y).",
+   "vida_real": "Hundir la flota, las filas y asientos del cine, una ubicación en el mapa.",
+   "nexo": "Nexo coloca barcos en una cuadrícula y dice las coordenadas de cada impacto.",
+   "problema_inverso": "Dar las coordenadas que hay que unir para dibujar una casa.",
+   "requisitos": [
+    "U3.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U13.2",
+   "id": "MAT-1ESO-U13.2",
+   "unidad": "U13",
+   "titulo": "Tablas, fórmulas y gráficas",
+   "idea_clave": "Una función asocia a cada entrada una única salida; se puede contar con una tabla, una fórmula o una gráfica.",
+   "vida_real": "El taxi de U7.1: 3 + 1,20x. Con 10 km, 15 €.",
+   "nexo": "Nexo mueve un punto sobre la gráfica mientras la tabla y la fórmula se rellenan a la vez.",
+   "problema_inverso": "A partir de la gráfica, ¿cuánto cuesta un trayecto de 10 km?",
+   "requisitos": [
+    "U13.1",
+    "U7.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U13.3",
+   "id": "MAT-1ESO-U13.3",
+   "unidad": "U13",
+   "titulo": "Interpretar gráficas",
+   "idea_clave": "Una gráfica sube, baja o se mantiene: cada tramo cuenta qué pasa. Máximos y mínimos.",
+   "vida_real": "La temperatura a lo largo de un día. La distancia recorrida en un paseo con parada.",
+   "nexo": "Nexo camina y su distancia al punto de partida se dibuja en tiempo real.",
+   "problema_inverso": "Dada una gráfica, ¿qué historia cuenta? Dibujar la de un trayecto contado con palabras.",
+   "requisitos": [
+    "U13.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U14.1",
+   "id": "MAT-1ESO-U14.1",
+   "unidad": "U14",
+   "titulo": "Recoger y organizar datos",
+   "idea_clave": "Población y muestra. Tipos de variable. Tabla de frecuencias.",
+   "vida_real": "Encuesta: ¿qué app usan en tu clase?",
+   "nexo": "Nexo pasa por los pupitres, apunta las respuestas y la tabla se llena.",
+   "problema_inverso": "Dada una tabla, ¿a cuántas personas se preguntó?",
+   "requisitos": [
+    "U5.3"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U14.2",
+   "id": "MAT-1ESO-U14.2",
+   "unidad": "U14",
+   "titulo": "Gráficos y medidas",
+   "idea_clave": "La media es el reparto equitativo; la mediana, el valor central; la moda, el más repetido; el rango mide la dispersión.",
+   "vida_real": "Notas 5, 5, 6 y 10: media 6,5, mediana 5,5 y moda 5. El \"salario medio\" puede engañar.",
+   "nexo": "Nexo nivela torres de bloques para mostrar la media; el gráfico cambia al añadir un valor extremo.",
+   "problema_inverso": "Si la media de 4 notas es 7 y tres son 6, 7 y 8, ¿cuál es la cuarta? (7)",
+   "requisitos": [
+    "U14.1",
+    "U5.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "U14.3",
+   "id": "MAT-1ESO-U14.3",
+   "unidad": "U14",
+   "titulo": "Probabilidad y Laplace",
+   "idea_clave": "Probabilidad = casos favorables entre casos posibles, si todos son igual de probables. Al repetir muchas veces, la frecuencia se acerca a ella.",
+   "vida_real": "Lanzar un dado: la probabilidad de sacar par es 3/6 = 1/2. Por qué el casino siempre gana.",
+   "nexo": "Nexo lanza un dado 600 veces y la gráfica de frecuencias se estabiliza.",
+   "problema_inverso": "Una bolsa de 10 bolas: ¿cuántas rojas para que P(roja) = 0,3? (3)",
+   "requisitos": [
+    "U4.1",
+    "U14.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "T1.1",
+   "id": "MAT-1ESO-T1.1",
+   "unidad": "T1",
+   "titulo": "Cuánto cuesta realmente",
+   "idea_clave": "El precio por unidad permite comparar tamaños distintos.",
+   "vida_real": "500 g a 1,80 € (3,60 €/kg) frente a 750 g a 2,55 € (3,40 €/kg).",
+   "nexo": "Nexo en el supermercado comparando etiquetas.",
+   "problema_inverso": "¿A qué precio tendría que estar el paquete de 500 g para igualarlo? (1,70 €)",
+   "requisitos": [
+    "U5.2",
+    "U6.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "T1.2",
+   "id": "MAT-1ESO-T1.2",
+   "unidad": "T1",
+   "titulo": "Rebajas, IVA y trucos de precios",
+   "idea_clave": "Un descuento y una subida del mismo porcentaje no se anulan.",
+   "vida_real": "\"Hasta un 50 %\", \"2×1\" y precios que acaban en ,99.",
+   "nexo": "Nexo desmonta un cartel de rebajas paso a paso.",
+   "problema_inverso": "Precio final 80 € tras rebajar un 20 %: ¿precio original? (100 €)",
+   "requisitos": [
+    "U6.4"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "T1.3",
+   "id": "MAT-1ESO-T1.3",
+   "unidad": "T1",
+   "titulo": "Presupuesto personal",
+   "idea_clave": "Ingresos − gastos = ahorro. Un presupuesto es una ecuación.",
+   "vida_real": "Una paga de 20 € a la semana y un objetivo de ahorro.",
+   "nexo": "Nexo y una hucha con una gráfica de ahorro.",
+   "problema_inverso": "¿Cuántas semanas hacen falta para ahorrar 120 €? (6)",
+   "requisitos": [
+    "U7.3",
+    "U13.3"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "T2.1",
+   "id": "MAT-1ESO-T2.1",
+   "unidad": "T2",
+   "titulo": "Secuencias y regularidades",
+   "idea_clave": "Un patrón es algo que se repite o crece siguiendo una regla.",
+   "vida_real": "Fibonacci en piñas y girasoles.",
+   "nexo": "Nexo coloca figuras en una fila y adivina la siguiente.",
+   "problema_inverso": "Con la regla \"suma 3\" empezando en 2, ¿cuál es el término 20? (59)",
+   "requisitos": [
+    "U1.2"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "T2.2",
+   "id": "MAT-1ESO-T2.2",
+   "unidad": "T2",
+   "titulo": "Del patrón a la fórmula",
+   "idea_clave": "La regla se escribe con una letra: n cuadrados de cerillas necesitan 3n + 1 cerillas.",
+   "vida_real": "Calcular piezas de una cerca sin contarlas una a una.",
+   "nexo": "Nexo construye la fila de cuadrados y la fórmula aparece.",
+   "problema_inverso": "Si tengo 31 cerillas, ¿cuántos cuadrados puedo hacer? (10)",
+   "requisitos": [
+    "T2.1",
+    "U7.1"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "T3.1",
+   "id": "MAT-1ESO-T3.1",
+   "unidad": "T3",
+   "titulo": "Algoritmos",
+   "idea_clave": "Un algoritmo es una receta con pasos claros. El algoritmo de Euclides calcula el m.c.d.",
+   "vida_real": "Una receta de cocina, las indicaciones de un GPS.",
+   "nexo": "Nexo sigue un diagrama de flujo para calcular el m.c.d. de 48 y 18.",
+   "problema_inverso": "¿Qué entradas dan salida 6?",
+   "requisitos": [
+    "U2.3"
+   ],
+   "estado": "pendiente"
+  },
+  {
+   "codigo": "T3.2",
+   "id": "MAT-1ESO-T3.2",
+   "unidad": "T3",
+   "titulo": "Seguir y corregir un algoritmo",
+   "idea_clave": "Probar con ejemplos y encontrar dónde falla.",
+   "vida_real": "Un robot de limpieza que se queda atascado.",
+   "nexo": "Nexo ejecuta un algoritmo con un fallo y lo arregla.",
+   "problema_inverso": "Escribir un algoritmo que diga si un número es par.",
+   "requisitos": [
+    "T3.1"
+   ],
+   "estado": "pendiente"
+  }
+ ]
+}

@@ -1,17 +1,21 @@
-# <Código> <Título del vídeo>
-Curso: 1º ESO · Unidad: <U> · Nivel de Nexo: eso · Requisitos: <códigos>
+# <ID> · <Título del vídeo>
+Curso: <curso> · Unidad: <U> · Nivel de Nexo: <eso|bach|uni|avanzado> · Requisitos: <códigos>
+Duración estimada: <min> (<palabras> palabras) · Términos y colores: x → mates.a, ...
 
-## Escena 1 · Gancho (20 s)
+## e01 · gancho · 20 s
 - Locución:
 - Se ve:
-- Nexo:
+- Nexo: <acción del catálogo> · <expresión>   (o «no aparece»)
+- Claims:
 
-## Escena 2 · El problema
-## Escena 3 · De dónde sale la idea
-## Escena 4 · La regla o fórmula
-## Escena 5 · Ejemplo de vida real (Nexo participa)
-## Escena 6 · Al revés (problema inverso)
-## Escena 7 · Resumen en tres frases
-## Escena 8 · Siguiente vídeo
+## e02 · problema
+## e03 · origen          (de dónde sale la idea, desde lo que ya se sabe)
+## e04 · regla           (la fórmula o el procedimiento, como resumen de lo descubierto)
+## e05 · vida_real       (Nexo participa)
+## e06 · error_comun
+## e07 · inverso         (el mismo problema al revés)
+## e08 · resumen         (tres frases)
+## e09 · siguiente       (adelanto del próximo vídeo del mapa)
 
-Cada escena: id, duración estimada, locución, qué se ve, gesto y expresión de Nexo.
+Secciones válidas: gancho, problema, origen, regla, ejemplo, vida_real, inverso, error_comun, demostracion, codigo,
+practica, resumen, siguiente. Se pueden repetir y reordenar; gancho, origen, vida_real, inverso y resumen son obligatorias.

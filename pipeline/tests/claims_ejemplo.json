@@ -1,0 +1,12 @@
+[
+ {"id": "c01", "tipo": "numero", "expr": "0.20*60", "esperado": "12", "nota": "20 % de 60"},
+ {"id": "c02", "tipo": "numero", "expr": "pi*20**2", "esperado": "1256.64", "decimales": 2, "nota": "pizza de 40 cm"},
+ {"id": "c03", "tipo": "simbolico", "expr": "diff(x**3, x)", "esperado": "3*x**2", "nota": "derivada"},
+ {"id": "c04", "tipo": "simbolico", "expr": "integrate(sin(x), (x, 0, pi))", "esperado": "2", "nota": "integral"},
+ {"id": "c05", "tipo": "ecuacion", "ecuacion": "3*x - 4 = 11", "incognita": "x", "soluciones": ["5"], "nota": "pienso un número"},
+ {"id": "c06", "tipo": "ecuacion", "ecuacion": "x^2 - 5*x + 6 = 0", "incognita": "x", "soluciones": ["2", "3"], "nota": "segundo grado"},
+ {"id": "c07", "tipo": "unidades", "expr": "5 m * 3 m * 1.5 m", "esperado": "22500 L", "nota": "piscina"},
+ {"id": "c08", "tipo": "unidades", "expr": "42.195 km", "esperado": "42195 m", "nota": "maratón"},
+ {"id": "c09", "tipo": "codigo", "lenguaje": "python", "codigo": "import math\nprint(math.gcd(48, 18))", "salida": "6", "nota": "Euclides"},
+ {"id": "c10", "tipo": "dato", "fuente": "https://worldathletics.org/records", "estado": "verificado", "nota": "récord 100 m 9,58 s"}
+]

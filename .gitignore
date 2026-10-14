@@ -2,3 +2,6 @@ __pycache__/
 *.blend1
 episodios/*/render/
 episodios/*/audio/*.wav
+episodios/*/en/audio/*.wav
+render_pruebas/
+media/

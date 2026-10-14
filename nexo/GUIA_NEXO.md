@@ -30,3 +30,9 @@ Evoluciona por nivel con el color del emblema de la mochila: ESO verde agua · B
 - **Desde código:** `expr(N, "Curioso")`, `pose(N, "señala" | "lanza" | "piensa" | "saluda")` e `idle(N)`.
 - **Brillo de los ojos:** el halo lo pone el compositor (Glare tipo Bloom), así que funciona igual en Eevee y en Cycles. Para más o menos halo, cambia `Strength` en el grupo «Composicion».
 - **Estudio:** `studio()` y `set_camera(cam, az, el, dist, tz)`. Un render en Cycles por CPU con 40 muestras tarda unos 45 s por imagen de 800x900.
+
+## Nexo como actor: props, acciones y planos
+- `props.py`: biblioteca de objetos en su estilo (pelota, dado, pizarra, portátil, libro, balanza, bloque, regla, puntero, coche, mesa, matraz, robot, vaso).
+- `acciones.py`: gestos con parámetros (idle, saludar, senalar, pensar, sostener, mostrar, lanzar, celebrar, asentir, encoger, escribir, teclear, caminar).
+- `catalogo.json`: lo que existe, con parámetros y usos. Se regenera con `python3 nexo/props.py --catalogo` y `python3 nexo/acciones.py --catalogo`.
+- Un plano (JSON) se renderiza con `pipeline/render_nexo.py`. Guía completa: `.claude/skills/dirigir-nexo/SKILL.md`.

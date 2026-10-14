@@ -1,1 +1,3 @@
-Descarga aquí los .ttf: Sora (SemiBold), Manrope (Medium), STIX Two Math, JetBrains Mono (Medium) desde fonts.google.com. Licencia OFL: uso comercial permitido.
+Fuentes del canal (licencia SIL Open Font License: uso comercial y redistribución permitidos), descargadas de github.com/google/fonts:
+Sora (títulos), Manrope (cuerpo), JetBrains Mono (código) y STIX Two Math (fórmulas; en LaTeX se usa Latin Modern).
+Para usarlas fuera de Manim, instálalas en el sistema.

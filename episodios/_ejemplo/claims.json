@@ -1,0 +1,5 @@
+[
+ {"id": "c01", "tipo": "numero", "expr": "4*sin(50*pi/180)", "esperado": "3.06", "decimales": 2,
+  "nota": "componente vertical de 4 m/s a 50°", "escena": "e02"},
+ {"id": "c02", "tipo": "unidades", "expr": "4 m/s * 1 s", "esperado": "400 cm", "nota": "a 4 m/s, en 1 s recorre 4 m", "escena": "e01"}
+]

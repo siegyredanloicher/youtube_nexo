@@ -1,0 +1,61 @@
+# Catálogo del canal: qué materias y cursos existen, en qué estado y con qué nivel de Nexo.
+# Cada curso con mapa vive en curriculo/<materia>/<curso>/curso.json (fuente de verdad de sus fichas).
+# Identificador de vídeo: <MATERIA>-<CURSO>-<código>, por ejemplo MAT-1ESO-U6.3.
+# Estados de un curso: idea → mapa (fichas escritas) → produccion → publicado.
+
+niveles:            # nivel de Nexo = color del emblema (brand/tokens.json → color.nivel)
+  eso: {nombre: "ESO", edades: "12-16", tokens: eso}
+  bach: {nombre: "Bachillerato", edades: "16-18", tokens: bachillerato}
+  uni: {nombre: "Universidad", edades: "18+", tokens: universidad}
+  avanzado: {nombre: "Avanzado", edades: "posgrado y profesional", tokens: avanzado}
+
+materias:
+  MAT:
+    nombre: Matemáticas
+    carpeta: matematicas
+    cursos:
+      1ESO: {nivel: eso, estado: mapa}
+      2ESO: {nivel: eso, estado: idea}
+      3ESO: {nivel: eso, estado: idea}
+      4ESO: {nivel: eso, estado: idea, nota: "opciones A y B"}
+      1BACH: {nivel: bach, estado: idea, nota: "Ciencias y CCSS"}
+      2BACH: {nivel: bach, estado: idea}
+      CALC1: {nivel: uni, estado: idea, nombre: "Cálculo I"}
+      ALGLIN: {nivel: uni, estado: idea, nombre: "Álgebra lineal"}
+      EDO: {nivel: uni, estado: idea, nombre: "Ecuaciones diferenciales"}
+      PROB: {nivel: uni, estado: idea, nombre: "Probabilidad y estadística"}
+      ANAREAL: {nivel: avanzado, estado: idea, nombre: "Análisis real"}
+  FIS:
+    nombre: Física
+    carpeta: fisica
+    cursos:
+      2ESO: {nivel: eso, estado: idea, nota: "Física y Química"}
+      1BACH: {nivel: bach, estado: idea}
+      2BACH: {nivel: bach, estado: idea}
+      MEC: {nivel: uni, estado: idea, nombre: "Mecánica clásica"}
+      ELEC: {nivel: uni, estado: idea, nombre: "Electromagnetismo"}
+  QUI:
+    nombre: Química
+    carpeta: quimica
+    cursos:
+      2ESO: {nivel: eso, estado: idea, nota: "Física y Química"}
+      1BACH: {nivel: bach, estado: idea}
+  PRG:
+    nombre: Programación
+    carpeta: programacion
+    cursos:
+      INICIO: {nivel: eso, estado: idea, nombre: "Pensar como un programa (Python desde cero)"}
+      PY: {nivel: bach, estado: idea, nombre: "Python de verdad"}
+      ALGO: {nivel: uni, estado: idea, nombre: "Algoritmos y estructuras de datos"}
+  ROB:
+    nombre: Robótica
+    carpeta: robotica
+    cursos:
+      INICIO: {nivel: eso, estado: idea, nombre: "Sensores, motores y lógica"}
+      CINEM: {nivel: uni, estado: idea, nombre: "Cinemática de robots"}
+      CONTROL: {nivel: uni, estado: idea, nombre: "Control (PID y más)"}
+  IA:
+    nombre: Datos e inteligencia artificial
+    carpeta: ia
+    cursos:
+      FUND: {nivel: uni, estado: idea, nombre: "Fundamentos del aprendizaje automático"}

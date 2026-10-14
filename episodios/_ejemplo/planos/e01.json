@@ -1,0 +1,19 @@
+{
+ "accion": "lanzar",
+ "params": {
+  "prop": "p1",
+  "v0": 4,
+  "angulo": 50,
+  "hacia": "derecha",
+  "rebotes": 1
+ },
+ "props": [
+  {
+   "id": "p1",
+   "prop": "pelota"
+  }
+ ],
+ "camara": "completo",
+ "encuadre": "izquierda",
+ "duracion_s": 4.5
+}

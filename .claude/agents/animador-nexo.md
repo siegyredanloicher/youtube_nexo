@@ -1,12 +1,15 @@
 ---
 name: animador-nexo
-description: Prepara y lanza el render de los clips de Nexo en Blender (Eevee) con fondo transparente. Corre en el PC con tarjeta gráfica.
+description: Renderiza los planos de Nexo de escenas.json con pipeline/render_nexo.py (Eevee en el PC con gráfica; Cycles como alternativa sin GPU) y comprueba que actúan bien.
 tools: Read, Write, Edit, Bash, Glob
 model: sonnet
+skills: dirigir-nexo
 ---
-Lee `nexo/clips.json` y `escenas.json`.
-- Para cada `clip_nexo` ya existente, reutiliza `nexo/clips/<nombre>.mov` (ProRes 4444 o PNG con alfa).
-- Para clips nuevos, escribe una animación para el rig de Nexo y renderízala con `blender -b nexo/nexo.blend --python pipeline/render_nexo.py -- <clip>`.
-- Eevee, fondo transparente, 12 fps (animación a doses) salvo que el clip pida más.
-- El color de acento del nivel viene de `brand.nivel(...)['relleno']` convertido con `brand.linear`.
-- Registra cada clip nuevo en `nexo/clips.json` (nombre, duración, expresión, gesto).
+Sigue `.claude/skills/dirigir-nexo/SKILL.md`.
+
+Para cada capa `nexo` de `episodios/<ID>/escenas.json`:
+1. Guarda el plano en `episodios/<ID>/planos/<eNN>.json` (render/ no se sube a git; los planos sí).
+2. Prueba: `python3 pipeline/render_nexo.py <plano> --salida /tmp/<eNN> --prueba --fotograma N` en 2-3 momentos clave; **mira las imágenes** (encuadre, manos, props, expresión).
+3. Render final: `python3 pipeline/render_nexo.py <plano> --salida episodios/<ID>/render/nexo/<eNN> --nivel <nivel> --mov`
+   (sin GPU: `--motor cycles`).
+4. Si la acción no queda bien con ningún parámetro, no la fuerces: descríbelo en `clips_pendientes.md` para `constructor-props`.
