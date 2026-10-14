@@ -11,6 +11,7 @@ Expresiones: Feliz, Tranquilo, Sorpresa, Pensativo, Concentrado, Curioso, Motiva
 Añadir una acción: escribe la función, regístrala con @accion y ejecuta  python nexo/acciones.py --catalogo
 """
 import math
+import re
 import sys
 from pathlib import Path
 
@@ -131,12 +132,13 @@ class Plano:
 
     def en_mano(self, pid, mano, t0, t1, separacion=None):
         ob = self.props[pid]
-        sep = separacion if separacion is not None else ob.get("radio", 0.04) + 0.012
+        sep = separacion if separacion is not None else ob.get("sep_mano", ob.get("radio", 0.04) + 0.012)
 
         def fn(t, mano=mano, sep=sep):
             m = self.palma(mano)
             hacia = Vector((-1 if mano == "L" else 1, -0.6, 0.35)).normalized()  # hacia el interior y delante
-            pos = m.translation + hacia * sep
+            dx, dy, dz = ob.get("desp_mano", (0.0, 0.0, 0.0))  # ajuste del prop: x hacia el interior, y, z del mundo
+            pos = m.translation + hacia * sep + Vector(((-dx if mano == "L" else dx), dy, dz))
             return pos, None
         self._pistas.setdefault(pid, []).append((t0, t1, fn))
 
@@ -420,6 +422,122 @@ def caminar(P, distancia=1.0, direccion="derecha", velocidad=0.5):
         P.cuerpo(t, subir=0.006 * math.cos(4 * math.pi * fase), giro=3 * math.sin(2 * math.pi * fase))
         t += paso / 4
     return dur
+
+
+def _aparecer(ob, f):
+    """El prop está oculto (escala 0) hasta el fotograma f y visible desde f (sin fundido)."""
+    pref = bpy.context.preferences.edit
+    antes, pref.keyframe_new_interpolation_type = pref.keyframe_new_interpolation_type, "CONSTANT"
+    esc = tuple(ob.scale)
+    ob.scale = (0, 0, 0)
+    ob.keyframe_insert("scale", frame=1)
+    ob.scale = esc
+    ob.keyframe_insert("scale", frame=max(2, f))
+    pref.keyframe_new_interpolation_type = antes
+
+
+@accion("Deja un prop de mano en un punto del suelo o de la mesa: se agacha, lo baja y lo suelta a pocos centímetros "
+        "(cae en caída libre y se queda quieto). Con veces > 1 coloca en fila los props p1..pN (cada uno aparece en "
+        "su mano al cogerlo); con mano auto usa la mano del lado de cada destino. Nexo no se desplaza: alcanza ~0,2 m "
+        "a cada lado de sus pies (en el suelo, lo suelta a 4-6 cm; cuanto más lejos, más cae: plano_meta.colocar)",
+        {"prop": "p1", "destino": [0.18, -0.16, 0.0], "veces": 1, "paso": "auto", "fila": "derecha", "mano": "auto"},
+        props=["cualquiera de mano (bloque, dado, pelota, libro...)"],
+        usos=["contar", "repartir", "agrupar de diez en diez", "apilar", "ordenar"])
+def colocar(P, prop="p1", destino=(0.18, -0.16, 0.0), veces=1, paso="auto", fila="derecha", mano="auto",
+            expresion="Concentrado"):
+    destino = Vector(destino)
+    # qué props coloca: el dado y, si veces > 1, la serie con el mismo prefijo (p1, p2, ...) que exista en el plano
+    ids = [prop]
+    if veces > 1:
+        m = re.match(r"^(.*?)(\d+)$", prop)
+        if m:
+            pre, n0 = m.group(1), int(m.group(2))
+            ids = [f"{pre}{n0 + k}" for k in range(veces) if f"{pre}{n0 + k}" in P.props]
+    ids = [i for i in ids if i in P.props] or [prop]
+    primero = P.props[ids[0]]
+    if paso == "auto":
+        paso = primero.get("tam", [2 * primero.get("radio", 0.05)])[0] + 0.01
+    dir_fila = {"derecha": Vector((1, 0, 0)), "izquierda": Vector((-1, 0, 0)), "delante": Vector((0, -1, 0)),
+                "atras": Vector((0, 1, 0))}[fila] if isinstance(fila, str) else Vector(fila).normalized()
+    escena = P.rig.users_scene[0]
+    P.relajado(0)
+    P.expr(expresion, 0.3)
+    t, anterior = 0.0, None
+    for k, pid in enumerate(ids):
+        ob = P.props[pid]
+        dst = destino + dir_fila * paso * k
+        mk = mano if mano != "auto" else ("L" if dst.x >= 0 else "R")
+        s = 1 if mk == "L" else -1
+        if anterior and anterior != mk:   # cambia de mano: la otra vuelve a reposo
+            P.ik(f"IK_hand.{anterior}", P.reposo[f"IK_hand.{anterior}"] + Vector((-0.035 * (1 if anterior == "L" else -1), -0.02, -0.01)),
+                 t + 0.3, (-4, 0, 0))
+        anterior = mk
+        apoyo = dst + Vector((0, 0, ob.get("semialto", ob.get("radio", 0.04))))
+        delante = Vector((0.1 * s, -0.2, 0.42))
+        if k == 0:
+            t_coge = t
+            P.ik(f"IK_hand.{mk}", delante, t + 0.5, (70, 0, -20 * s))
+            t += 0.5
+        else:   # coge el siguiente junto a la cadera (aparece en la mano) y lo trae delante
+            P.ik(f"IK_hand.{mk}", P.hombro[mk] + Vector((0.1 * s, 0.02, -0.17)), t + 0.3, (20, 0, -10 * s))
+            t_coge = t + 0.3
+            P.ik(f"IK_hand.{mk}", delante, t + 0.6, (70, 0, -20 * s))
+            t += 0.6
+            _aparecer(ob, P.f(t_coge))
+        # agacharse según la altura del destino (mesa ~0,42 m: casi nada; suelo: rodillas y tronco).
+        # El pico de la capucha asoma si la cabeza se inclina más de ~12° en el mundo: la cabeza compensa el tronco.
+        bajo = max(0.0, min(1.0, (0.45 - apoyo.z) / 0.45))
+        t_baja, t_suelta = t + 0.5, t + 0.72
+        giro = math.degrees(math.atan2(dst.x, -dst.y)) * 0.2
+        inc = 4 + 26 * bajo
+        P.cuerpo(t_baja, giro=giro, inclinacion=inc, subir=-0.14 * bajo)
+        P.mirar(t_baja, giro=giro, cabeceo=3 - inc)
+        # al bajar, el prop pasa de ir junto a la palma a colgar bajo los dedos, listo para apoyarlo
+        sep = ob.get("sep_mano", ob.get("radio", 0.04) + 0.012)
+        dx, dy, dz = ob.get("desp_mano", (0.0, 0.0, 0.0))
+        junto = Vector((-s, -0.6, 0.35)).normalized() * sep + Vector((-dx * s, dy, dz))
+        debajo = Vector((-0.012 * s, -0.012, -(ob.get("semialto", sep) + 0.03)))
+
+        def lleva(tt, t_a=t, t_b=t_baja, junto=junto, debajo=debajo, mano=mk):
+            u = max(0.0, min(1.0, (tt - t_a) / (t_b - t_a)))
+            u = u * u * (3 - 2 * u)
+            return P.palma(mano).translation + junto.lerp(debajo, u), None
+        # la mano baja hasta que el prop queda justo encima del apoyo (se corrige midiendo la palma)
+        rot = (25, 0, -10 * s)
+        objetivo = apoyo - debajo + Vector((0, 0, 0.004))
+        for _ in range(5):
+            P.ik(f"IK_hand.{mk}", objetivo, t_baja, rot)
+            P.ik(f"IK_hand.{mk}", objetivo, t_suelta, rot)
+            escena.frame_set(P.f(t_suelta))
+            objetivo += (apoyo + Vector((0, 0, 0.004)) - lleva(t_suelta)[0])
+        escena.frame_set(P.f(t_suelta))
+        suelta = lleva(t_suelta)[0]
+        P._pistas.setdefault(pid, []).append((t_coge, t_suelta, lleva))
+        # cae lo que le falte hasta el apoyo (caída libre, g = 9,81 m/s²) y se queda quieto
+        h = max(0.0, suelta.z - apoyo.z)
+        P._colocar = getattr(P, "_colocar", []) + [dict(prop=pid, destino=[round(c, 4) for c in dst], caida_m=round(h, 3))]
+        t_caida = max(math.sqrt(2 * h / 9.81), 1 / P.fps)
+
+        def cae(tr, a=suelta.copy(), b=apoyo.copy(), tc=t_caida):
+            u = min(1.0, tr / tc)
+            return (a.x + (b.x - a.x) * u, a.y + (b.y - a.y) * u, a.z - (a.z - b.z) * u * u)
+        P.trayecto(pid, t_suelta, t_suelta + t_caida, cae)
+        P.trayecto(pid, t_suelta + t_caida, t_suelta + t_caida + 0.1, lambda tr, b=apoyo.copy(): b)
+        # retira la mano y se incorpora
+        P.ik(f"IK_hand.{mk}", objetivo + Vector((0.02 * s, 0.03, 0.07)), t_suelta + 0.22, (50, 0, -15 * s))
+        t = t_suelta + 0.22
+        if k == len(ids) - 1:
+            P.cuerpo(t + 0.45)
+            P.mirar(t + 0.45, giro=giro * 0.8, cabeceo=6)
+            P.relajado(t + 0.7)
+            P.mirar(t + 0.7, giro=0, cabeceo=0)
+            P.expr("Feliz", t + 0.6)
+            t += 0.9
+        else:
+            P.cuerpo(t + 0.3, giro=giro * 0.5, inclinacion=4)
+            P.mirar(t + 0.3, giro=giro * 0.5, cabeceo=4)
+    P.dur = max(P.dur, t)
+    return t
 
 
 def catalogo():
